@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fernando Chale Eteba - CV</title>
+  <style>
+    :root {
+      --bg-color: #121212;
+      --card-color: #1e1e2f;
+      --accent: #00f0ff;
+      --text-light: #ffffff;
+      --text-muted: #aaaaaa;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-light);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: var(--card-color);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .profile-pic {
+      display: block;
+      margin: 2rem auto;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--accent);
+      box-shadow: 0 0 20px var(--accent);
+    }
+
+    p {
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .button-container a {
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--accent);
+      color: var(--bg-color);
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Fernando CV</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#business">Business</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+      <div class="button-container">
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#business">Business</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <section id="about">
+    <img src="DSC_0014.JPG" alt="Fernando Chale Eteba" class="profile-pic">
+    <h2>About Me</h2>
+    <p><strong>Full Name:</strong> Fernando Chale Eteba</p>
+    <p><strong>Nationality:</strong> Equatorial Guinea</p>
+    <p><strong>Date of Birth:</strong> 04-Sept-1999</p>
+    <p><strong>Place of Birth:</strong> Malabo</p>
+    <p>I’m a passionate Junior Frontend Developer and Software Engineering student. Currently based in Ghana and studying at IPMC University College. I’m quick at learning, efficient at debugging, and always aiming to improve UI/UX with modern tools.</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <p><strong>Diploma in Software Engineering</strong> — IPMC University College (2023 - Present)</p>
+    <p><strong>Certificates:</strong></p>
+    <ul>
+      <li>Introduction to SQL - SoloLearn</li>
+      <li>Introduction to Java - SoloLearn</li>
+      <li>Fundamentals of AI - Netzum</li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p><strong>Frontend:</strong> HTML, CSS, JavaScript, Responsive Design, UI/UX Thinking</p>
+    <p><strong>Backend:</strong> PHP, MySQL, phpMyAdmin</p>
+    <p><strong>Debugging:</strong> Fast identification and resolution of bugs</p>
+    <p><strong>Languages:</strong> Spanish (Native), English (Fluent)</p>
+  </section>
+
+  <section id="experience">
+    <h2>Professional Experience</h2>
+    <p><strong>TV Producer at Fama GV</strong> — Guinea Vista EG (2017 - 2022)</p>
+    <p>Produced cultural TV shows and worked on youth-centered audiovisual projects, helping create local content and developing communication skills.</p>
+  </section>
+
+  <section id="business">
+    <h2>Business Experience</h2>
+    <p><strong>Nkeng Prod</strong> — Studio Production since 2013</p>
+    <p>Producing music, managing recording sessions, and working with various artists.</p>
+
+    <p><strong>Eteba Music</strong> — Record Label since 2018</p>
+    <p>Independent label supporting Afrobeat and urban talent across Equatorial Guinea and beyond.</p>
+
+    <p><strong>Eteba Group</strong> — Development company</p>
+    <p>Supporting and investing in small business projects for young entrepreneurs.</p>
+
+    <p><strong>Dream Motivation EG</strong></p>
+    <p>Motivational and empowerment platform for African youth.</p>
+
+    <p><strong>Abeme Modjobuy Envios</strong></p>
+    <p>A logistics company helping send packages from Ghana to Togo and Equatorial Guinea.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> fernandochaleeteba@gmail.com</p>
+    <p><strong>Phone:</strong> +233530938783</p>
+  </section>
+
+
+</body>
+</html>
