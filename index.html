@@ -11,7 +11,21 @@
       --accent: #00f0ff;
       --text-light: #ffffff;
       --text-muted: #aaaaaa;
+      --prnamee: #ffffff;
+    } .prn{
+        color: var(--prnamee);
+        font-size: 1.2em;
+        font-weight: bold;
+      
+    } .status{
+        color: var(--accent);
+        font-weight: bold;
     }
+      #projects a {
+        color: var(--accent);
+        text-decoration: none;
+        margin-right: 10px;
+      }
 
     body {
       margin: 0;
@@ -155,6 +169,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#business">Business</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -170,6 +185,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#business">Business</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -202,6 +218,74 @@
     <p><strong>Backend:</strong> PHP, MySQL, phpMyAdmin</p>
     <p><strong>Debugging:</strong> Fast identification and resolution of bugs</p>
     <p><strong>Languages:</strong> Spanish (Native), English (Fluent)</p>
+  </section>
+  <section id="projects">
+    <h2>Projects</h2>
+    <p><strong class="prn">Personal Portfolio Website: </strong><br>
+    A responsive portfolio showcasing my projects and skills using HTML, CSS, and JavaScript.
+      <br><strong class="status">Status: Active</strong>
+      <br>
+      <strong>Link: </strong> <a href="https://etebachale-group.github.io/cvfernandochaleeteba.github.io">Page</a>
+      <a href="https://github.com/etebachale-group/cvfernandochaleeteba.github.io.git">Repository</a></p>
+
+    <p><strong class="prn">Bubi-Lex</strong><br>
+      <strong>Type: </strong>Full-stack web app <br>
+      <strong>Tech Stack: </strong> Next.js, Supabase, PostgreSQL,Gemini CLI, Tailwind CSS, React, Vercel. <br>
+      <strong>Description: </strong>An interactive online dictionary for the Bubi language, built to preserve and teach one of Guinea Ecuatorial’s native tongues. Features CRUD operations, search, and phonetic data management through Supabase integration. <br>
+      <strong>Role: </strong>Full-stack developer (architecture, database, UI/UX, deployment). <br>
+    <strong class="status">Status: Live (beta)</strong> <br>
+      <strong>Link: </strong> <a href="https://bubi-lex.vercel.app/">Page</a>
+      <a href="https://github.com/etebachale-group/bubi-lex.git">Repository</a></p>
+  
+
+    <p><strong class="prn">Abeme Modjobuy Envíos</strong><br>
+      <strong>Type: </strong>Logistics management system + company site.<br>
+      <strong>Tech Stack: </strong> React.js, Node.js, phpMyAdmin,PHP,HTML,CSS,MySQL,AI, WhatsApp AP. <br>
+      <strong>Description: </strong>Online shop for organic skincare products produced under Eteba Group. Includes product catalog, cart system, and WhatsApp API integration for orders. <br>
+      <strong>Role: </strong>Full-stack developer & system architect. <br>
+    <strong class="status">Status: local Active (beta)</strong> <br>
+    <strong>Link: </strong>
+      <a href="https://github.com/etebachale-group/abeme-modjobuy.git">Repository</a>
+    </p>
+    <p><strong class="prn">Eteba Chale Group</strong><br>
+      <strong>Type: </strong>A bespoke E-commerce Platform and Service Management web application, built as a Minimum Viable Product
+  (MVP). The frontend is a Single Page Application (SPA).<br>
+      <strong>Tech Stack: </strong> React.js, Node.js, Frontend: React, React Router, React-Bootstrap, Framer Motion. <br>
+      <strong>Description: </strong>The application supports a full e-commerce workflow. Users can browse a dynamic catalog of services,
+  register/login via a secure JWT-based system, and place custom orders through a multi-step configurator,
+  including the ability to upload project files.
+  A key feature is the collaborative workflow between the client and the administrator. Admins can manage
+  all services, users, and orders from a dedicated dashboard. They can submit a work preview URL to the
+  client, who is then notified and can either approve the work or request changes directly from their
+  account panel. This entire review cycle is designed to streamline communication.
+  The backend is a custom-built RESTful API in pure PHP that handles all business logic, database
+  interactions via PDO, and serves data to the React frontend. The system is architected to integrate with
+  payment gateways like Stripe and PayPal and includes a fully functional demo mode for testing the payment
+  flow. <br>
+      <strong>Role: </strong>Architected and developed the backend RESTful API from scratch using vanilla PHP 8 to handle all business
+      logic. <br>
+    <strong class="status">Status: In development</strong> <br>
+    <strong>Link: </strong>
+      <a href="https://github.com/etebachale-group/abeme-modjobuy.git">Repository</a>
+    </p>
+
+    <p><strong class="prn">Ecuacelebs</strong><br>
+      <strong>Type: </strong>Subscription-based exclusive content web platform.<br>
+      <strong>Tech Stack: </strong> Backend:* PHP (vanilla, with no apparent major framework) and a MySQL database.
+     Frontend: HTML, CSS, and JavaScript.
+     Libraries and Frameworks:
+         Bootstrap 5.3: Used as the main CSS framework for design and responsiveness.
+         Font Awesome 6.4: For iconography throughout the application.
+         Google Fonts: For custom typography.
+         JavaScript (Bootstrap Bundle): For interactive frontend components. <br>
+      <strong>Description: </strong>"Ecuacelebs" is a web application designed for Ecuato Guinean celebrities or content creators to monetize their work. The platform allows users to register, log in, and subscribe to different payment plans ("Gratis,"
+   "Básico," "Premium") to access exclusive content, such as videos and posts. It features a comprehensive admin panel to manage users, content, subscriptions, events, and promotional banners. <br>
+      <strong>Role: </strong>Social Media Platform to Content Creator Of Equatorial Guinea. <br>
+    <strong class="status">Status: local Active (beta)</strong> <br>
+    <strong>Link: </strong>
+      <a href="https://github.com/etebachale-group/Ecuacelebs.git">Repository</a>
+    </p>
+
   </section>
 
   <section id="experience">
