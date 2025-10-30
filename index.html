@@ -6,324 +6,832 @@
   <title>Fernando Chale Eteba - CV</title>
   <style>
     :root {
-      --bg-color: #121212;
-      --card-color: #1e1e2f;
-      --accent: #00f0ff;
-      --text-light: #ffffff;
-      --text-muted: #aaaaaa;
-      --prnamee: #ffffff;
-    } .prn{
-        color: var(--prnamee);
-        font-size: 1.2em;
-        font-weight: bold;
-      
-    } .status{
-        color: var(--accent);
-        font-weight: bold;
-    }
-      #projects a {
-        color: var(--accent);
-        text-decoration: none;
-        margin-right: 10px;
-      }
+      /* Base corporativo/tecnológico */
+      --bg: #0a0b12;            /* Navy profundo */
+      --surface: #121427;       /* Superficie principal */
+      --surface-2: #171a2f;     /* Superficie secundaria */
 
+      /* Paleta colorida pero profesional */
+      --primary: #4cc9f0;       /* Electric Cyan */
+      --secondary: #7b2cff;     /* Tech Violet */
+      --tertiary: #00d1b2;      /* Modern Teal */
+      --highlight: #ffd166;     /* Warm Amber para remarcar */
+      --danger: #ff4d6d;        /* Accent rojizo para estados */
+
+      /* Aliases para compatibilidad con estilos existentes */
+      --accent: var(--primary);
+      --accent-2: #8be9fd;      
+
+      --text: #f8fafc;
+      --muted: #a5b0c4;
+      --ring: var(--secondary);
+      --radius: 14px;
+
+      /* Gradientes */
+      --grad-brand: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, #b5179e 100%);
+      --grad-hero: radial-gradient(1200px 600px at 15% -10%, rgba(76,201,240,.15) 0%, rgba(123,44,255,.12) 40%, rgba(0,209,178,.1) 70%, transparent 100%);
+      --grad-surface: linear-gradient(180deg, rgba(124,136,255,.06), rgba(0,0,0,0) 40%);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: var(--bg-color);
-      color: var(--text-light);
+      font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+      background: linear-gradient(180deg, var(--bg), #0b0c10 35%), var(--grad-hero);
+      color: var(--text);
     }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: var(--card-color);
-      position: sticky;
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-2); }
+    :focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+    section { padding: 4rem 0; scroll-margin-top: 80px; }
+
+    /* Modern Header */
+    .header {
+      position: fixed;
       top: 0;
-      z-index: 10;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 11, 18, 0.85);
+      backdrop-filter: blur(20px) saturate(1.8);
+      border-bottom: 1px solid rgba(76, 201, 240, 0.1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    nav .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: var(--accent);
+    .header.scrolled {
+      background: rgba(18, 20, 39, 0.95);
+      border-bottom-color: rgba(123, 44, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
 
-    nav .desktop-nav {
-      list-style: none;
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
       display: flex;
-      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .logo:hover {
+      color: var(--accent-2);
+      transform: translateY(-1px);
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--grad-brand);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
       margin: 0;
       padding: 0;
+      gap: 0.5rem;
     }
 
-    nav .desktop-nav li a {
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      padding: 0.6rem 1rem;
+      color: var(--text);
       text-decoration: none;
-      color: var(--text-light);
+      border-radius: 12px;
       font-weight: 500;
-      padding: 0.5rem 1rem;
-      display: block;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
     }
 
-    .menu-button {
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(76, 201, 240, 0.1), rgba(123, 44, 255, 0.1));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 12px;
+    }
+
+    .nav-link:hover::before {
+      opacity: 1;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(76, 201, 240, 0.2);
+    }
+
+    .nav-link.active {
+      color: var(--primary);
+      background: rgba(76, 201, 240, 0.1);
+      border: 1px solid rgba(76, 201, 240, 0.2);
+    }
+
+    .hamburger {
       display: none;
       flex-direction: column;
       cursor: pointer;
-      gap: 5px;
+      padding: 0.5rem;
+      border: none;
+      background: transparent;
+      border-radius: 8px;
+      transition: all 0.3s ease;
     }
 
-    .menu-button .bar {
-      width: 25px;
-      height: 3px;
-      background-color: var(--text-light);
-      border-radius: 5px;
+    .hamburger:hover {
+      background: rgba(76, 201, 240, 0.1);
     }
 
-    .mobile-nav {
-      display: none;
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      margin: 3px 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 2px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Mobile Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: min(85vw, 350px);
+      height: 100vh;
+      background: rgba(18, 20, 39, 0.98);
+      backdrop-filter: blur(20px) saturate(1.8);
+      border-right: 1px solid rgba(76, 201, 240, 0.2);
+      z-index: 1001;
+      transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto;
+    }
+
+    .sidebar.open {
+      left: 0;
+    }
+
+    .sidebar-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid rgba(76, 201, 240, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .sidebar-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .sidebar-close {
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: rgba(76, 201, 240, 0.1);
+      color: var(--primary);
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar-close:hover {
+      background: rgba(76, 201, 240, 0.2);
+      transform: scale(1.05);
+    }
+
+    .sidebar-nav {
+      padding: 1rem;
+    }
+
+    .sidebar-menu {
       list-style: none;
       margin: 0;
       padding: 0;
-      background-color: var(--card-color);
-      width: 100%;
-      position: absolute;
-      top: 60px; /* Adjust this value based on your nav height */
-      left: 0;
-      z-index: 9;
-    }
-    
-    .mobile-nav.active {
-        display: block;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
     }
 
-    .mobile-nav li a {
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      padding: 1rem 1.25rem;
+      color: var(--text);
       text-decoration: none;
-      color: var(--text-light);
+      border-radius: 12px;
       font-weight: 500;
-      padding: 1rem;
-      display: block;
-      text-align: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
     }
 
-    section {
-      padding: 3rem 2rem;
-      max-width: 1000px;
-      margin: auto;
+    .sidebar-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--grad-brand);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 12px;
     }
 
-    h2 {
-      font-size: 2rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
+    .sidebar-link:hover::before {
+      opacity: 0.1;
     }
 
-    .profile-pic {
-      display: block;
-      margin: 2rem auto;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid var(--accent);
-      box-shadow: 0 0 20px var(--accent);
+    .sidebar-link:hover {
+      color: var(--primary);
+      transform: translateX(8px);
+      box-shadow: 0 4px 20px rgba(76, 201, 240, 0.15);
     }
 
-    p {
-      line-height: 1.6;
-      color: var(--text-muted);
+    .sidebar-link.active {
+      color: var(--primary);
+      background: rgba(76, 201, 240, 0.1);
+      border: 1px solid rgba(76, 201, 240, 0.2);
     }
 
-    .button-container {
-      text-align: center;
+    .sidebar-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar-overlay.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+      
+      .hamburger {
+        display: flex;
+      }
+      
+      section {
+        scroll-margin-top: 90px;
+      }
+    }
+
+
+
+    /* Hero */
+    #about .hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; align-items: center; }
+    .hero-title { font-size: clamp(1.8rem, 3vw, 2.6rem); margin: 0; color: var(--accent); }
+    .hero-sub { color: var(--muted); margin-top: 0.5rem; }
+    .hero-cta { display: flex; gap: 0.75rem; margin-top: 1rem; }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 0.7rem 1rem; border-radius: 999px; border: 1px solid #2b314a; background: #1c2136; color: var(--text); font-weight: 600; }
+    .btn.primary { background: var(--grad-brand); color: #041016; border: 0; box-shadow: 0 10px 24px rgba(123,44,255,.2); }
+    .btn:hover { filter: brightness(1.1); }
+
+    .profile { justify-self: center; text-align: center; }
+    .profile-pic { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; border: 5px solid var(--accent); box-shadow: 0 8px 24px rgba(0,0,0,.45); background: var(--grad-surface); }
+
+    /* Section titles */
+    h2 { font-size: clamp(1.6rem, 2.4vw, 2rem); color: var(--accent); margin: 0 0 1rem; }
+    p { line-height: 1.65; color: var(--muted); }
+
+    /* Cards / Grid */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+    .card { background: linear-gradient(180deg, var(--surface), #0f1222 80%), var(--grad-surface); border: 1px solid #262b40; border-radius: var(--radius); padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .card .title { font-weight: 700; color: var(--text); }
+    .badge { display: inline-block; padding: 0.25rem 0.6rem; border-radius: 999px; background: linear-gradient(135deg, rgba(123,44,255,.35), rgba(76,201,240,.35)); color: var(--text); font-size: 0.85rem; border: 1px solid #364065; }
+    .status { color: var(--primary); font-weight: 700; }
+    .links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .links a { background: linear-gradient(180deg, #24283b, #1b1f33); padding: 0.4rem 0.7rem; border-radius: 8px; border: 1px solid #2b314a; }
+
+    /* Lists */
+    ul.clean { list-style: none; padding-left: 0; }
+    ul.clean li { margin: 0.25rem 0; color: var(--muted); }
+
+    /* Footer */
+    footer { padding: 2rem 0; color: var(--muted); text-align: center; border-top: 1px solid #24283b; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      #about .hero { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
+    /* WhatsApp Buttons */
+    .contact-buttons {
       margin-top: 2rem;
+      text-align: center;
     }
 
-    .button-container a {
-      margin: 0.5rem;
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       padding: 0.75rem 1.5rem;
-      background-color: var(--accent);
-      color: var(--bg-color);
-      border-radius: 25px;
+      background: #25D366;
+      color: white;
       text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+
+    .whatsapp-btn:hover {
+      background: #128C7E;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .whatsapp-float:hover {
+      background: #128C7E;
+      transform: scale(1.1);
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
     }
 
     @media (max-width: 768px) {
-      nav .desktop-nav {
-        display: none;
+      .whatsapp-float {
+        bottom: 1rem;
+        right: 1rem;
+        width: 50px;
+        height: 50px;
       }
-
-      .menu-button {
-        display: flex;
+      
+      .whatsapp-float svg {
+        width: 24px;
+        height: 24px;
       }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="logo">Fernando CV</div>
-    <ul class="desktop-nav">
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#business">Business</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="menu-button" onclick="toggleMenu()">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
+  <!-- Modern Header -->
+  <header class="header" id="header">
+    <div class="nav-container">
+      <a href="#about" class="logo">
+        <div class="logo-icon">DEV</div>
+        <span>Software Dev Portfolio</span>
+      </a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+          <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+          <li class="nav-item"><a href="#business" class="nav-link">Business</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-  </nav>
-  
-  <ul class="mobile-nav" id="mobile-nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#business">Business</a></li>
-      <li><a href="#contact">Contact</a></li>
-  </ul>
+  </header>
 
-  <section id="about">
-    <img src="DSC_0014.JPG" alt="Fernando Chale Eteba" class="profile-pic">
-    <h2>About Me</h2>
-    <p><strong>Full Name:</strong> Fernando Chale Eteba</p>
-    <p><strong>Nationality:</strong> Equatorial Guinea</p>
-    <p><strong>Date of Birth:</strong> 04-Sept-1999</p>
-    <p><strong>Place of Birth:</strong> Malabo</p>
-    <p>I’m a passionate Junior Frontend Developer and Software Engineering student. Currently based in Ghana and studying at IPMC University College. I’m quick at learning, efficient at debugging, and always aiming to improve UI/UX with modern tools.</p>
-  </section>
+  <!-- Mobile Sidebar -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="#about" class="sidebar-logo">
+        <div class="logo-icon">F</div>
+        <span>Fernando Chale</span>
+      </a>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="sidebar-nav">
+      <ul class="sidebar-menu">
+        <li><a href="#about" class="sidebar-link">About</a></li>
+        <li><a href="#education" class="sidebar-link">Education</a></li>
+        <li><a href="#skills" class="sidebar-link">Skills</a></li>
+        <li><a href="#projects" class="sidebar-link">Projects</a></li>
+        <li><a href="#experience" class="sidebar-link">Experience</a></li>
+        <li><a href="#business" class="sidebar-link">Business</a></li>
+        <li><a href="#contact" class="sidebar-link">Contact</a></li>
+      </ul>
+    </nav>
+  </aside>
+ 
+  <main>
+    <section id="about">
+      <div class="container hero">
+        <div>
+          <h1 class="hero-title">Fernando Chale Eteba</h1>
+          <p class="hero-sub">Junior Full-Stack Developer & Software Engineering student. Focused on clean UI, robust architecture, and fast delivery with Vibe Coding.</p>
+          <div class="hero-cta">
+            <a class="btn primary" href="#projects">See Projects</a>
+            <a href="https://wa.me/233208870387" target="_blank" rel="noopener noreferrer" class="whatsapp-btn"> <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.106"/>
+            </svg>Chat On WhatsApp</a>
+            
+          </div>
+          <div style="margin-top:1rem; color: var(--muted)">
+            <p><strong>Nationality:</strong> Equatorial Guinea · <strong>DOB:</strong> 04-Sept-1999 · <strong>Birthplace:</strong> Malabo</p>
+          </div>
+        </div>
+        <div class="profile">
+          <img src="DSC_0014.JPG" alt="Fernando Chale Eteba" class="profile-pic">
+        </div>
+      </div>
+    </section>
 
-  <section id="education">
-    <h2>Education</h2>
-    <p><strong>Diploma in Software Engineering</strong> — IPMC University College (2023 - Present)</p>
-    <p><strong>Certificates:</strong></p>
-    <ul>
-      <li>Introduction to SQL - SoloLearn</li>
-      <li>Introduction to Java - SoloLearn</li>
-      <li>Fundamentals of AI - Netzum</li>
-    </ul>
-  </section>
+    <section id="education">
+      <div class="container">
+        <h2>Education</h2>
+        <p><strong>Primary School Diploma</strong> — Malabo Equatorial Guinea (2005-2013)</p>
+        <p><strong>High School Diploma</strong> — Malabo Equatorial Guinea (2014-2018)</p>
+        <p><strong>Baccalaureate</strong> — Malabo Equatorial Guinea (2018-2020)</p>
+        <p><strong>Profesional Diploma in Software Engineering</strong> — IPMC University College (March 2024 - March 2025)</p>
+        <p><strong>Advance Diploma</strong> — IPMC University College (May 2024 - Present)</p>
+        <p><strong>Certificates:</strong></p>
+        <ul class="clean">
+          <li>Introduction to SQL - SoloLearn</li>
+          <li>Introduction to Java - SoloLearn</li>
+          <li>Fundamentals of AI - Netzum</li>
+        </ul>
+      </div>
+    </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <p><strong>Frontend:</strong> HTML, CSS, JavaScript, Responsive Design, UI/UX Thinking</p>
-    <p><strong>Backend:</strong> PHP, MySQL, phpMyAdmin</p>
-    <p><strong>Debugging:</strong> Fast identification and resolution of bugs</p>
-    <p><strong>Languages:</strong> Spanish (Native), English (Fluent)</p>
-  </section>
-  <section id="projects">
-    <h2>Projects</h2>
-    <p><strong class="prn">Personal Portfolio Website: </strong><br>
-    A responsive portfolio showcasing my projects and skills using HTML, CSS, and JavaScript.
-      <br><strong class="status">Status: Active</strong>
-      <br>
-      <strong>Link: </strong> <a href="https://etebachale-group.github.io/cvfernandochaleeteba.github.io">Page</a>
-      <a href="https://github.com/etebachale-group/cvfernandochaleeteba.github.io.git">Repository</a></p>
+    <section id="skills">
+      <div class="container">
+        <h2>Skills</h2>
+        <p><strong>Tools</strong>Visual Studio Code, Git, Docker,github,Android Studio, MackDown,deployment</p>
+        <p><strong>AI</strong>Copilot, Gemini,ChatGpt,Codex,Google Notebook LM,</p>
+        <p><strong>Notion</strong> C++,Java, C#,Python</p>
+        <p><strong>Frontend:</strong> HTML, CSS, JavaScript, Responsive Design, UI/UX Thinking,React, Bootstrap</p>
+        <p><strong>Backend:</strong> PHP, MySQL, phpMyAdmin, Node.js, PostgreSQL, Next.js</p>
+        <p><strong>Debugging:</strong> Fast identification and resolution of bugs, Vibe Coding, </p>
+        <p><strong>Languages:</strong> Spanish (Native), English (Fluent)</p>
+      </div>
+    </section>
 
-    <p><strong class="prn">Bubi-Lex</strong><br>
-      <strong>Type: </strong>Full-stack web app <br>
-      <strong>Tech Stack: </strong> Next.js, Supabase, PostgreSQL,Gemini CLI, Tailwind CSS, React, Vercel. <br>
-      <strong>Description: </strong>An interactive online dictionary for the Bubi language, built to preserve and teach one of Guinea Ecuatorial’s native tongues. Features CRUD operations, search, and phonetic data management through Supabase integration. <br>
-      <strong>Role: </strong>Full-stack developer (architecture, database, UI/UX, deployment). <br>
-    <strong class="status">Status: Live (beta)</strong> <br>
-      <strong>Link: </strong> <a href="https://bubi-lex.vercel.app/">Page</a>
-      <a href="https://github.com/etebachale-group/bubi-lex.git">Repository</a></p>
-  
+    <section id="projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="title">Personal Portfolio Website</div>
+            <span class="badge">Frontend</span>
+            <p>A responsive portfolio showcasing my projects and skills using HTML, CSS, and JavaScript.</p>
+            <div class="status">Status: Active</div>
+            <div class="links">
+              <a href="https://etebachale-group.github.io/cvfernandochaleeteba.github.io">Page</a>
+              <a href="https://github.com/etebachale-group/cvfernandochaleeteba.github.io.git">Repository</a>
+            </div>
+          </article>
 
-    <p><strong class="prn">Abeme Modjobuy Envíos</strong><br>
-      <strong>Type: </strong>Logistics management system + company site.<br>
-      <strong>Tech Stack: </strong> React.js, Node.js, phpMyAdmin,PHP,HTML,CSS,MySQL,AI, WhatsApp AP. <br>
-      <strong>Description: </strong>Online shop for organic skincare products produced under Eteba Group. Includes product catalog, cart system, and WhatsApp API integration for orders. <br>
-      <strong>Role: </strong>Full-stack developer & system architect. <br>
-    <strong class="status">Status: local Active (beta)</strong> <br>
-    <strong>Link: </strong>
-      <a href="https://github.com/etebachale-group/abeme-modjobuy.git">Repository</a>
-    </p>
-    <p><strong class="prn">Eteba Chale Group</strong><br>
-      <strong>Type: </strong>A bespoke E-commerce Platform and Service Management web application, built as a Minimum Viable Product
-  (MVP). The frontend is a Single Page Application (SPA).<br>
-      <strong>Tech Stack: </strong> React.js, Node.js, Frontend: React, React Router, React-Bootstrap, Framer Motion. <br>
-      <strong>Description: </strong>The application supports a full e-commerce workflow. Users can browse a dynamic catalog of services,
-  register/login via a secure JWT-based system, and place custom orders through a multi-step configurator,
-  including the ability to upload project files.
-  A key feature is the collaborative workflow between the client and the administrator. Admins can manage
-  all services, users, and orders from a dedicated dashboard. They can submit a work preview URL to the
-  client, who is then notified and can either approve the work or request changes directly from their
-  account panel. This entire review cycle is designed to streamline communication.
-  The backend is a custom-built RESTful API in pure PHP that handles all business logic, database
-  interactions via PDO, and serves data to the React frontend. The system is architected to integrate with
-  payment gateways like Stripe and PayPal and includes a fully functional demo mode for testing the payment
-  flow. <br>
-      <strong>Role: </strong>Architected and developed the backend RESTful API from scratch using vanilla PHP 8 to handle all business
-      logic. <br>
-    <strong class="status">Status: In development</strong> <br>
-    <strong>Link: </strong>
-      <a href="https://github.com/etebachale-group/abeme-modjobuy.git">Repository</a>
-    </p>
+          <article class="card">
+            <div class="title">Bubi-Lex</div>
+            <span class="badge">Full-stack web app</span>
+            <p><strong>Tech Stack:</strong> Next.js, Supabase, PostgreSQL, Gemini CLI, Tailwind CSS, React, Vercel.</p>
+            <p><strong>Description:</strong> An interactive online dictionary for the Bubi language. Features CRUD operations, search, and phonetic data management via Supabase.</p>
+            <p><strong>Role:</strong> Full-stack developer (architecture, database, UI/UX, deployment).</p>
+            <div class="status">Status: Live (beta)</div>
+            <div class="links">
+              <a href="https://bubi-lex.vercel.app/">Page</a>
+              <a href="https://github.com/etebachale-group/bubi-lex.git">Repository</a>
+            </div>
+          </article>
 
-    <p><strong class="prn">Ecuacelebs</strong><br>
-      <strong>Type: </strong>Subscription-based exclusive content web platform.<br>
-      <strong>Tech Stack: </strong> Backend:* PHP (vanilla, with no apparent major framework) and a MySQL database.
-     Frontend: HTML, CSS, and JavaScript.
-     Libraries and Frameworks:
-         Bootstrap 5.3: Used as the main CSS framework for design and responsiveness.
-         Font Awesome 6.4: For iconography throughout the application.
-         Google Fonts: For custom typography.
-         JavaScript (Bootstrap Bundle): For interactive frontend components. <br>
-      <strong>Description: </strong>"Ecuacelebs" is a web application designed for Ecuato Guinean celebrities or content creators to monetize their work. The platform allows users to register, log in, and subscribe to different payment plans ("Gratis,"
-   "Básico," "Premium") to access exclusive content, such as videos and posts. It features a comprehensive admin panel to manage users, content, subscriptions, events, and promotional banners. <br>
-      <strong>Role: </strong>Social Media Platform to Content Creator Of Equatorial Guinea. <br>
-    <strong class="status">Status: local Active (beta)</strong> <br>
-    <strong>Link: </strong>
-      <a href="https://github.com/etebachale-group/Ecuacelebs.git">Repository</a>
-    </p>
+          <article class="card">
+            <div class="title">GQ-Turismo</div>
+            <span class="badge">Travel Planning & Booking Web App</span>
+            <p><strong>Tech Stack:</strong> React.js, Node.js, PHP, MySQL, HTML, CSS, AI.</p>
+            <p><strong>Description:</strong> Explore Equatorial Guinea, build itineraries, and book local experiences; mobile-friendly and real-time updates.</p>
+            <p><strong>Role:</strong> Full-Stack Developer — database design, system architecture, UX/UI.</p>
+            <div class="status">Status: Live (MVP)</div>
+            <div class="links">
+              <a href="https://etebachalegroup.page.gd/GQ-Turismo/">Page</a>
+              <a href="https://github.com/etebachale-group/GQ-Turismo.git">Repository</a>
+            </div>
+          </article>
 
-  </section>
+          <article class="card">
+            <div class="title">Abeme Modjobuy Envíos</div>
+            <span class="badge">Logistics + Company site</span>
+            <p><strong>Tech Stack:</strong> React.js, Node.js, PHP, MySQL, HTML, CSS, WhatsApp API.</p>
+            <p><strong>Description:</strong> Online shop for organic skincare products by Eteba Group. Includes catalog, cart, and WhatsApp orders.</p>
+            <p><strong>Role:</strong> Full-stack developer & system architect.</p>
+            <div class="status">Status: Local Active (beta)</div>
+            <div class="links">
+              <a href="https://github.com/etebachale-group/abeme-modjobuy.git">Repository</a>
+            </div>
+          </article>
 
-  <section id="experience">
-    <h2>Professional Experience</h2>
-    <p><strong>TV Producer at Fama GV</strong> — Guinea Vista EG (2017 - 2022)</p>
-    <p>Produced cultural TV shows and worked on youth-centered audiovisual projects, helping create local content and developing communication skills.</p>
-  </section>
+          <article class="card">
+            <div class="title">Eteba Chale Group</div>
+            <span class="badge">MVP · SPA</span>
+            <p><strong>Tech Stack:</strong> React.js, React Router, React-Bootstrap, Framer Motion; Backend: custom REST API in PHP 8.</p>
+            <p><strong>Description:</strong> Full e-commerce workflow with secure JWT auth, admin dashboard, and review cycle (submit preview URL, client approves/requests changes). Stripe/PayPal-ready, demo mode included.</p>
+            <p><strong>Role:</strong> Architected and developed the backend RESTful API.</p>
+            <div class="status">Status: In development</div>
+            <div class="links">
+              <a href="https://github.com/etebachale-group/abeme-modjobuy.git">Repository</a>
+            </div>
+          </article>
 
-  <section id="business">
-    <h2>Business Experience</h2>
-    <p><strong>Nkeng Prod</strong> — Studio Production since 2013</p>
-    <p>Producing music, managing recording sessions, and working with various artists.</p>
+          <article class="card">
+            <div class="title">Ecuacelebs</div>
+            <span class="badge">Subscription platform</span>
+            <p><strong>Tech Stack:</strong> PHP (vanilla), MySQL; Frontend: HTML, CSS, JS; Bootstrap 5.3, Font Awesome, Google Fonts.</p>
+            <p><strong>Description:</strong> Platform for creators to monetize content with tiered subscriptions (Gratis, Básico, Premium). Admin panel to manage users, content, events, and banners.</p>
+            <p><strong>Role:</strong> Social Media Platform to Content Creator Of Equatorial Guinea.</p>
+            <div class="status">Status: Local Active (beta)</div>
+            <div class="links">
+              <a href="https://github.com/etebachale-group/Ecuacelebs.git">Repository</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <p><strong>Eteba Music</strong> — Record Label since 2018</p>
-    <p>Independent label supporting Afrobeat and urban talent across Equatorial Guinea and beyond.</p>
+    <section id="experience">
+      <div class="container">
+        <h2>Professional Experience</h2>
+        <p><strong>TV Producer at Fama GV</strong> — Guinea Vista EG (2017 - 2022)</p>
+        <p>Produced cultural TV shows and youth-centered audiovisual projects, building local content and communication skills.</p>
+      </div>
+    </section>
 
-    <p><strong>Eteba Group</strong> — Development company</p>
-    <p>Supporting and investing in small business projects for young entrepreneurs.</p>
+    <section id="business">
+      <div class="container">
+        <h2>Business Experience</h2>
+        <ul class="clean">
+          <li><strong>Nkeng Prod</strong> — Studio Production since 2013: Producing music, managing recording sessions, and working with artists.</li>
+          <li><strong>Eteba Music</strong> — Record Label since 2018: Independent label supporting Afrobeat and urban talent.</li>
+          <li><strong>Eteba Chale Group</strong> — Development company: Supporting and investing in small business projects for young entrepreneurs.</li>
+          <li><strong>Dream Motivation EG</strong>: Motivational and empowerment platform for African youth.</li>
+          <li><strong>Abeme Modjobuy Envios</strong>: Logistics company sending packages from Ghana to Togo and Equatorial Guinea.</li>
+        </ul>
+      </div>
+    </section>
 
-    <p><strong>Dream Motivation EG</strong></p>
-    <p>Motivational and empowerment platform for African youth.</p>
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p><strong>Email:</strong> fernandochaleeteba@gmail.com</p>
+        <p><strong>Phone:</strong> +233530938783</p>
+        
+        <div class="contact-buttons">
+          <a href="https://wa.me/233208870387" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.106"/>
+            </svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <p><strong>Abeme Modjobuy Envios</strong></p>
-    <p>A logistics company helping send packages from Ghana to Togo and Equatorial Guinea.</p>
-  </section>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/233208870387" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.106"/>
+    </svg>
+  </a>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p><strong>Email:</strong> fernandochaleeteba@gmail.com</p>
-    <p><strong>Phone:</strong> +233530938783</p>
-  </section>
+  <footer>
+    <div class="container">© 2025 Eteba Chale Group · Built with love and clean code.</div>
+  </footer>
 
-<script>
-  function toggleMenu() {
-    const navLinks = document.getElementById('mobile-nav-links');
-    navLinks.classList.toggle('active');
-  }
-</script>
-
+  <script>
+    // Modern Navigation System
+    class ModernNav {
+      constructor() {
+        this.header = document.getElementById('header');
+        this.hamburger = document.getElementById('hamburger');
+        this.sidebar = document.getElementById('sidebar');
+        this.sidebarOverlay = document.getElementById('sidebarOverlay');
+        this.sidebarClose = document.getElementById('sidebarClose');
+        this.navLinks = document.querySelectorAll('.nav-link');
+        this.sidebarLinks = document.querySelectorAll('.sidebar-link');
+        this.allLinks = [...this.navLinks, ...this.sidebarLinks];
+        
+        this.init();
+      }
+      
+      init() {
+        this.bindEvents();
+        this.handleScroll();
+        this.setActiveLink();
+      }
+      
+      bindEvents() {
+        // Hamburger toggle
+        this.hamburger?.addEventListener('click', () => this.toggleSidebar());
+        
+        // Sidebar close
+        this.sidebarClose?.addEventListener('click', () => this.closeSidebar());
+        this.sidebarOverlay?.addEventListener('click', () => this.closeSidebar());
+        
+        // Escape key to close sidebar
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && this.sidebar?.classList.contains('open')) {
+            this.closeSidebar();
+          }
+        });
+        
+        // Scroll detection for header
+        window.addEventListener('scroll', () => this.handleScroll());
+        
+        // Active link detection
+        window.addEventListener('scroll', () => this.setActiveLink());
+        
+        // Smooth scroll for all navigation links
+        this.allLinks.forEach(link => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+              // Close sidebar if open
+              this.closeSidebar();
+              
+              // Smooth scroll to section
+              targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+              
+              // Update URL without triggering scroll
+              history.pushState(null, null, targetId);
+            }
+          });
+        });
+      }
+      
+      toggleSidebar() {
+        const isOpen = this.sidebar?.classList.contains('open');
+        
+        if (isOpen) {
+          this.closeSidebar();
+        } else {
+          this.openSidebar();
+        }
+      }
+      
+      openSidebar() {
+        this.sidebar?.classList.add('open');
+        this.sidebarOverlay?.classList.add('show');
+        this.hamburger?.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Focus first link for accessibility
+        const firstLink = this.sidebar?.querySelector('.sidebar-link');
+        firstLink?.focus();
+      }
+      
+      closeSidebar() {
+        this.sidebar?.classList.remove('open');
+        this.sidebarOverlay?.classList.remove('show');
+        this.hamburger?.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      handleScroll() {
+        if (!this.header) return;
+        
+        const scrolled = window.scrollY > 50;
+        this.header.classList.toggle('scrolled', scrolled);
+      }
+      
+      setActiveLink() {
+        const sections = document.querySelectorAll('section[id]');
+        const scrollPos = window.scrollY + 100;
+        
+        let activeSection = '';
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          
+          if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            activeSection = section.getAttribute('id');
+          }
+        });
+        
+        // Update active states
+        this.allLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          const isActive = href === `#${activeSection}`;
+          
+          link.classList.toggle('active', isActive);
+        });
+      }
+    }
+    
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      new ModernNav();
+    });
+    
+    // Handle page load with hash
+    window.addEventListener('load', () => {
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }, 100);
+        }
+      }
+    });
+  </script>
 </body>
 </html>
