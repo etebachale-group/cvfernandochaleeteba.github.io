@@ -525,7 +525,7 @@
         <span>Software Dev Portfolio</span>
       </a>
       
-      <nav>
+      <nav aria-label="Main navigation"></nav>
         <ul class="nav-menu">
           <li class="nav-item"><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
           <li class="nav-item"><a href="#education" class="nav-link" data-i18n="nav.education">Education</a></li>
@@ -538,12 +538,12 @@
       </nav>
       
       <div class="lang-switcher">
-        <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
-        <button class="lang-btn" data-lang="es" aria-label="Español">ES</button>
-        <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
+        <button type="button" class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+        <button type="button" class="lang-btn" data-lang="es" aria-label="Español">ES</button>
+        <button type="button" class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
       </div>
       
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <button type="button" class="hamburger" id="hamburger" aria-label="Toggle menu"></button>
         <span></span>
         <span></span>
         <span></span>
@@ -559,13 +559,13 @@
         <div class="logo-icon">F</div>
         <span>Fernando Chale</span>
       </a>
-      <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">
+      <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close menu"></button>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
           <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
       </button>
     </div>
-    <nav class="sidebar-nav">
+    <nav class="sidebar-nav" aria-label="Mobile navigation"></nav>
       <ul class="sidebar-menu">
         <li><a href="#about" class="sidebar-link" data-i18n="nav.about">About</a></li>
         <li><a href="#education" class="sidebar-link" data-i18n="nav.education">Education</a></li>
@@ -593,7 +593,7 @@
       <div class="container hero">
         <div>
           <h1 class="hero-title">Fernando Chale Eteba</h1>
-          <p class="hero-sub" data-i18n="hero.subtitle">Junior Full-Stack Developer & Software Engineering student. Focused on clean UI, robust architecture, and fast delivery with Vibe Coding.</p>
+          <p class="hero-sub" data-i18n="hero.subtitle">Junior Full-Stack Developer &amp; Software Engineering student. Focused on clean UI, robust architecture, and fast delivery with Vibe Coding.</p>
           
           <!-- About Me Extended Section -->
           <section id="about-extended" style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(76, 201, 240, 0.05); border-left: 3px solid var(--primary); border-radius: 8px;">
@@ -709,13 +709,13 @@
             <li style="padding: 0.75rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border-left: 3px solid var(--secondary);" data-i18n="projects.context.item5">MVP validation for startups</li>
           </ul>
         </section>
-
+Online store for selling products in Equatorial Guinea, with dynamic catalog, shopping cart, order management, and responsive design.
         <div class="cards">
           <article class="card">
             <div class="title">Rotteri Online Shop</div>
             <span class="badge" data-i18n="project.badge.fullstack">Full-stack e-commerce web app</span>
             <p><strong data-i18n="project.tech">Tech Stack:</strong>PHP · MySQL · HTML · CSS · JavaScript · Bootstrap· Apache. </p>
-            <p><strong data-i18n="project.description">Description:</strong><span data-i18n="project1.description">Online store for selling products in Equatorial Guinea, with dynamic catalog, shopping cart, order management, and responsive design.</span></p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project2.description">Online store for selling products in Equatorial Guinea, with dynamic catalog, shopping cart, order management, and responsive design.</span></p>
             <p><strong data-i18n="project.role">Role:</strong><span data-i18n="project1.role">Full-stack developer — built backend, database, UI, payment system, and order workflow for a smooth shopping experience.</span></p>
             <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
             <div class="links">
@@ -815,9 +815,9 @@
       <div class="container">
         <h2 data-i18n="experience.title">Professional Experience</h2>
         
-        <!-- Business & Leadership Experience -->
+        <!-- Business &amp; Leadership Experience -->
         <section id="business-leadership" style="margin-bottom: 2rem; padding: 1.5rem; background: var(--surface); border-radius: var(--radius); border-left: 4px solid var(--primary);">
-          <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 1rem;" data-i18n="business.leadership.title">Business & Leadership Experience</h3>
+          <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 1rem;" data-i18n="business.leadership.title">Business &amp; Leadership Experience</h3>
           <ul class="clean" style="display: grid; gap: 0.75rem;">
             <li style="padding: 0.75rem; background: rgba(76, 201, 240, 0.05); border-radius: 8px;" data-i18n="business.leadership.item1">Designed business workflows translated into software systems</li>
             <li style="padding: 0.75rem; background: rgba(123, 44, 255, 0.05); border-radius: 8px;" data-i18n="business.leadership.item2">Managed logistics, payments, and operations</li>
@@ -826,9 +826,9 @@
           </ul>
         </section>
         
-        <!-- Creative & Media Background -->
+        <!-- Creative &amp; Media Background -->
         <section id="creative-background" style="margin-bottom: 2rem; padding: 1.5rem; background: var(--surface); border-radius: var(--radius); border-left: 4px solid var(--secondary);">
-          <h3 style="color: var(--secondary); font-size: 1.3rem; margin-bottom: 1rem;" data-i18n="creative.title">Creative & Media Background</h3>
+          <h3 style="color: var(--secondary); font-size: 1.3rem; margin-bottom: 1rem;" data-i18n="creative.title">Creative &amp; Media Background</h3>
           <ul class="clean" style="display: grid; gap: 0.75rem;">
             <li style="padding: 0.75rem; background: rgba(123, 44, 255, 0.05); border-radius: 8px;" data-i18n="creative.item1">TV Producer at Guinea Vista EG (2017–2022)</li>
             <li style="padding: 0.75rem; background: rgba(76, 201, 240, 0.05); border-radius: 8px;" data-i18n="creative.item2">Team coordination and deadline management</li>
