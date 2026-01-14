@@ -328,6 +328,63 @@
     }
 
     /* Responsive */
+    /* Language Switcher */
+    .lang-switcher {
+      display: flex;
+      gap: 0.25rem;
+      background: rgba(76, 201, 240, 0.05);
+      padding: 0.25rem;
+      border-radius: 12px;
+      border: 1px solid rgba(76, 201, 240, 0.15);
+    }
+
+    .lang-btn {
+      padding: 0.4rem 0.75rem;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.85rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn:hover {
+      color: var(--primary);
+      background: rgba(76, 201, 240, 0.1);
+    }
+
+    .lang-btn.active {
+      background: var(--grad-brand);
+      color: white;
+      box-shadow: 0 2px 8px rgba(76, 201, 240, 0.3);
+    }
+
+    .lang-btn-mobile {
+      padding: 0.5rem 1rem;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      flex: 1;
+    }
+
+    .lang-btn-mobile:hover {
+      color: var(--primary);
+      background: rgba(76, 201, 240, 0.1);
+    }
+
+    .lang-btn-mobile.active {
+      background: var(--grad-brand);
+      color: white;
+      box-shadow: 0 2px 8px rgba(76, 201, 240, 0.3);
+    }
+
     @media (max-width: 768px) {
       .nav-menu {
         display: none;
@@ -335,6 +392,10 @@
       
       .hamburger {
         display: flex;
+      }
+      
+      .lang-switcher {
+        margin-right: 0.5rem;
       }
       
       section {
@@ -461,15 +522,21 @@
       
       <nav>
         <ul class="nav-menu">
-          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
-          <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-          <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-          <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-          <li class="nav-item"><a href="#business" class="nav-link">Business</a></li>
-          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+          <li class="nav-item"><a href="#education" class="nav-link" data-i18n="nav.education">Education</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+          <li class="nav-item"><a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a></li>
+          <li class="nav-item"><a href="#business" class="nav-link" data-i18n="nav.business">Business</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </nav>
+      
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+        <button class="lang-btn" data-lang="es" aria-label="Español">ES</button>
+        <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
+      </div>
       
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span>
@@ -495,14 +562,24 @@
     </div>
     <nav class="sidebar-nav">
       <ul class="sidebar-menu">
-        <li><a href="#about" class="sidebar-link">About</a></li>
-        <li><a href="#education" class="sidebar-link">Education</a></li>
-        <li><a href="#skills" class="sidebar-link">Skills</a></li>
-        <li><a href="#projects" class="sidebar-link">Projects</a></li>
-        <li><a href="#experience" class="sidebar-link">Experience</a></li>
-        <li><a href="#business" class="sidebar-link">Business</a></li>
-        <li><a href="#contact" class="sidebar-link">Contact</a></li>
+        <li><a href="#about" class="sidebar-link" data-i18n="nav.about">About</a></li>
+        <li><a href="#education" class="sidebar-link" data-i18n="nav.education">Education</a></li>
+        <li><a href="#skills" class="sidebar-link" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="#projects" class="sidebar-link" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#experience" class="sidebar-link" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="#business" class="sidebar-link" data-i18n="nav.business">Business</a></li>
+        <li><a href="#contact" class="sidebar-link" data-i18n="nav.contact">Contact</a></li>
       </ul>
+      
+      <!-- Language Switcher in Sidebar -->
+      <div style="padding: 1rem 1.25rem; border-top: 1px solid rgba(76, 201, 240, 0.1); margin-top: 1rem;">
+        <p style="color: var(--muted); font-size: 0.85rem; margin-bottom: 0.75rem;" data-i18n="nav.language">Language</p>
+        <div class="lang-switcher">
+          <button type="button" class="lang-btn-mobile active" data-lang="en" aria-label="English">EN</button>
+          <button type="button" class="lang-btn-mobile" data-lang="es" aria-label="Español">ES</button>
+          <button type="button" class="lang-btn-mobile" data-lang="fr" aria-label="Français">FR</button>
+        </div>
+      </div>
     </nav>
   </aside>
  
@@ -511,16 +588,16 @@
       <div class="container hero">
         <div>
           <h1 class="hero-title">Fernando Chale Eteba</h1>
-          <p class="hero-sub">Junior Full-Stack Developer & Software Engineering student. Focused on clean UI, robust architecture, and fast delivery with Vibe Coding.</p>
+          <p class="hero-sub" data-i18n="hero.subtitle">Junior Full-Stack Developer & Software Engineering student. Focused on clean UI, robust architecture, and fast delivery with Vibe Coding.</p>
           <div class="hero-cta">
-            <a class="btn primary" href="#projects">See Projects</a>
+            <a class="btn primary" href="#projects" data-i18n="hero.cta">See Projects</a>
             <a href="https://wa.me/233208870387" target="_blank" rel="noopener noreferrer" class="whatsapp-btn"> <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.106"/>
-            </svg>Chat On WhatsApp</a>
+            </svg><span data-i18n="hero.whatsapp">Chat On WhatsApp</span></a>
             
           </div>
           <div style="margin-top:1rem; color: var(--muted)">
-            <p><strong>Nationality:</strong> Equatorial Guinea · <strong>DOB:</strong> 04-Sept-1999 · <strong>Birthplace:</strong> Malabo</p>
+            <p><strong data-i18n="hero.nationality">Nationality:</strong> Equatorial Guinea · <strong data-i18n="hero.dob">DOB:</strong> 04-Sept-1999 · <strong data-i18n="hero.birthplace">Birthplace:</strong> Malabo</p>
           </div>
         </div>
         <div class="profile">
@@ -531,13 +608,13 @@
 
     <section id="education">
       <div class="container">
-        <h2>Education</h2>
-        <p><strong>Primary School Diploma</strong> — Malabo Equatorial Guinea (2005-2013)</p>
-        <p><strong>High School Diploma</strong> — Malabo Equatorial Guinea (2014-2018)</p>
-        <p><strong>Baccalaureate</strong> — Malabo Equatorial Guinea (2018-2020)</p>
-        <p><strong>Profesional Diploma in Software Engineering</strong> — IPMC University College (March 2024 - March 2025)</p>
-        <p><strong>Advance Diploma</strong> — IPMC University College (May 2024 - Present)</p>
-        <p><strong>Certificates:</strong></p>
+        <h2 data-i18n="education.title">Education</h2>
+        <p><strong data-i18n="education.primary">Primary School Diploma</strong> — Malabo Equatorial Guinea (2005-2013)</p>
+        <p><strong data-i18n="education.high">High School Diploma</strong> — Malabo Equatorial Guinea (2014-2018)</p>
+        <p><strong data-i18n="education.baccalaureate">Baccalaureate</strong> — Malabo Equatorial Guinea (2018-2020)</p>
+        <p><strong data-i18n="education.professional">Profesional Diploma in Software Engineering</strong> — IPMC University College (March 2024 - March 2025)</p>
+        <p><strong data-i18n="education.advance">Advance Diploma</strong> — IPMC University College (May 2024 - Present)</p>
+        <p><strong data-i18n="education.certificates">Certificates:</strong></p>
         <ul class="clean">
           <li>Introduction to SQL - SoloLearn</li>
           <li>Introduction to Java - SoloLearn</li>
@@ -548,20 +625,20 @@
 
     <section id="skills">
       <div class="container">
-        <h2>Skills</h2>
-        <p><strong>Tools:</strong> Visual Studio Code, Git, Docker, GitHub, Android Studio, Markdown, Deployment, SEO</p>
-        <p><strong>AI:</strong> Copilot, Gemini, ChatGPT, Codex, Google Notebook LM</p>
-        <p><strong>Basic:</strong> C++, Java, C#, Python</p>
-        <p><strong>Frontend:</strong> HTML, CSS, JavaScript, Responsive Design, UI/UX Thinking, React, Bootstrap</p>
-        <p><strong>Backend:</strong> PHP, MySQL, phpMyAdmin, Node.js, PostgreSQL, Next.js, MongoDB, SQLite</p>
-        <p><strong>Debugging:</strong> Fast identification and resolution of bugs, Vibe Coding, </p>
-        <p><strong>Languages:</strong> Spanish (Native), English (Fluent)</p>
+        <h2 data-i18n="skills.title">Skills</h2>
+        <p><strong data-i18n="skills.tools">Tools:</strong> Visual Studio Code, Git, Docker, GitHub, Android Studio, Markdown, Deployment, SEO</p>
+        <p><strong data-i18n="skills.ai">AI:</strong> Copilot, Gemini, ChatGPT, Codex, Google Notebook LM</p>
+        <p><strong data-i18n="skills.basic">Basic:</strong> C++, Java, C#, Python</p>
+        <p><strong data-i18n="skills.frontend">Frontend:</strong> HTML, CSS, JavaScript, Responsive Design, UI/UX Thinking, React, Bootstrap</p>
+        <p><strong data-i18n="skills.backend">Backend:</strong> PHP, MySQL, phpMyAdmin, Node.js, PostgreSQL, Next.js, MongoDB, SQLite</p>
+        <p><strong data-i18n="skills.debugging">Debugging:</strong> Fast identification and resolution of bugs, Vibe Coding, </p>
+        <p><strong data-i18n="skills.languages">Languages:</strong> Spanish (Native), English (Fluent)</p>
       </div>
     </section>
 
     <section id="projects">
       <div class="container">
-        <h2>Projects</h2>
+        <h2 data-i18n="projects.title">Projects</h2>
         <div class="cards">
           <article class="card">
             <div class="title">Frikabeatz</div>
@@ -654,15 +731,15 @@
 
     <section id="experience">
       <div class="container">
-        <h2>Professional Experience</h2>
-        <p><strong>TV Producer at Fama GV</strong> — Guinea Vista EG (2017 - 2022)</p>
-        <p>Produced cultural TV shows and youth-centered audiovisual projects, building local content and communication skills.</p>
+        <h2 data-i18n="experience.title">Professional Experience</h2>
+        <p><strong data-i18n="experience.producer">TV Producer at Fama GV</strong> — Guinea Vista EG (2017 - 2022)</p>
+        <p data-i18n="experience.description">Produced cultural TV shows and youth-centered audiovisual projects, building local content and communication skills.</p>
       </div>
     </section>
 
     <section id="business">
       <div class="container">
-        <h2>Business Experience</h2>
+        <h2 data-i18n="business.title">Business Experience</h2>
         <ul class="clean">
           <li><strong>Nkeng Prod</strong> — Studio Production since 2013: Producing music, managing recording sessions, and working with artists.</li>
           <li><strong>Eteba Music</strong> — Record Label since 2018: Independent label supporting Afrobeat and urban talent.</li>
@@ -675,15 +752,15 @@
 
     <section id="contact">
       <div class="container">
-        <h2>Contact</h2>
+        <h2 data-i18n="contact.title">Contact</h2>
         <p><strong>Email:</strong> <a href="mailto:etebachalegroup@gmail.com">etebachalegroup@gmail.com</a></p>
-        <p><strong>Phone:</strong> <a href="tel:+233208870387">+233208870387</a></p>
+        <p><strong data-i18n="hero.whatsapp">Phone:</strong> <a href="tel:+233208870387">+233208870387</a></p>
         <div class="contact-buttons">
           <a href="https://wa.me/233208870387" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.106"/>
             </svg>
-            Chat on WhatsApp
+            <span data-i18n="hero.whatsapp">Chat on WhatsApp</span>
           </a>
         </div>
       </div>
@@ -698,10 +775,184 @@
   </a>
 
   <footer>
-    <div class="container">© 2025 Eteba Chale Group · Built with love and clean code.</div>
+    <div class="container">© 2025 Eteba Chale Group · <span data-i18n="footer.text">Built with love and clean code.</span></div>
   </footer>
 
   <script>
+    // Translations
+    const translations = {
+      en: {
+        'nav.about': 'About',
+        'nav.education': 'Education',
+        'nav.skills': 'Skills',
+        'nav.projects': 'Projects',
+        'nav.experience': 'Experience',
+        'nav.business': 'Business',
+        'nav.contact': 'Contact',
+        'nav.language': 'Language',
+        'hero.subtitle': 'Junior Full-Stack Developer & Software Engineering student. Focused on clean UI, robust architecture, and fast delivery with Vibe Coding.',
+        'hero.cta': 'See Projects',
+        'hero.whatsapp': 'Chat On WhatsApp',
+        'hero.nationality': 'Nationality:',
+        'hero.dob': 'DOB:',
+        'hero.birthplace': 'Birthplace:',
+        'education.title': 'Education',
+        'education.primary': 'Primary School Diploma',
+        'education.high': 'High School Diploma',
+        'education.baccalaureate': 'Baccalaureate',
+        'education.professional': 'Professional Diploma in Software Engineering',
+        'education.advance': 'Advance Diploma',
+        'education.certificates': 'Certificates:',
+        'skills.title': 'Skills',
+        'skills.tools': 'Tools:',
+        'skills.ai': 'AI:',
+        'skills.basic': 'Basic:',
+        'skills.frontend': 'Frontend:',
+        'skills.backend': 'Backend:',
+        'skills.debugging': 'Debugging:',
+        'skills.languages': 'Languages:',
+        'projects.title': 'Projects',
+        'experience.title': 'Professional Experience',
+        'experience.producer': 'TV Producer at Fama GV',
+        'experience.description': 'Produced cultural TV shows and youth-centered audiovisual projects, building local content and communication skills.',
+        'business.title': 'Business Experience',
+        'contact.title': 'Contact',
+        'footer.text': 'Built with love and clean code.'
+      },
+      es: {
+        'nav.about': 'Acerca de',
+        'nav.education': 'Educación',
+        'nav.skills': 'Habilidades',
+        'nav.projects': 'Proyectos',
+        'nav.experience': 'Experiencia',
+        'nav.business': 'Negocios',
+        'nav.contact': 'Contacto',
+        'nav.language': 'Idioma',
+        'hero.subtitle': 'Desarrollador Full-Stack Junior y estudiante de Ingeniería de Software. Enfocado en UI limpia, arquitectura robusta y entrega rápida con Vibe Coding.',
+        'hero.cta': 'Ver Proyectos',
+        'hero.whatsapp': 'Chatear en WhatsApp',
+        'hero.nationality': 'Nacionalidad:',
+        'hero.dob': 'Fecha de Nacimiento:',
+        'hero.birthplace': 'Lugar de Nacimiento:',
+        'education.title': 'Educación',
+        'education.primary': 'Diploma de Escuela Primaria',
+        'education.high': 'Diploma de Escuela Secundaria',
+        'education.baccalaureate': 'Bachillerato',
+        'education.professional': 'Diploma Profesional en Ingeniería de Software',
+        'education.advance': 'Diploma Avanzado',
+        'education.certificates': 'Certificados:',
+        'skills.title': 'Habilidades',
+        'skills.tools': 'Herramientas:',
+        'skills.ai': 'IA:',
+        'skills.basic': 'Básico:',
+        'skills.frontend': 'Frontend:',
+        'skills.backend': 'Backend:',
+        'skills.debugging': 'Depuración:',
+        'skills.languages': 'Idiomas:',
+        'projects.title': 'Proyectos',
+        'experience.title': 'Experiencia Profesional',
+        'experience.producer': 'Productor de TV en Fama GV',
+        'experience.description': 'Producción de programas de TV culturales y proyectos audiovisuales centrados en la juventud, construyendo contenido local y habilidades de comunicación.',
+        'business.title': 'Experiencia Empresarial',
+        'contact.title': 'Contacto',
+        'footer.text': 'Construido con amor y código limpio.'
+      },
+      fr: {
+        'nav.about': 'À propos',
+        'nav.education': 'Éducation',
+        'nav.skills': 'Compétences',
+        'nav.projects': 'Projets',
+        'nav.experience': 'Expérience',
+        'nav.business': 'Affaires',
+        'nav.contact': 'Contact',
+        'nav.language': 'Langue',
+        'hero.subtitle': 'Développeur Full-Stack Junior et étudiant en génie logiciel. Concentré sur une interface utilisateur propre, une architecture robuste et une livraison rapide avec Vibe Coding.',
+        'hero.cta': 'Voir les Projets',
+        'hero.whatsapp': 'Discuter sur WhatsApp',
+        'hero.nationality': 'Nationalité:',
+        'hero.dob': 'Date de Naissance:',
+        'hero.birthplace': 'Lieu de Naissance:',
+        'education.title': 'Éducation',
+        'education.primary': 'Diplôme d\'École Primaire',
+        'education.high': 'Diplôme d\'École Secondaire',
+        'education.baccalaureate': 'Baccalauréat',
+        'education.professional': 'Diplôme Professionnel en Génie Logiciel',
+        'education.advance': 'Diplôme Avancé',
+        'education.certificates': 'Certificats:',
+        'skills.title': 'Compétences',
+        'skills.tools': 'Outils:',
+        'skills.ai': 'IA:',
+        'skills.basic': 'Base:',
+        'skills.frontend': 'Frontend:',
+        'skills.backend': 'Backend:',
+        'skills.debugging': 'Débogage:',
+        'skills.languages': 'Langues:',
+        'projects.title': 'Projets',
+        'experience.title': 'Expérience Professionnelle',
+        'experience.producer': 'Producteur TV chez Fama GV',
+        'experience.description': 'Production d\'émissions de télévision culturelles et de projets audiovisuels centrés sur les jeunes, développant du contenu local et des compétences en communication.',
+        'business.title': 'Expérience Commerciale',
+        'contact.title': 'Contact',
+        'footer.text': 'Construit avec amour et code propre.'
+      }
+    };
+
+    // Language Manager
+    class LanguageManager {
+      constructor() {
+        this.currentLang = localStorage.getItem('preferredLang') || 'en';
+        this.init();
+      }
+
+      init() {
+        this.setLanguage(this.currentLang);
+        this.bindEvents();
+      }
+
+      bindEvents() {
+        // Desktop language buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const lang = e.target.dataset.lang;
+            this.setLanguage(lang);
+          });
+        });
+
+        // Mobile language buttons
+        document.querySelectorAll('.lang-btn-mobile').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const lang = e.target.dataset.lang;
+            this.setLanguage(lang);
+          });
+        });
+      }
+
+      setLanguage(lang) {
+        this.currentLang = lang;
+        localStorage.setItem('preferredLang', lang);
+        
+        // Update all translatable elements
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+          const key = element.getAttribute('data-i18n');
+          if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+          }
+        });
+
+        // Update active button states
+        document.querySelectorAll('.lang-btn, .lang-btn-mobile').forEach(btn => {
+          if (btn.dataset.lang === lang) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+
+        // Update HTML lang attribute
+        document.documentElement.lang = lang;
+      }
+    }
+
     // Modern Navigation System
     class ModernNav {
       constructor() {
@@ -830,6 +1081,7 @@
     
     // Initialize when DOM is loaded
     document.addEventListener('DOMContentLoaded', () => {
+      new LanguageManager();
       new ModernNav();
     });
     
