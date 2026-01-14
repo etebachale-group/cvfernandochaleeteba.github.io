@@ -589,6 +589,15 @@
         <div>
           <h1 class="hero-title">Fernando Chale Eteba</h1>
           <p class="hero-sub" data-i18n="hero.subtitle">Junior Full-Stack Developer & Software Engineering student. Focused on clean UI, robust architecture, and fast delivery with Vibe Coding.</p>
+          
+          <!-- About Me Extended Section -->
+          <section id="about-extended" style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(76, 201, 240, 0.05); border-left: 3px solid var(--primary); border-radius: 8px;">
+            <h3 style="color: var(--primary); font-size: 1.2rem; margin-bottom: 0.75rem;" data-i18n="about.extended.title">About Me</h3>
+            <p style="margin-bottom: 0.75rem; line-height: 1.65;" data-i18n="about.extended.p1">I'm a <strong>hybrid builder</strong> — technology, data, business, and culture moving together.</p>
+            <p style="margin-bottom: 0.75rem; line-height: 1.65;" data-i18n="about.extended.p2">I design and develop <strong>real systems for real problems</strong>, especially in emerging markets. From clean UI to backend logic, from databases to deployment — I think in end-to-end solutions.</p>
+            <p style="margin-bottom: 0; line-height: 1.65;" data-i18n="about.extended.p3">My background mixes Software Engineering, Data Analysis, Digital Business, and Creative Production. That blend lets me build products that are not only functional, but usable, scalable, and human.</p>
+          </section>
+          
           <div class="hero-cta">
             <a class="btn primary" href="#projects" data-i18n="hero.cta">See Projects</a>
             <a href="https://wa.me/233208870387" target="_blank" rel="noopener noreferrer" class="whatsapp-btn"> <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -606,14 +615,29 @@
       </div>
     </section>
 
+    <!-- Core Profile Section -->
+    <section id="core-profile">
+      <div class="container">
+        <h2 data-i18n="core.title">Core Profile</h2>
+        <ul class="clean" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1rem;">
+          <li style="padding: 1rem; background: var(--surface); border-left: 3px solid var(--primary); border-radius: 8px;" data-i18n="core.item1">Hybrid Full-Stack Developer with strong backend & database focus</li>
+          <li style="padding: 1rem; background: var(--surface); border-left: 3px solid var(--secondary); border-radius: 8px;" data-i18n="core.item2">Data-driven mindset: decisions backed by analysis</li>
+          <li style="padding: 1rem; background: var(--surface); border-left: 3px solid var(--tertiary); border-radius: 8px;" data-i18n="core.item3">Experience building MVPs and business platforms</li>
+          <li style="padding: 1rem; background: var(--surface); border-left: 3px solid var(--primary); border-radius: 8px;" data-i18n="core.item4">Strong documentation and system thinking</li>
+          <li style="padding: 1rem; background: var(--surface); border-left: 3px solid var(--secondary); border-radius: 8px;" data-i18n="core.item5">Comfortable working solo or leading small teams</li>
+          <li style="padding: 1rem; background: var(--surface); border-left: 3px solid var(--tertiary); border-radius: 8px;" data-i18n="core.item6">Focused on Africa-centric solutions with global standards</li>
+        </ul>
+      </div>
+    </section>
+
     <section id="education">
       <div class="container">
         <h2 data-i18n="education.title">Education</h2>
-        <p><strong data-i18n="education.primary">Primary School Diploma</strong> — Malabo Equatorial Guinea (2005-2013)</p>
-        <p><strong data-i18n="education.high">High School Diploma</strong> — Malabo Equatorial Guinea (2014-2018)</p>
-        <p><strong data-i18n="education.baccalaureate">Baccalaureate</strong> — Malabo Equatorial Guinea (2018-2020)</p>
-        <p><strong data-i18n="education.professional">Profesional Diploma in Software Engineering</strong> — IPMC University College (March 2024 - March 2025)</p>
-        <p><strong data-i18n="education.advance">Advance Diploma</strong> — IPMC University College (May 2024 - Present)</p>
+        <p><strong data-i18n="education.primary">Primary School Diploma</strong> — <span data-i18n="education.primary.location">Malabo Equatorial Guinea</span> (2005-2013)</p>
+        <p><strong data-i18n="education.high">High School Diploma</strong> — <span data-i18n="education.high.location">Malabo Equatorial Guinea</span> (2014-2018)</p>
+        <p><strong data-i18n="education.baccalaureate">Baccalaureate</strong> — <span data-i18n="education.baccalaureate.location">Malabo Equatorial Guinea</span> (2018-2020)</p>
+        <p><strong data-i18n="education.professional">Profesional Diploma in Software Engineering</strong> — <span data-i18n="education.professional.location">IPMC University College</span> (<span data-i18n="education.professional.date">March 2024 - March 2025</span>)</p>
+        <p><strong data-i18n="education.advance">Advance Diploma</strong> — <span data-i18n="education.advance.location">IPMC University College</span> (<span data-i18n="education.advance.date">May 2024 - Present</span>)</p>
         <p><strong data-i18n="education.certificates">Certificates:</strong></p>
         <ul class="clean">
           <li>Introduction to SQL - SoloLearn</li>
@@ -626,103 +650,145 @@
     <section id="skills">
       <div class="container">
         <h2 data-i18n="skills.title">Skills</h2>
-        <p><strong data-i18n="skills.tools">Tools:</strong> Visual Studio Code, Git, Docker, GitHub, Android Studio, Markdown, Deployment, SEO</p>
-        <p><strong data-i18n="skills.ai">AI:</strong> Copilot, Gemini, ChatGPT, Codex, Google Notebook LM</p>
-        <p><strong data-i18n="skills.basic">Basic:</strong> C++, Java, C#, Python</p>
-        <p><strong data-i18n="skills.frontend">Frontend:</strong> HTML, CSS, JavaScript, Responsive Design, UI/UX Thinking, React, Bootstrap</p>
-        <p><strong data-i18n="skills.backend">Backend:</strong> PHP, MySQL, phpMyAdmin, Node.js, PostgreSQL, Next.js, MongoDB, SQLite</p>
-        <p><strong data-i18n="skills.debugging">Debugging:</strong> Fast identification and resolution of bugs, Vibe Coding, </p>
-        <p><strong data-i18n="skills.languages">Languages:</strong> Spanish (Native), English (Fluent)</p>
+        <p><strong data-i18n="skills.tools">Tools:</strong> <span data-i18n="skills.tools.list">Visual Studio Code, Git, Docker, GitHub, Android Studio, Markdown, Deployment, SEO</span></p>
+        <p><strong data-i18n="skills.ai">AI:</strong> <span data-i18n="skills.ai.list">Copilot, Gemini, ChatGPT, Codex, Google Notebook LM</span></p>
+        <p><strong data-i18n="skills.basic">Basic:</strong> <span data-i18n="skills.basic.list">C++, Java, C#, Python</span></p>
+        <p><strong data-i18n="skills.frontend">Frontend:</strong> <span data-i18n="skills.frontend.list">HTML, CSS, JavaScript, Responsive Design, UI/UX Thinking, React, Bootstrap</span></p>
+        <p><strong data-i18n="skills.backend">Backend:</strong> <span data-i18n="skills.backend.list">PHP, MySQL, phpMyAdmin, Node.js, PostgreSQL, Next.js, MongoDB, SQLite</span></p>
+        <p><strong data-i18n="skills.debugging">Debugging:</strong> <span data-i18n="skills.debugging.list">Fast identification and resolution of bugs, Vibe Coding</span></p>
+        <p><strong data-i18n="skills.languages">Languages:</strong> <span data-i18n="skills.languages.list">Spanish (Native), English (Fluent)</span></p>
+        
+        <!-- Professional Skillset Highlights -->
+        <section id="skills-highlights" style="margin-top: 2rem; padding: 1.5rem; background: var(--surface); border-radius: var(--radius); border: 1px solid rgba(76, 201, 240, 0.2);">
+          <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 1rem;" data-i18n="skills.highlights.title">Professional Skillset Highlights</h3>
+          <ul class="clean" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0.75rem;">
+            <li style="padding: 0.75rem; background: rgba(76, 201, 240, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item1">Full-Stack Web Development</li>
+            <li style="padding: 0.75rem; background: rgba(123, 44, 255, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item2">REST API design and backend architecture</li>
+            <li style="padding: 0.75rem; background: rgba(0, 209, 178, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item3">Business-oriented system design</li>
+            <li style="padding: 0.75rem; background: rgba(76, 201, 240, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item4">Debugging and rapid problem resolution</li>
+            <li style="padding: 0.75rem; background: rgba(123, 44, 255, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item5">Technical documentation</li>
+            <li style="padding: 0.75rem; background: rgba(0, 209, 178, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item6">Digital marketing fundamentals</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+    <!-- Data & Analytics Section -->
+    <section id="data-analytics">
+      <div class="container">
+        <h2 data-i18n="data.title">Data & Analytics</h2>
+        <p style="font-size: 1.1rem; color: var(--accent); margin-bottom: 1rem;" data-i18n="data.intro">I use data as a decision tool, not decoration.</p>
+        <ul class="clean" style="display: grid; gap: 0.75rem;">
+          <li style="padding: 0.75rem 1rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--primary);" data-i18n="data.item1">SQL-based analysis for business insights</li>
+          <li style="padding: 0.75rem 1rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--secondary);" data-i18n="data.item2">Reporting for stakeholders and internal decisions</li>
+          <li style="padding: 0.75rem 1rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--tertiary);" data-i18n="data.item3">Process optimization through data interpretation</li>
+          <li style="padding: 0.75rem 1rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--primary);" data-i18n="data.item4">Experience with Excel and Power BI</li>
+          <li style="padding: 0.75rem 1rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--secondary);" data-i18n="data.item5">Basic understanding of data privacy and security</li>
+        </ul>
       </div>
     </section>
 
     <section id="projects">
       <div class="container">
         <h2 data-i18n="projects.title">Projects</h2>
+        
+        <!-- Projects Context Section -->
+        <section id="projects-context" style="margin-bottom: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(76, 201, 240, 0.08), rgba(123, 44, 255, 0.08)); border-radius: var(--radius); border: 1px solid rgba(76, 201, 240, 0.2);">
+          <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 0.75rem;" data-i18n="projects.context.title">What These Projects Represent</h3>
+          <p style="font-size: 1.05rem; margin-bottom: 1rem;" data-i18n="projects.context.intro">My projects are not tutorials. They are <strong>working systems</strong> built around real needs.</p>
+          <ul class="clean" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem;">
+            <li style="padding: 0.75rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border-left: 3px solid var(--primary);" data-i18n="projects.context.item1">User authentication and roles</li>
+            <li style="padding: 0.75rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border-left: 3px solid var(--secondary);" data-i18n="projects.context.item2">Payments and monetization logic</li>
+            <li style="padding: 0.75rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border-left: 3px solid var(--tertiary);" data-i18n="projects.context.item3">Content management</li>
+            <li style="padding: 0.75rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border-left: 3px solid var(--primary);" data-i18n="projects.context.item4">Logistics and operations workflows</li>
+            <li style="padding: 0.75rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border-left: 3px solid var(--secondary);" data-i18n="projects.context.item5">MVP validation for startups</li>
+          </ul>
+        </section>
+        
         <div class="cards">
           <article class="card">
             <div class="title">Frikabeatz</div>
-            <span class="badge">Full-stack web app</span>
-            <p><strong>Tech Stack:</strong>PHP · MySQL · HTML · CSS · JavaScript · Apache.</p>
-            <p><strong>Description:</strong>is a web platform for buying and selling beats, sample packs, and production services, with audio previews, user roles, and a small social feed.</p>
-            <p><strong>Role:</strong>Full-stack developer — built the backend, database, UI, audio system, and payment flow.</p>
-            <div class="status">Status: Live (beta)</div>
+            <span class="badge" data-i18n="project.badge.fullstack">Full-stack web app</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong>PHP · MySQL · HTML · CSS · JavaScript · Apache.</p>
+            <p><strong data-i18n="project.description">Description:</strong><span data-i18n="project1.description">is a web platform for buying and selling beats, sample packs, and production services, with audio previews, user roles, and a small social feed.</span></p>
+            <p><strong data-i18n="project.role">Role:</strong><span data-i18n="project1.role">Full-stack developer — built the backend, database, UI, audio system, and payment flow.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
             <div class="links">
-              <a href="https://frikabeatz.xo.je/">Page</a>
-              <a href="https://github.com/etebachale-group/Frikabeatz">Repository</a>
+              <a href="https://frikabeatz.xo.je/" data-i18n="project.link.page">Page</a>
+              <a href="https://github.com/etebachale-group/Frikabeatz" data-i18n="project.link.repo">Repository</a>
             </div>
           </article>
 
           <article class="card">
             <div class="title">Bubi-Lex</div>
-            <span class="badge">Full-stack web app</span>
-            <p><strong>Tech Stack:</strong> Next.js, Supabase, PostgreSQL, Gemini CLI, Tailwind CSS, React, Vercel.</p>
-            <p><strong>Description:</strong> An interactive online dictionary for the Bubi language. Features CRUD operations, search, and phonetic data management via Supabase.</p>
-            <p><strong>Role:</strong> Full-stack developer (architecture, database, UI/UX, deployment).</p>
-            <div class="status">Status: Live (beta)</div>
+            <span class="badge" data-i18n="project.badge.fullstack">Full-stack web app</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> Next.js, Supabase, PostgreSQL, Gemini CLI, Tailwind CSS, React, Vercel.</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project2.description">An interactive online dictionary for the Bubi language. Features CRUD operations, search, and phonetic data management via Supabase.</span></p>
+            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project2.role">Full-stack developer (architecture, database, UI/UX, deployment).</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
             <div class="links">
-              <a href="https://bubi-lex.vercel.app/">Page</a>
-              <a href="https://github.com/etebachale-group/bubi-lex.git">Repository</a>
+              <a href="https://bubi-lex.vercel.app/" data-i18n="project.link.page">Page</a>
+              <a href="https://github.com/etebachale-group/bubi-lex.git" data-i18n="project.link.repo">Repository</a>
             </div>
           </article>
 
           <article class="card">
             <div class="title">GQ-Turismo</div>
-            <span class="badge">Travel Planning & Booking Web App</span>
-            <p><strong>Tech Stack:</strong> React.js, Node.js, PHP, MySQL, HTML, CSS, AI.</p>
-            <p><strong>Description:</strong> Explore Equatorial Guinea, build itineraries, and book local experiences; mobile-friendly and real-time updates.</p>
-            <p><strong>Role:</strong> Full-Stack Developer — database design, system architecture, UX/UI.</p>
-            <div class="status">Status: Live (MVP)</div>
+            <span class="badge" data-i18n="project.badge.travel">Travel Planning & Booking Web App</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> React.js, Node.js, PHP, MySQL, HTML, CSS, AI.</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project3.description">Explore Equatorial Guinea, build itineraries, and book local experiences; mobile-friendly and real-time updates.</span></p>
+            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project3.role">Full-Stack Developer — database design, system architecture, UX/UI.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.mvp">Live (MVP)</span></div>
             <div class="links">
-              <a href="https://etebachalegroup.page.gd/GQ-Turismo/">Page</a>
-              <a href="https://github.com/etebachale-group/GQ-Turismo.git">Repository</a>
+              <a href="https://etebachalegroup.page.gd/GQ-Turismo/" data-i18n="project.link.page">Page</a>
+              <a href="https://github.com/etebachale-group/GQ-Turismo.git" data-i18n="project.link.repo">Repository</a>
             </div>
           </article>
 
           <article class="card">
             <div class="title">Abeme Modjobuy Envíos</div>
-            <span class="badge">Logistics + Company site</span>
-            <p><strong>Tech Stack:</strong> React.js, Node.js, PHP, MySQL, HTML, CSS, WhatsApp API.</p>
-            <p><strong>Description:</strong> Online shop for organic skincare products by Eteba Group. Includes catalog, cart, and WhatsApp orders.</p>
-            <p><strong>Role:</strong> Full-stack developer & system architect.</p>
-            <div class="status">Status: Live (MVP)</div>
+            <span class="badge" data-i18n="project.badge.logistics">Logistics + Company site</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> React.js, Node.js, PHP, MySQL, HTML, CSS, WhatsApp API.</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project4.description">Online shop for organic skincare products by Eteba Group. Includes catalog, cart, and WhatsApp orders.</span></p>
+            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project4.role">Full-stack developer & system architect.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.mvp">Live (MVP)</span></div>
             <div class="links">
-              <a href="https://abememodjobuy.page.gd/">Page</a>
-              <a href="https://github.com/etebachale-group/abeme-modjobuy.git">Repository</a>
+              <a href="https://abememodjobuy.page.gd/" data-i18n="project.link.page">Page</a>
+              <a href="https://github.com/etebachale-group/abeme-modjobuy.git" data-i18n="project.link.repo">Repository</a>
             </div>
           </article>
 
           <article class="card">
             <div class="title">Eteba Chale Group</div>
-            <span class="badge">MVP · SPA</span>
-            <p><strong>Tech Stack:</strong> React.js, React Router, React-Bootstrap, Framer Motion; Backend: custom REST API in PHP 8.</p>
-            <p><strong>Description:</strong> Full e-commerce workflow with secure JWT auth, admin dashboard, and review cycle (submit preview URL, client approves/requests changes). Stripe/PayPal-ready, demo mode included.</p>
-            <p><strong>Role:</strong> Architected and developed the backend RESTful API.</p>
-            <div class="status">Status: In development</div>
+            <span class="badge" data-i18n="project.badge.mvp">MVP · SPA</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> React.js, React Router, React-Bootstrap, Framer Motion; Backend: custom REST API in PHP 8.</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project5.description">Full e-commerce workflow with secure JWT auth, admin dashboard, and review cycle (submit preview URL, client approves/requests changes). Stripe/PayPal-ready, demo mode included.</span></p>
+            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project5.role">Architected and developed the backend RESTful API.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.dev">In development</span></div>
             <div class="links">
-              <a href="https://github.com/etebachale-group/abeme-modjobuy.git">Repository</a>
+              <a href="https://github.com/etebachale-group/abeme-modjobuy.git" data-i18n="project.link.repo">Repository</a>
             </div>
           </article>
 
           <article class="card">
             <div class="title">Ecuacelebs</div>
-            <span class="badge">Subscription platform</span>
-            <p><strong>Tech Stack:</strong> PHP (vanilla), MySQL; Frontend: HTML, CSS, JS; Bootstrap 5.3, Font Awesome, Google Fonts.</p>
-            <p><strong>Description:</strong> Platform for creators to monetize content with tiered subscriptions (Gratis, Básico, Premium). Admin panel to manage users, content, events, and banners.</p>
-            <p><strong>Role:</strong> Social Media Platform to Content Creator Of Equatorial Guinea.</p>
-            <div class="status">Status: Local Active (beta)</div>
+            <span class="badge" data-i18n="project.badge.subscription">Subscription platform</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> PHP (vanilla), MySQL; Frontend: HTML, CSS, JS; Bootstrap 5.3, Font Awesome, Google Fonts.</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project6.description">Platform for creators to monetize content with tiered subscriptions (Gratis, Básico, Premium). Admin panel to manage users, content, events, and banners.</span></p>
+            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project6.role">Social Media Platform to Content Creator Of Equatorial Guinea.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.local">Local Active (beta)</span></div>
             <div class="links">
-              <a href="https://github.com/etebachale-group/Ecuacelebs.git">Repository</a>
+              <a href="https://github.com/etebachale-group/Ecuacelebs.git" data-i18n="project.link.repo">Repository</a>
             </div>
           </article>
           <article class="card">
             <div class="title">Personal Portfolio Website</div>
-            <span class="badge">Frontend</span>
-            <p>A responsive portfolio showcasing my projects and skills using HTML, CSS, and JavaScript.</p>
-            <div class="status">Status: Active</div>
+            <span class="badge" data-i18n="project.badge.frontend">Frontend</span>
+            <p data-i18n="project7.description">A responsive portfolio showcasing my projects and skills using HTML, CSS, and JavaScript.</p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.active">Active</span></div>
             <div class="links">
-              <a href="https://etebachale-group.github.io/cvfernandochaleeteba.github.io">Page</a>
-              <a href="https://github.com/etebachale-group/cvfernandochaleeteba.github.io.git">Repository</a>
+              <a href="https://etebachale-group.github.io/cvfernandochaleeteba.github.io" data-i18n="project.link.page">Page</a>
+              <a href="https://github.com/etebachale-group/cvfernandochaleeteba.github.io.git" data-i18n="project.link.repo">Repository</a>
             </div>
           </article>
         </div>
@@ -732,7 +798,30 @@
     <section id="experience">
       <div class="container">
         <h2 data-i18n="experience.title">Professional Experience</h2>
-        <p><strong data-i18n="experience.producer">TV Producer at Fama GV</strong> — Guinea Vista EG (2017 - 2022)</p>
+        
+        <!-- Business & Leadership Experience -->
+        <section id="business-leadership" style="margin-bottom: 2rem; padding: 1.5rem; background: var(--surface); border-radius: var(--radius); border-left: 4px solid var(--primary);">
+          <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 1rem;" data-i18n="business.leadership.title">Business & Leadership Experience</h3>
+          <ul class="clean" style="display: grid; gap: 0.75rem;">
+            <li style="padding: 0.75rem; background: rgba(76, 201, 240, 0.05); border-radius: 8px;" data-i18n="business.leadership.item1">Designed business workflows translated into software systems</li>
+            <li style="padding: 0.75rem; background: rgba(123, 44, 255, 0.05); border-radius: 8px;" data-i18n="business.leadership.item2">Managed logistics, payments, and operations</li>
+            <li style="padding: 0.75rem; background: rgba(0, 209, 178, 0.05); border-radius: 8px;" data-i18n="business.leadership.item3">Built brands and platforms from zero</li>
+            <li style="padding: 0.75rem; background: rgba(76, 201, 240, 0.05); border-radius: 8px;" data-i18n="business.leadership.item4">Decision-making under resource constraints</li>
+          </ul>
+        </section>
+        
+        <!-- Creative & Media Background -->
+        <section id="creative-background" style="margin-bottom: 2rem; padding: 1.5rem; background: var(--surface); border-radius: var(--radius); border-left: 4px solid var(--secondary);">
+          <h3 style="color: var(--secondary); font-size: 1.3rem; margin-bottom: 1rem;" data-i18n="creative.title">Creative & Media Background</h3>
+          <ul class="clean" style="display: grid; gap: 0.75rem;">
+            <li style="padding: 0.75rem; background: rgba(123, 44, 255, 0.05); border-radius: 8px;" data-i18n="creative.item1">TV Producer at Guinea Vista EG (2017–2022)</li>
+            <li style="padding: 0.75rem; background: rgba(76, 201, 240, 0.05); border-radius: 8px;" data-i18n="creative.item2">Team coordination and deadline management</li>
+            <li style="padding: 0.75rem; background: rgba(0, 209, 178, 0.05); border-radius: 8px;" data-i18n="creative.item3">Visual storytelling and communication skills</li>
+            <li style="padding: 0.75rem; background: rgba(123, 44, 255, 0.05); border-radius: 8px;" data-i18n="creative.item4">Creative foundation influencing UI/UX design</li>
+          </ul>
+        </section>
+        
+        <p><strong data-i18n="experience.producer">TV Producer at Fama GV</strong> — <span data-i18n="experience.company">Guinea Vista EG</span> (<span data-i18n="experience.date">2017 - 2022</span>)</p>
         <p data-i18n="experience.description">Produced cultural TV shows and youth-centered audiovisual projects, building local content and communication skills.</p>
       </div>
     </section>
@@ -741,20 +830,34 @@
       <div class="container">
         <h2 data-i18n="business.title">Business Experience</h2>
         <ul class="clean">
-          <li><strong>Nkeng Prod</strong> — Studio Production since 2013: Producing music, managing recording sessions, and working with artists.</li>
-          <li><strong>Eteba Music</strong> — Record Label since 2018: Independent label supporting Afrobeat and urban talent.</li>
-          <li><strong>Eteba Chale Group</strong> — Development company: Supporting and investing in small business projects for young entrepreneurs.</li>
-          <li><strong>Dream Motivation EG</strong>: Motivational and empowerment platform for African youth.</li>
-          <li><strong>Abeme Modjobuy Envios</strong>: Logistics company sending packages from Ghana to Togo and Equatorial Guinea.</li>
+          <li><strong>Nkeng Prod</strong> — <span data-i18n="business.nkeng">Studio Production since 2013: Producing music, managing recording sessions, and working with artists.</span></li>
+          <li><strong>Eteba Music</strong> — <span data-i18n="business.eteba">Record Label since 2018: Independent label supporting Afrobeat and urban talent.</span></li>
+          <li><strong>Eteba Chale Group</strong> — <span data-i18n="business.group">Development company: Supporting and investing in small business projects for young entrepreneurs.</span></li>
+          <li><strong>Dream Motivation EG</strong>: <span data-i18n="business.dream">Motivational and empowerment platform for African youth.</span></li>
+          <li><strong>Abeme Modjobuy Envios</strong>: <span data-i18n="business.abeme">Logistics company sending packages from Ghana to Togo and Equatorial Guinea.</span></li>
         </ul>
+      </div>
+    </section>
+
+    <!-- Career Focus Section -->
+    <section id="career-focus">
+      <div class="container">
+        <h2 data-i18n="career.title">Career Focus</h2>
+        <ul class="clean" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+          <li style="padding: 1rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--primary);" data-i18n="career.item1">Full-Stack Developer roles (Junior / Associate)</li>
+          <li style="padding: 1rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--secondary);" data-i18n="career.item2">Data-oriented technical positions</li>
+          <li style="padding: 1rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--tertiary);" data-i18n="career.item3">Startup and MVP-driven environments</li>
+          <li style="padding: 1rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--primary);" data-i18n="career.item4">Remote or on-site roles with growth potential</li>
+        </ul>
+        <p style="font-size: 1.1rem; color: var(--accent); text-align: center; padding: 1rem; background: rgba(76, 201, 240, 0.05); border-radius: var(--radius);" data-i18n="career.closing">I value learning, ownership, and building systems that matter.</p>
       </div>
     </section>
 
     <section id="contact">
       <div class="container">
         <h2 data-i18n="contact.title">Contact</h2>
-        <p><strong>Email:</strong> <a href="mailto:etebachalegroup@gmail.com">etebachalegroup@gmail.com</a></p>
-        <p><strong data-i18n="hero.whatsapp">Phone:</strong> <a href="tel:+233208870387">+233208870387</a></p>
+        <p><strong data-i18n="contact.email">Email:</strong> <a href="mailto:etebachalegroup@gmail.com">etebachalegroup@gmail.com</a></p>
+        <p><strong data-i18n="contact.phone">Phone:</strong> <a href="tel:+233208870387">+233208870387</a></p>
         <div class="contact-buttons">
           <a href="https://wa.me/233208870387" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -798,26 +901,127 @@
         'hero.birthplace': 'Birthplace:',
         'education.title': 'Education',
         'education.primary': 'Primary School Diploma',
+        'education.primary.location': 'Malabo Equatorial Guinea',
         'education.high': 'High School Diploma',
+        'education.high.location': 'Malabo Equatorial Guinea',
         'education.baccalaureate': 'Baccalaureate',
+        'education.baccalaureate.location': 'Malabo Equatorial Guinea',
         'education.professional': 'Professional Diploma in Software Engineering',
+        'education.professional.location': 'IPMC University College',
+        'education.professional.date': 'March 2024 - March 2025',
         'education.advance': 'Advance Diploma',
+        'education.advance.location': 'IPMC University College',
+        'education.advance.date': 'May 2024 - Present',
         'education.certificates': 'Certificates:',
         'skills.title': 'Skills',
         'skills.tools': 'Tools:',
+        'skills.tools.list': 'Visual Studio Code, Git, Docker, GitHub, Android Studio, Markdown, Deployment, SEO',
         'skills.ai': 'AI:',
+        'skills.ai.list': 'Copilot, Gemini, ChatGPT, Codex, Google Notebook LM',
         'skills.basic': 'Basic:',
+        'skills.basic.list': 'C++, Java, C#, Python',
         'skills.frontend': 'Frontend:',
+        'skills.frontend.list': 'HTML, CSS, JavaScript, Responsive Design, UI/UX Thinking, React, Bootstrap',
         'skills.backend': 'Backend:',
+        'skills.backend.list': 'PHP, MySQL, phpMyAdmin, Node.js, PostgreSQL, Next.js, MongoDB, SQLite',
         'skills.debugging': 'Debugging:',
+        'skills.debugging.list': 'Fast identification and resolution of bugs, Vibe Coding',
         'skills.languages': 'Languages:',
+        'skills.languages.list': 'Spanish (Native), English (Fluent)',
         'projects.title': 'Projects',
+        'project.badge.fullstack': 'Full-stack web app',
+        'project.badge.travel': 'Travel Planning & Booking Web App',
+        'project.badge.logistics': 'Logistics + Company site',
+        'project.badge.mvp': 'MVP · SPA',
+        'project.badge.subscription': 'Subscription platform',
+        'project.badge.frontend': 'Frontend',
+        'project.tech': 'Tech Stack:',
+        'project.description': 'Description:',
+        'project.role': 'Role:',
+        'project.status': 'Status:',
+        'project.status.live': 'Live (beta)',
+        'project.status.mvp': 'Live (MVP)',
+        'project.status.dev': 'In development',
+        'project.status.local': 'Local Active (beta)',
+        'project.status.active': 'Active',
+        'project.link.page': 'Page',
+        'project.link.repo': 'Repository',
+        'project1.description': 'is a web platform for buying and selling beats, sample packs, and production services, with audio previews, user roles, and a small social feed.',
+        'project1.role': 'Full-stack developer — built the backend, database, UI, audio system, and payment flow.',
+        'project2.description': 'An interactive online dictionary for the Bubi language. Features CRUD operations, search, and phonetic data management via Supabase.',
+        'project2.role': 'Full-stack developer (architecture, database, UI/UX, deployment).',
+        'project3.description': 'Explore Equatorial Guinea, build itineraries, and book local experiences; mobile-friendly and real-time updates.',
+        'project3.role': 'Full-Stack Developer — database design, system architecture, UX/UI.',
+        'project4.description': 'Online shop for organic skincare products by Eteba Group. Includes catalog, cart, and WhatsApp orders.',
+        'project4.role': 'Full-stack developer & system architect.',
+        'project5.description': 'Full e-commerce workflow with secure JWT auth, admin dashboard, and review cycle (submit preview URL, client approves/requests changes). Stripe/PayPal-ready, demo mode included.',
+        'project5.role': 'Architected and developed the backend RESTful API.',
+        'project6.description': 'Platform for creators to monetize content with tiered subscriptions (Gratis, Básico, Premium). Admin panel to manage users, content, events, and banners.',
+        'project6.role': 'Social Media Platform to Content Creator Of Equatorial Guinea.',
+        'project7.description': 'A responsive portfolio showcasing my projects and skills using HTML, CSS, and JavaScript.',
         'experience.title': 'Professional Experience',
         'experience.producer': 'TV Producer at Fama GV',
+        'experience.company': 'Guinea Vista EG',
+        'experience.date': '2017 - 2022',
         'experience.description': 'Produced cultural TV shows and youth-centered audiovisual projects, building local content and communication skills.',
         'business.title': 'Business Experience',
+        'business.nkeng': 'Studio Production since 2013: Producing music, managing recording sessions, and working with artists.',
+        'business.eteba': 'Record Label since 2018: Independent label supporting Afrobeat and urban talent.',
+        'business.group': 'Development company: Supporting and investing in small business projects for young entrepreneurs.',
+        'business.dream': 'Motivational and empowerment platform for African youth.',
+        'business.abeme': 'Logistics company sending packages from Ghana to Togo and Equatorial Guinea.',
         'contact.title': 'Contact',
-        'footer.text': 'Built with love and clean code.'
+        'contact.email': 'Email:',
+        'contact.phone': 'Phone:',
+        'footer.text': 'Built with love and clean code.',
+        'about.extended.title': 'About Me',
+        'about.extended.p1': 'I\'m a <strong>hybrid builder</strong> — technology, data, business, and culture moving together.',
+        'about.extended.p2': 'I design and develop <strong>real systems for real problems</strong>, especially in emerging markets. From clean UI to backend logic, from databases to deployment — I think in end-to-end solutions.',
+        'about.extended.p3': 'My background mixes Software Engineering, Data Analysis, Digital Business, and Creative Production. That blend lets me build products that are not only functional, but usable, scalable, and human.',
+        'core.title': 'Core Profile',
+        'core.item1': 'Hybrid Full-Stack Developer with strong backend & database focus',
+        'core.item2': 'Data-driven mindset: decisions backed by analysis',
+        'core.item3': 'Experience building MVPs and business platforms',
+        'core.item4': 'Strong documentation and system thinking',
+        'core.item5': 'Comfortable working solo or leading small teams',
+        'core.item6': 'Focused on Africa-centric solutions with global standards',
+        'data.title': 'Data & Analytics',
+        'data.intro': 'I use data as a decision tool, not decoration.',
+        'data.item1': 'SQL-based analysis for business insights',
+        'data.item2': 'Reporting for stakeholders and internal decisions',
+        'data.item3': 'Process optimization through data interpretation',
+        'data.item4': 'Experience with Excel and Power BI',
+        'data.item5': 'Basic understanding of data privacy and security',
+        'skills.highlights.title': 'Professional Skillset Highlights',
+        'skills.highlights.item1': 'Full-Stack Web Development',
+        'skills.highlights.item2': 'REST API design and backend architecture',
+        'skills.highlights.item3': 'Business-oriented system design',
+        'skills.highlights.item4': 'Debugging and rapid problem resolution',
+        'skills.highlights.item5': 'Technical documentation',
+        'skills.highlights.item6': 'Digital marketing fundamentals',
+        'projects.context.title': 'What These Projects Represent',
+        'projects.context.intro': 'My projects are not tutorials. They are <strong>working systems</strong> built around real needs.',
+        'projects.context.item1': 'User authentication and roles',
+        'projects.context.item2': 'Payments and monetization logic',
+        'projects.context.item3': 'Content management',
+        'projects.context.item4': 'Logistics and operations workflows',
+        'projects.context.item5': 'MVP validation for startups',
+        'business.leadership.title': 'Business & Leadership Experience',
+        'business.leadership.item1': 'Designed business workflows translated into software systems',
+        'business.leadership.item2': 'Managed logistics, payments, and operations',
+        'business.leadership.item3': 'Built brands and platforms from zero',
+        'business.leadership.item4': 'Decision-making under resource constraints',
+        'creative.title': 'Creative & Media Background',
+        'creative.item1': 'TV Producer at Guinea Vista EG (2017–2022)',
+        'creative.item2': 'Team coordination and deadline management',
+        'creative.item3': 'Visual storytelling and communication skills',
+        'creative.item4': 'Creative foundation influencing UI/UX design',
+        'career.title': 'Career Focus',
+        'career.item1': 'Full-Stack Developer roles (Junior / Associate)',
+        'career.item2': 'Data-oriented technical positions',
+        'career.item3': 'Startup and MVP-driven environments',
+        'career.item4': 'Remote or on-site roles with growth potential',
+        'career.closing': 'I value learning, ownership, and building systems that matter.'
       },
       es: {
         'nav.about': 'Acerca de',
@@ -836,26 +1040,127 @@
         'hero.birthplace': 'Lugar de Nacimiento:',
         'education.title': 'Educación',
         'education.primary': 'Diploma de Escuela Primaria',
+        'education.primary.location': 'Malabo Guinea Ecuatorial',
         'education.high': 'Diploma de Escuela Secundaria',
+        'education.high.location': 'Malabo Guinea Ecuatorial',
         'education.baccalaureate': 'Bachillerato',
+        'education.baccalaureate.location': 'Malabo Guinea Ecuatorial',
         'education.professional': 'Diploma Profesional en Ingeniería de Software',
+        'education.professional.location': 'IPMC University College',
+        'education.professional.date': 'Marzo 2024 - Marzo 2025',
         'education.advance': 'Diploma Avanzado',
+        'education.advance.location': 'IPMC University College',
+        'education.advance.date': 'Mayo 2024 - Presente',
         'education.certificates': 'Certificados:',
         'skills.title': 'Habilidades',
         'skills.tools': 'Herramientas:',
+        'skills.tools.list': 'Visual Studio Code, Git, Docker, GitHub, Android Studio, Markdown, Despliegue, SEO',
         'skills.ai': 'IA:',
+        'skills.ai.list': 'Copilot, Gemini, ChatGPT, Codex, Google Notebook LM',
         'skills.basic': 'Básico:',
+        'skills.basic.list': 'C++, Java, C#, Python',
         'skills.frontend': 'Frontend:',
+        'skills.frontend.list': 'HTML, CSS, JavaScript, Diseño Responsivo, Pensamiento UI/UX, React, Bootstrap',
         'skills.backend': 'Backend:',
+        'skills.backend.list': 'PHP, MySQL, phpMyAdmin, Node.js, PostgreSQL, Next.js, MongoDB, SQLite',
         'skills.debugging': 'Depuración:',
+        'skills.debugging.list': 'Identificación y resolución rápida de errores, Vibe Coding',
         'skills.languages': 'Idiomas:',
+        'skills.languages.list': 'Español (Nativo), Inglés (Fluido)',
         'projects.title': 'Proyectos',
+        'project.badge.fullstack': 'Aplicación web full-stack',
+        'project.badge.travel': 'Aplicación de Planificación y Reservas de Viajes',
+        'project.badge.logistics': 'Logística + Sitio Corporativo',
+        'project.badge.mvp': 'MVP · SPA',
+        'project.badge.subscription': 'Plataforma de suscripción',
+        'project.badge.frontend': 'Frontend',
+        'project.tech': 'Stack Tecnológico:',
+        'project.description': 'Descripción:',
+        'project.role': 'Rol:',
+        'project.status': 'Estado:',
+        'project.status.live': 'En vivo (beta)',
+        'project.status.mvp': 'En vivo (MVP)',
+        'project.status.dev': 'En desarrollo',
+        'project.status.local': 'Activo Local (beta)',
+        'project.status.active': 'Activo',
+        'project.link.page': 'Página',
+        'project.link.repo': 'Repositorio',
+        'project1.description': 'es una plataforma web para comprar y vender beats, paquetes de samples y servicios de producción, con vistas previas de audio, roles de usuario y un pequeño feed social.',
+        'project1.role': 'Desarrollador full-stack — construí el backend, base de datos, UI, sistema de audio y flujo de pagos.',
+        'project2.description': 'Un diccionario interactivo en línea para el idioma Bubi. Incluye operaciones CRUD, búsqueda y gestión de datos fonéticos vía Supabase.',
+        'project2.role': 'Desarrollador full-stack (arquitectura, base de datos, UI/UX, despliegue).',
+        'project3.description': 'Explora Guinea Ecuatorial, crea itinerarios y reserva experiencias locales; compatible con móviles y actualizaciones en tiempo real.',
+        'project3.role': 'Desarrollador Full-Stack — diseño de base de datos, arquitectura del sistema, UX/UI.',
+        'project4.description': 'Tienda en línea de productos orgánicos para el cuidado de la piel por Eteba Group. Incluye catálogo, carrito y pedidos por WhatsApp.',
+        'project4.role': 'Desarrollador full-stack y arquitecto de sistemas.',
+        'project5.description': 'Flujo completo de e-commerce con autenticación JWT segura, panel de administración y ciclo de revisión (enviar URL de vista previa, el cliente aprueba/solicita cambios). Listo para Stripe/PayPal, modo demo incluido.',
+        'project5.role': 'Arquitecté y desarrollé la API RESTful del backend.',
+        'project6.description': 'Plataforma para creadores de contenido para monetizar con suscripciones escalonadas (Gratis, Básico, Premium). Panel de administración para gestionar usuarios, contenido, eventos y banners.',
+        'project6.role': 'Plataforma de Redes Sociales para Creadores de Contenido de Guinea Ecuatorial.',
+        'project7.description': 'Un portafolio responsivo que muestra mis proyectos y habilidades usando HTML, CSS y JavaScript.',
         'experience.title': 'Experiencia Profesional',
         'experience.producer': 'Productor de TV en Fama GV',
+        'experience.company': 'Guinea Vista EG',
+        'experience.date': '2017 - 2022',
         'experience.description': 'Producción de programas de TV culturales y proyectos audiovisuales centrados en la juventud, construyendo contenido local y habilidades de comunicación.',
         'business.title': 'Experiencia Empresarial',
+        'business.nkeng': 'Estudio de Producción desde 2013: Produciendo música, gestionando sesiones de grabación y trabajando con artistas.',
+        'business.eteba': 'Sello Discográfico desde 2018: Sello independiente que apoya talento Afrobeat y urbano.',
+        'business.group': 'Empresa de desarrollo: Apoyando e invirtiendo en proyectos de pequeñas empresas para jóvenes emprendedores.',
+        'business.dream': 'Plataforma motivacional y de empoderamiento para la juventud africana.',
+        'business.abeme': 'Empresa de logística que envía paquetes desde Ghana a Togo y Guinea Ecuatorial.',
         'contact.title': 'Contacto',
-        'footer.text': 'Construido con amor y código limpio.'
+        'contact.email': 'Correo:',
+        'contact.phone': 'Teléfono:',
+        'footer.text': 'Construido con amor y código limpio.',
+        'about.extended.title': 'Acerca de Mí',
+        'about.extended.p1': 'Soy un <strong>constructor híbrido</strong> — tecnología, datos, negocios y cultura moviéndose juntos.',
+        'about.extended.p2': 'Diseño y desarrollo <strong>sistemas reales para problemas reales</strong>, especialmente en mercados emergentes. Desde UI limpia hasta lógica backend, desde bases de datos hasta despliegue — pienso en soluciones de extremo a extremo.',
+        'about.extended.p3': 'Mi formación mezcla Ingeniería de Software, Análisis de Datos, Negocios Digitales y Producción Creativa. Esa combinación me permite construir productos que no solo son funcionales, sino usables, escalables y humanos.',
+        'core.title': 'Perfil Principal',
+        'core.item1': 'Desarrollador Full-Stack Híbrido con fuerte enfoque en backend y bases de datos',
+        'core.item2': 'Mentalidad basada en datos: decisiones respaldadas por análisis',
+        'core.item3': 'Experiencia construyendo MVPs y plataformas de negocios',
+        'core.item4': 'Fuerte documentación y pensamiento sistémico',
+        'core.item5': 'Cómodo trabajando solo o liderando equipos pequeños',
+        'core.item6': 'Enfocado en soluciones centradas en África con estándares globales',
+        'data.title': 'Datos y Análisis',
+        'data.intro': 'Uso los datos como herramienta de decisión, no como decoración.',
+        'data.item1': 'Análisis basado en SQL para insights de negocio',
+        'data.item2': 'Reportes para stakeholders y decisiones internas',
+        'data.item3': 'Optimización de procesos mediante interpretación de datos',
+        'data.item4': 'Experiencia con Excel y Power BI',
+        'data.item5': 'Comprensión básica de privacidad y seguridad de datos',
+        'skills.highlights.title': 'Aspectos Destacados de Habilidades Profesionales',
+        'skills.highlights.item1': 'Desarrollo Web Full-Stack',
+        'skills.highlights.item2': 'Diseño de API REST y arquitectura backend',
+        'skills.highlights.item3': 'Diseño de sistemas orientado a negocios',
+        'skills.highlights.item4': 'Depuración y resolución rápida de problemas',
+        'skills.highlights.item5': 'Documentación técnica',
+        'skills.highlights.item6': 'Fundamentos de marketing digital',
+        'projects.context.title': 'Lo Que Estos Proyectos Representan',
+        'projects.context.intro': 'Mis proyectos no son tutoriales. Son <strong>sistemas funcionales</strong> construidos alrededor de necesidades reales.',
+        'projects.context.item1': 'Autenticación de usuarios y roles',
+        'projects.context.item2': 'Lógica de pagos y monetización',
+        'projects.context.item3': 'Gestión de contenido',
+        'projects.context.item4': 'Flujos de trabajo de logística y operaciones',
+        'projects.context.item5': 'Validación de MVP para startups',
+        'business.leadership.title': 'Experiencia en Negocios y Liderazgo',
+        'business.leadership.item1': 'Diseñé flujos de trabajo empresariales traducidos en sistemas de software',
+        'business.leadership.item2': 'Gestioné logística, pagos y operaciones',
+        'business.leadership.item3': 'Construí marcas y plataformas desde cero',
+        'business.leadership.item4': 'Toma de decisiones bajo restricciones de recursos',
+        'creative.title': 'Experiencia Creativa y de Medios',
+        'creative.item1': 'Productor de TV en Guinea Vista EG (2017–2022)',
+        'creative.item2': 'Coordinación de equipos y gestión de plazos',
+        'creative.item3': 'Habilidades de narración visual y comunicación',
+        'creative.item4': 'Base creativa que influye en el diseño UI/UX',
+        'career.title': 'Enfoque Profesional',
+        'career.item1': 'Roles de Desarrollador Full-Stack (Junior / Asociado)',
+        'career.item2': 'Posiciones técnicas orientadas a datos',
+        'career.item3': 'Entornos de startups y orientados a MVP',
+        'career.item4': 'Roles remotos o presenciales con potencial de crecimiento',
+        'career.closing': 'Valoro el aprendizaje, la propiedad y la construcción de sistemas que importan.'
       },
       fr: {
         'nav.about': 'À propos',
@@ -874,26 +1179,127 @@
         'hero.birthplace': 'Lieu de Naissance:',
         'education.title': 'Éducation',
         'education.primary': 'Diplôme d\'École Primaire',
+        'education.primary.location': 'Malabo Guinée Équatoriale',
         'education.high': 'Diplôme d\'École Secondaire',
+        'education.high.location': 'Malabo Guinée Équatoriale',
         'education.baccalaureate': 'Baccalauréat',
+        'education.baccalaureate.location': 'Malabo Guinée Équatoriale',
         'education.professional': 'Diplôme Professionnel en Génie Logiciel',
+        'education.professional.location': 'IPMC University College',
+        'education.professional.date': 'Mars 2024 - Mars 2025',
         'education.advance': 'Diplôme Avancé',
+        'education.advance.location': 'IPMC University College',
+        'education.advance.date': 'Mai 2024 - Présent',
         'education.certificates': 'Certificats:',
         'skills.title': 'Compétences',
         'skills.tools': 'Outils:',
+        'skills.tools.list': 'Visual Studio Code, Git, Docker, GitHub, Android Studio, Markdown, Déploiement, SEO',
         'skills.ai': 'IA:',
+        'skills.ai.list': 'Copilot, Gemini, ChatGPT, Codex, Google Notebook LM',
         'skills.basic': 'Base:',
+        'skills.basic.list': 'C++, Java, C#, Python',
         'skills.frontend': 'Frontend:',
+        'skills.frontend.list': 'HTML, CSS, JavaScript, Design Responsive, Réflexion UI/UX, React, Bootstrap',
         'skills.backend': 'Backend:',
+        'skills.backend.list': 'PHP, MySQL, phpMyAdmin, Node.js, PostgreSQL, Next.js, MongoDB, SQLite',
         'skills.debugging': 'Débogage:',
+        'skills.debugging.list': 'Identification et résolution rapides des bugs, Vibe Coding',
         'skills.languages': 'Langues:',
+        'skills.languages.list': 'Espagnol (Natif), Anglais (Courant)',
         'projects.title': 'Projets',
+        'project.badge.fullstack': 'Application web full-stack',
+        'project.badge.travel': 'Application de Planification et Réservation de Voyages',
+        'project.badge.logistics': 'Logistique + Site d\'Entreprise',
+        'project.badge.mvp': 'MVP · SPA',
+        'project.badge.subscription': 'Plateforme d\'abonnement',
+        'project.badge.frontend': 'Frontend',
+        'project.tech': 'Stack Technologique:',
+        'project.description': 'Description:',
+        'project.role': 'Rôle:',
+        'project.status': 'Statut:',
+        'project.status.live': 'En ligne (bêta)',
+        'project.status.mvp': 'En ligne (MVP)',
+        'project.status.dev': 'En développement',
+        'project.status.local': 'Actif Local (bêta)',
+        'project.status.active': 'Actif',
+        'project.link.page': 'Page',
+        'project.link.repo': 'Dépôt',
+        'project1.description': 'est une plateforme web pour acheter et vendre des beats, des packs d\'échantillons et des services de production, avec aperçus audio, rôles d\'utilisateur et un petit flux social.',
+        'project1.role': 'Développeur full-stack — j\'ai construit le backend, la base de données, l\'interface utilisateur, le système audio et le flux de paiement.',
+        'project2.description': 'Un dictionnaire interactif en ligne pour la langue Bubi. Comprend des opérations CRUD, une recherche et une gestion des données phonétiques via Supabase.',
+        'project2.role': 'Développeur full-stack (architecture, base de données, UI/UX, déploiement).',
+        'project3.description': 'Explorez la Guinée Équatoriale, créez des itinéraires et réservez des expériences locales; compatible mobile et mises à jour en temps réel.',
+        'project3.role': 'Développeur Full-Stack — conception de base de données, architecture système, UX/UI.',
+        'project4.description': 'Boutique en ligne de produits de soins de la peau biologiques par Eteba Group. Comprend catalogue, panier et commandes WhatsApp.',
+        'project4.role': 'Développeur full-stack et architecte système.',
+        'project5.description': 'Flux e-commerce complet avec authentification JWT sécurisée, tableau de bord administrateur et cycle de révision (soumettre l\'URL de prévisualisation, le client approuve/demande des modifications). Prêt pour Stripe/PayPal, mode démo inclus.',
+        'project5.role': 'J\'ai conçu et développé l\'API RESTful du backend.',
+        'project6.description': 'Plateforme pour les créateurs de monétiser le contenu avec des abonnements échelonnés (Gratuit, Basique, Premium). Panneau d\'administration pour gérer les utilisateurs, le contenu, les événements et les bannières.',
+        'project6.role': 'Plateforme de Médias Sociaux pour les Créateurs de Contenu de Guinée Équatoriale.',
+        'project7.description': 'Un portfolio responsive présentant mes projets et compétences en utilisant HTML, CSS et JavaScript.',
         'experience.title': 'Expérience Professionnelle',
         'experience.producer': 'Producteur TV chez Fama GV',
+        'experience.company': 'Guinea Vista EG',
+        'experience.date': '2017 - 2022',
         'experience.description': 'Production d\'émissions de télévision culturelles et de projets audiovisuels centrés sur les jeunes, développant du contenu local et des compétences en communication.',
         'business.title': 'Expérience Commerciale',
+        'business.nkeng': 'Studio de Production depuis 2013: Production de musique, gestion de sessions d\'enregistrement et travail avec des artistes.',
+        'business.eteba': 'Label de Disques depuis 2018: Label indépendant soutenant les talents Afrobeat et urbains.',
+        'business.group': 'Entreprise de développement: Soutenir et investir dans des projets de petites entreprises pour les jeunes entrepreneurs.',
+        'business.dream': 'Plateforme de motivation et d\'autonomisation pour la jeunesse africaine.',
+        'business.abeme': 'Entreprise de logistique envoyant des colis du Ghana vers le Togo et la Guinée Équatoriale.',
         'contact.title': 'Contact',
-        'footer.text': 'Construit avec amour et code propre.'
+        'contact.email': 'Email:',
+        'contact.phone': 'Téléphone:',
+        'footer.text': 'Construit avec amour et code propre.',
+        'about.extended.title': 'À Propos de Moi',
+        'about.extended.p1': 'Je suis un <strong>constructeur hybride</strong> — technologie, données, affaires et culture se déplaçant ensemble.',
+        'about.extended.p2': 'Je conçois et développe des <strong>systèmes réels pour des problèmes réels</strong>, en particulier dans les marchés émergents. De l\'interface utilisateur propre à la logique backend, des bases de données au déploiement — je pense en solutions de bout en bout.',
+        'about.extended.p3': 'Mon parcours mélange Génie Logiciel, Analyse de Données, Affaires Numériques et Production Créative. Ce mélange me permet de construire des produits qui ne sont pas seulement fonctionnels, mais utilisables, évolutifs et humains.',
+        'core.title': 'Profil Principal',
+        'core.item1': 'Développeur Full-Stack Hybride avec un fort accent sur le backend et les bases de données',
+        'core.item2': 'Mentalité axée sur les données: décisions soutenues par l\'analyse',
+        'core.item3': 'Expérience dans la construction de MVP et de plateformes commerciales',
+        'core.item4': 'Documentation solide et pensée systémique',
+        'core.item5': 'À l\'aise pour travailler seul ou diriger de petites équipes',
+        'core.item6': 'Concentré sur des solutions centrées sur l\'Afrique avec des normes mondiales',
+        'data.title': 'Données et Analytique',
+        'data.intro': 'J\'utilise les données comme outil de décision, pas comme décoration.',
+        'data.item1': 'Analyse basée sur SQL pour des insights commerciaux',
+        'data.item2': 'Rapports pour les parties prenantes et les décisions internes',
+        'data.item3': 'Optimisation des processus par l\'interprétation des données',
+        'data.item4': 'Expérience avec Excel et Power BI',
+        'data.item5': 'Compréhension de base de la confidentialité et de la sécurité des données',
+        'skills.highlights.title': 'Points Forts des Compétences Professionnelles',
+        'skills.highlights.item1': 'Développement Web Full-Stack',
+        'skills.highlights.item2': 'Conception d\'API REST et architecture backend',
+        'skills.highlights.item3': 'Conception de systèmes orientée affaires',
+        'skills.highlights.item4': 'Débogage et résolution rapide de problèmes',
+        'skills.highlights.item5': 'Documentation technique',
+        'skills.highlights.item6': 'Fondamentaux du marketing numérique',
+        'projects.context.title': 'Ce Que Ces Projets Représentent',
+        'projects.context.intro': 'Mes projets ne sont pas des tutoriels. Ce sont des <strong>systèmes fonctionnels</strong> construits autour de besoins réels.',
+        'projects.context.item1': 'Authentification des utilisateurs et rôles',
+        'projects.context.item2': 'Logique de paiements et de monétisation',
+        'projects.context.item3': 'Gestion de contenu',
+        'projects.context.item4': 'Flux de travail logistiques et opérationnels',
+        'projects.context.item5': 'Validation de MVP pour startups',
+        'business.leadership.title': 'Expérience en Affaires et Leadership',
+        'business.leadership.item1': 'Conçu des flux de travail commerciaux traduits en systèmes logiciels',
+        'business.leadership.item2': 'Géré la logistique, les paiements et les opérations',
+        'business.leadership.item3': 'Construit des marques et des plateformes à partir de zéro',
+        'business.leadership.item4': 'Prise de décision sous contraintes de ressources',
+        'creative.title': 'Expérience Créative et Médiatique',
+        'creative.item1': 'Producteur TV chez Guinea Vista EG (2017–2022)',
+        'creative.item2': 'Coordination d\'équipe et gestion des délais',
+        'creative.item3': 'Compétences en narration visuelle et communication',
+        'creative.item4': 'Fondation créative influençant la conception UI/UX',
+        'career.title': 'Orientation de Carrière',
+        'career.item1': 'Rôles de Développeur Full-Stack (Junior / Associé)',
+        'career.item2': 'Postes techniques orientés données',
+        'career.item3': 'Environnements de startups et orientés MVP',
+        'career.item4': 'Rôles à distance ou sur site avec potentiel de croissance',
+        'career.closing': 'Je valorise l\'apprentissage, la propriété et la construction de systèmes qui comptent.'
       }
     };
 
@@ -935,7 +1341,13 @@
         document.querySelectorAll('[data-i18n]').forEach(element => {
           const key = element.getAttribute('data-i18n');
           if (translations[lang] && translations[lang][key]) {
-            element.textContent = translations[lang][key];
+            // Check if translation contains HTML tags
+            const translation = translations[lang][key];
+            if (translation.includes('<strong>') || translation.includes('<')) {
+              element.innerHTML = translation;
+            } else {
+              element.textContent = translation;
+            }
           }
         });
 
