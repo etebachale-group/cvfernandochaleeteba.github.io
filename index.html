@@ -12,6 +12,7 @@
       --bg: #0a0b12;            /* Navy profundo */
       --surface: #121427;       /* Superficie principal */
       --surface-2: #171a2f;     /* Superficie secundaria */
+      --surface-3: #1a1d35;     /* Superficie terciaria */
 
       /* Paleta colorida pero profesional */
       --primary: #4cc9f0;       /* Electric Cyan */
@@ -19,6 +20,7 @@
       --tertiary: #00d1b2;      /* Modern Teal */
       --highlight: #ffd166;     /* Warm Amber para remarcar */
       --danger: #ff4d6d;        /* Accent rojizo para estados */
+      --success: #06ffa5;       /* Success green */
 
       /* Aliases para compatibilidad con estilos existentes */
       --accent: var(--primary);
@@ -27,12 +29,13 @@
       --text: #f8fafc;
       --muted: #a5b0c4;
       --ring: var(--secondary);
-      --radius: 14px;
+      --radius: 16px;
 
-      /* Gradientes */
+      /* Gradientes mejorados */
       --grad-brand: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, #b5179e 100%);
-      --grad-hero: radial-gradient(1200px 600px at 15% -10%, rgba(76,201,240,.15) 0%, rgba(123,44,255,.12) 40%, rgba(0,209,178,.1) 70%, transparent 100%);
-      --grad-surface: linear-gradient(180deg, rgba(124,136,255,.06), rgba(0,0,0,0) 40%);
+      --grad-hero: radial-gradient(1200px 600px at 15% -10%, rgba(76,201,240,.18) 0%, rgba(123,44,255,.15) 40%, rgba(0,209,178,.12) 70%, transparent 100%);
+      --grad-surface: linear-gradient(180deg, rgba(124,136,255,.08), rgba(0,0,0,0) 40%);
+      --grad-card: linear-gradient(145deg, rgba(76,201,240,.03) 0%, rgba(123,44,255,.05) 100%);
     }
 
     * { box-sizing: border-box; }
@@ -48,8 +51,22 @@
     a:hover { color: var(--accent-2); }
     :focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
 
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
-    section { padding: 4rem 0; scroll-margin-top: 80px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    section { 
+      padding: 5rem 0; 
+      scroll-margin-top: 80px;
+      position: relative;
+    }
+    section:not(#about)::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(76, 201, 240, 0.2), transparent);
+    }
 
     /* Modern Header */
     .header {
@@ -408,36 +425,229 @@
 
 
     /* Hero */
-    #about .hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; align-items: center; }
-    .hero-title { font-size: clamp(1.8rem, 3vw, 2.6rem); margin: 0; color: var(--accent); }
-    .hero-sub { color: var(--muted); margin-top: 0.5rem; }
-    .hero-cta { display: flex; gap: 0.75rem; margin-top: 1rem; }
-    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 0.7rem 1rem; border-radius: 999px; border: 1px solid #2b314a; background: #1c2136; color: var(--text); font-weight: 600; }
-    .btn.primary { background: var(--grad-brand); color: #041016; border: 0; box-shadow: 0 10px 24px rgba(123,44,255,.2); }
-    .btn:hover { filter: brightness(1.1); }
+    #about .hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; align-items: center; }
+    .hero-title { 
+      font-size: clamp(2rem, 4vw, 3rem); 
+      margin: 0; 
+      background: var(--grad-brand);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .hero-sub { 
+      color: var(--muted); 
+      margin-top: 0.75rem; 
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+    .hero-cta { 
+      display: flex; 
+      gap: 1rem; 
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .btn { 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 8px; 
+      padding: 0.85rem 1.5rem; 
+      border-radius: 999px; 
+      border: 1px solid rgba(76, 201, 240, 0.3); 
+      background: rgba(76, 201, 240, 0.05); 
+      color: var(--text); 
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-size: 0.95rem;
+    }
+    .btn:hover {
+      background: rgba(76, 201, 240, 0.1);
+      border-color: rgba(76, 201, 240, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(76, 201, 240, 0.2);
+    }
+    .btn.primary { 
+      background: var(--grad-brand); 
+      color: white; 
+      border: 0; 
+      box-shadow: 0 10px 30px rgba(123,44,255,.3);
+      font-weight: 700;
+    }
+    .btn.primary:hover { 
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(123,44,255,.4);
+    }
 
-    .profile { justify-self: center; text-align: center; }
-    .profile-pic { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; border: 5px solid var(--accent); box-shadow: 0 8px 24px rgba(0,0,0,.45); background: var(--grad-surface); }
+    .profile { 
+      justify-self: center; 
+      text-align: center;
+      position: relative;
+    }
+    .profile::before {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      background: var(--grad-brand);
+      border-radius: 50%;
+      opacity: 0.15;
+      filter: blur(40px);
+      z-index: -1;
+    }
+    .profile-pic { 
+      width: 240px; 
+      height: 240px; 
+      border-radius: 50%; 
+      object-fit: cover; 
+      border: 4px solid rgba(76, 201, 240, 0.3); 
+      box-shadow: 0 12px 40px rgba(0,0,0,.5), 0 0 0 1px rgba(76, 201, 240, 0.2);
+      transition: all 0.3s ease;
+    }
+    .profile-pic:hover {
+      transform: scale(1.05);
+      border-color: rgba(76, 201, 240, 0.6);
+      box-shadow: 0 16px 50px rgba(76, 201, 240, 0.3);
+    }
 
     /* Section titles */
-    h2 { font-size: clamp(1.6rem, 2.4vw, 2rem); color: var(--accent); margin: 0 0 1rem; }
-    p { line-height: 1.65; color: var(--muted); }
+    h2 { 
+      font-size: clamp(1.8rem, 2.8vw, 2.4rem); 
+      background: var(--grad-brand);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 0 0 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      position: relative;
+      display: inline-block;
+    }
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--grad-brand);
+      border-radius: 2px;
+    }
+    p { 
+      line-height: 1.7; 
+      color: var(--muted);
+      font-size: 1rem;
+    }
 
     /* Cards / Grid */
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
-    .card { background: linear-gradient(180deg, var(--surface), #0f1222 80%), var(--grad-surface); border: 1px solid #262b40; border-radius: var(--radius); padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
-    .card .title { font-weight: 700; color: var(--text); }
-    .badge { display: inline-block; padding: 0.25rem 0.6rem; border-radius: 999px; background: linear-gradient(135deg, rgba(123,44,255,.35), rgba(76,201,240,.35)); color: var(--text); font-size: 0.85rem; border: 1px solid #364065; }
-    .status { color: var(--primary); font-weight: 700; }
-    .links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .links a { background: linear-gradient(180deg, #24283b, #1b1f33); padding: 0.4rem 0.7rem; border-radius: 8px; border: 1px solid #2b314a; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .card { 
+      background: linear-gradient(145deg, var(--surface) 0%, var(--surface-2) 100%); 
+      border: 1px solid rgba(76, 201, 240, 0.15); 
+      border-radius: var(--radius); 
+      padding: 1.5rem; 
+      display: flex; 
+      flex-direction: column; 
+      gap: 0.75rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--grad-brand);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(76, 201, 240, 0.3);
+      box-shadow: 0 12px 40px rgba(76, 201, 240, 0.15), 0 0 0 1px rgba(76, 201, 240, 0.1);
+    }
+    .card:hover::before {
+      opacity: 1;
+    }
+    .card .title { 
+      font-weight: 700; 
+      color: var(--text); 
+      font-size: 1.25rem;
+      margin-bottom: 0.25rem;
+    }
+    .badge { 
+      display: inline-block; 
+      padding: 0.35rem 0.75rem; 
+      border-radius: 999px; 
+      background: linear-gradient(135deg, rgba(123,44,255,.4), rgba(76,201,240,.4)); 
+      color: var(--text); 
+      font-size: 0.8rem; 
+      border: 1px solid rgba(76, 201, 240, 0.3);
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    .status { 
+      color: var(--success); 
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .status::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--success);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    .links { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 0.75rem;
+      margin-top: auto;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(76, 201, 240, 0.1);
+    }
+    .links a { 
+      background: linear-gradient(135deg, rgba(76, 201, 240, 0.1), rgba(123, 44, 255, 0.1)); 
+      padding: 0.5rem 1rem; 
+      border-radius: 10px; 
+      border: 1px solid rgba(76, 201, 240, 0.2);
+      transition: all 0.3s ease;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    .links a:hover {
+      background: linear-gradient(135deg, rgba(76, 201, 240, 0.2), rgba(123, 44, 255, 0.2));
+      border-color: rgba(76, 201, 240, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(76, 201, 240, 0.2);
+    }
 
     /* Lists */
     ul.clean { list-style: none; padding-left: 0; }
     ul.clean li { margin: 0.25rem 0; color: var(--muted); }
 
     /* Footer */
-    footer { padding: 2rem 0; color: var(--muted); text-align: center; border-top: 1px solid #24283b; }
+    footer { 
+      padding: 3rem 0; 
+      color: var(--muted); 
+      text-align: center; 
+      border-top: 1px solid rgba(76, 201, 240, 0.1);
+      background: linear-gradient(180deg, transparent, rgba(76, 201, 240, 0.02));
+      margin-top: 4rem;
+    }
+    footer .container {
+      font-size: 0.95rem;
+    }
 
     /* Responsive */
     @media (max-width: 900px) {
@@ -457,58 +667,83 @@
     .whatsapp-btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      background: #25D366;
+      gap: 0.75rem;
+      padding: 0.85rem 1.75rem;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
       color: white;
       text-decoration: none;
       border-radius: 50px;
       font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+      font-size: 0.95rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .whatsapp-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .whatsapp-btn:hover::before {
+      left: 100%;
     }
 
     .whatsapp-btn:hover {
-      background: #128C7E;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
     }
 
     .whatsapp-float {
       position: fixed;
       bottom: 2rem;
       right: 2rem;
-      width: 60px;
-      height: 60px;
-      background: #25D366;
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
       color: white;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-      transition: all 0.3s ease;
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: 1000;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
     }
 
     .whatsapp-float:hover {
-      background: #128C7E;
-      transform: scale(1.1);
-      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+      background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+      transform: scale(1.1) translateY(-5px);
+      box-shadow: 0 10px 35px rgba(37, 211, 102, 0.5);
+      animation: none;
     }
 
     @media (max-width: 768px) {
       .whatsapp-float {
-        bottom: 1rem;
-        right: 1rem;
-        width: 50px;
-        height: 50px;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 56px;
+        height: 56px;
       }
       
       .whatsapp-float svg {
-        width: 24px;
-        height: 24px;
+        width: 26px;
+        height: 26px;
       }
     }
   </style>
@@ -708,16 +943,16 @@
         </section>
 
         <div class="cards">
-            <article class="card">
-            <div class="title">Dreams Lux Hair web</div>
-            <span class="badge" data-i18n="project.badge.fullstack">Full-stack e-commerce and catalog web app</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong>PHP · MySQL 8· HTML5 · Tailwind CSS · JavaScript (Vanilla, Fetch API)· RESTful API (PHP) · Apache · JWT Authentication</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project0.description">A functional e-commerce platform designed to manage products, automate sales, and enable secure online purchases through a streamlined admin dashboard and checkout flow.</span></p>
-            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project0.role">Responsible for designing, developing, and maintaining the complete e-commerce system, including backend logic, REST APIs, database structure, admin dashboard, and frontend integration.</span></p>
+          <article class="card">
+            <div class="title">Dreams Lux Hair</div>
+            <span class="badge" data-i18n="project.badge.ecommerce">Full-stack e-commerce platform</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> PHP · MySQL 8 · HTML5 · Tailwind CSS · JavaScript (Vanilla, Fetch API) · RESTful API (PHP) · Apache · JWT Authentication</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project8.description">A functional e-commerce platform designed to manage products, automate sales, and enable secure online purchases through a streamlined admin dashboard and checkout flow.</span></p>
+            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project8.role">Responsible for designing, developing, and maintaining the complete e-commerce system, including backend logic, REST APIs, database structure, admin dashboard, and frontend integration.</span></p>
             <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
             <div class="links">
-              <a href="http://dreamluxhair.xo.je/" data-i18n="project.link.page">Page</a>
-              <a href="" data-i18n="project.link.repo">Repository</a>
+              <a href="http://dreamluxhair.xo.je/" target="_blank" rel="noopener noreferrer" data-i18n="project.link.page">Page</a>
+              <a href="https://github.com/etebachale-group/Dreams-Lux-Hair" target="_blank" rel="noopener noreferrer" data-i18n="project.link.repo">Repository</a>
             </div>
           </article>
           
@@ -955,6 +1190,7 @@
         'skills.languages': 'Languages:',
         'skills.languages.list': 'Spanish (Native), English (Fluent)',
         'projects.title': 'Projects',
+        'project.badge.ecommerce': 'Full-stack e-commerce platform',
         'project.badge.fullstack': 'Full-stack web app',
         'project.badge.travel': 'Travel Planning & Booking Web App',
         'project.badge.logistics': 'Logistics + Company site',
@@ -987,6 +1223,7 @@
         'project6.description': 'Platform for creators to monetize content with tiered subscriptions (Gratis, Básico, Premium). Admin panel to manage users, content, events, and banners.',
         'project6.role': 'Social Media Platform to Content Creator Of Equatorial Guinea.',
         'project7.description': 'A responsive portfolio showcasing my projects and skills using HTML, CSS, and JavaScript.',
+        'project8.description': 'A functional e-commerce platform designed to manage products, automate sales, and enable secure online purchases through a streamlined admin dashboard and checkout flow.',
         'experience.title': 'Professional Experience',
         'experience.producer': 'TV Producer at Fama GV',
         'experience.company': 'Guinea Vista EG',
@@ -1078,7 +1315,7 @@
         'education.professional.date': 'Marzo 2024 - Marzo 2025',
         'education.advance': 'Diploma Avanzado',
         'education.advance.location': 'IPMC University College',
-        'education.advance.date': 'Mayo 2024 - Presente',
+        'education.advance.date': 'Mayo 2025 - Presente',
         'education.certificates': 'Certificados:',
         'skills.title': 'Habilidades',
         'skills.tools': 'Herramientas:',
@@ -1096,6 +1333,7 @@
         'skills.languages': 'Idiomas:',
         'skills.languages.list': 'Español (Nativo), Inglés (Fluido)',
         'projects.title': 'Proyectos',
+        'project.badge.ecommerce': 'Plataforma e-commerce full-stack',
         'project.badge.fullstack': 'Aplicación web full-stack',
         'project.badge.travel': 'Aplicación de Planificación y Reservas de Viajes',
         'project.badge.logistics': 'Logística + Sitio Corporativo',
@@ -1128,6 +1366,8 @@
         'project6.description': 'Plataforma para creadores de contenido para monetizar con suscripciones escalonadas (Gratis, Básico, Premium). Panel de administración para gestionar usuarios, contenido, eventos y banners.',
         'project6.role': 'Plataforma de Redes Sociales para Creadores de Contenido de Guinea Ecuatorial.',
         'project7.description': 'Un portafolio responsivo que muestra mis proyectos y habilidades usando HTML, CSS y JavaScript.',
+        'project8.description': 'Una plataforma de e-commerce funcional diseñada para gestionar productos, automatizar ventas y permitir compras en línea seguras a través de un panel de administración optimizado y flujo de pago.',
+        'project8.role': 'Responsable de diseñar, desarrollar y mantener el sistema completo de e-commerce, incluyendo lógica backend, APIs REST, estructura de base de datos, panel de administración e integración frontend.',
         'experience.title': 'Experiencia Profesional',
         'experience.producer': 'Productor de TV en Fama GV',
         'experience.company': 'Guinea Vista EG',
@@ -1219,7 +1459,7 @@
         'education.professional.date': 'Mars 2024 - Mars 2025',
         'education.advance': 'Diplôme Avancé',
         'education.advance.location': 'IPMC University College',
-        'education.advance.date': 'Mai 2024 - Présent',
+        'education.advance.date': 'Mai 2025 - Présent',
         'education.certificates': 'Certificats:',
         'skills.title': 'Compétences',
         'skills.tools': 'Outils:',
@@ -1237,6 +1477,7 @@
         'skills.languages': 'Langues:',
         'skills.languages.list': 'Espagnol (Natif), Anglais (Courant)',
         'projects.title': 'Projets',
+        'project.badge.ecommerce': 'Plateforme e-commerce full-stack',
         'project.badge.fullstack': 'Application web full-stack',
         'project.badge.travel': 'Application de Planification et Réservation de Voyages',
         'project.badge.logistics': 'Logistique + Site d\'Entreprise',
@@ -1269,6 +1510,8 @@
         'project6.description': 'Plateforme pour les créateurs de monétiser le contenu avec des abonnements échelonnés (Gratuit, Basique, Premium). Panneau d\'administration pour gérer les utilisateurs, le contenu, les événements et les bannières.',
         'project6.role': 'Plateforme de Médias Sociaux pour les Créateurs de Contenu de Guinée Équatoriale.',
         'project7.description': 'Un portfolio responsive présentant mes projets et compétences en utilisant HTML, CSS et JavaScript.',
+        'project8.description': 'Une plateforme e-commerce fonctionnelle conçue pour gérer les produits, automatiser les ventes et permettre des achats en ligne sécurisés via un tableau de bord administrateur optimisé et un flux de paiement.',
+        'project8.role': 'Responsable de la conception, du développement et de la maintenance du système e-commerce complet, y compris la logique backend, les API REST, la structure de base de données, le tableau de bord administrateur et l\'intégration frontend.',
         'experience.title': 'Expérience Professionnelle',
         'experience.producer': 'Producteur TV chez Fama GV',
         'experience.company': 'Guinea Vista EG',
