@@ -7,45 +7,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio - Fernando Chale Eteba</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap');
+
     :root {
-      /* Base corporativo/tecnológico */
-      --bg: #0a0b12;            /* Navy profundo */
-      --surface: #121427;       /* Superficie principal */
-      --surface-2: #171a2f;     /* Superficie secundaria */
-      --surface-3: #1a1d35;     /* Superficie terciaria */
+      /* Ultra-Premium Midnight Theme */
+      --bg: #020617;
+      /* Cosmic ambient glows */
+      --bg-gradient: 
+        radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.08) 0%, transparent 50%), 
+        radial-gradient(circle at 100% 100%, rgba(129, 140, 248, 0.08) 0%, transparent 50%);
+      
+      --surface: rgba(15, 23, 42, 0.6);
+      --surface-hover: rgba(30, 41, 59, 0.8);
+      --surface-border: rgba(51, 65, 85, 0.5);
 
-      /* Paleta colorida pero profesional */
-      --primary: #4cc9f0;       /* Electric Cyan */
-      --secondary: #7b2cff;     /* Tech Violet */
-      --tertiary: #00d1b2;      /* Modern Teal */
-      --highlight: #ffd166;     /* Warm Amber para remarcar */
-      --danger: #ff4d6d;        /* Accent rojizo para estados */
-      --success: #06ffa5;       /* Success green */
-
-      /* Aliases para compatibilidad con estilos existentes */
-      --accent: var(--primary);
-      --accent-2: #8be9fd;      
+      /* Neon Cyber Accents */
+      --primary: #38bdf8; /* Sky 400 */
+      --secondary: #818cf8; /* Indigo 400 */
+      --tertiary: #34d399; /* Emerald 400 */
+      --accent: #f472b6; /* Pink 400 */
 
       --text: #f8fafc;
-      --muted: #a5b0c4;
-      --ring: var(--secondary);
-      --radius: 16px;
+      --muted: #94a3b8;
+      --radius: 20px;
 
-      /* Gradientes mejorados */
-      --grad-brand: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, #b5179e 100%);
-      --grad-hero: radial-gradient(1200px 600px at 15% -10%, rgba(76,201,240,.18) 0%, rgba(123,44,255,.15) 40%, rgba(0,209,178,.12) 70%, transparent 100%);
-      --grad-surface: linear-gradient(180deg, rgba(124,136,255,.08), rgba(0,0,0,0) 40%);
-      --grad-card: linear-gradient(145deg, rgba(76,201,240,.03) 0%, rgba(123,44,255,.05) 100%);
+      --grad-brand: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      --grad-text: linear-gradient(to right, var(--text), var(--muted));
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
-      background: linear-gradient(180deg, var(--bg), #0b0c10 35%), var(--grad-hero);
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      background-image: var(--bg-gradient);
+      background-attachment: fixed;
       color: var(--text);
+      line-height: 1.6;
     }
+    h1, h2, h3, h4, .title { font-family: 'Outfit', sans-serif; }
 
     a { color: var(--accent); text-decoration: none; }
     a:hover { color: var(--accent-2); }
@@ -427,14 +427,21 @@
     /* Hero */
     #about .hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; align-items: center; }
     .hero-title { 
-      font-size: clamp(2rem, 4vw, 3rem); 
+      font-size: clamp(2.5rem, 5vw, 4rem); 
       margin: 0; 
-      background: var(--grad-brand);
+      background: var(--grad-text);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       font-weight: 800;
-      letter-spacing: -0.5px;
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+    .hero-title span {
+      background: var(--grad-brand);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     .hero-sub { 
       color: var(--muted); 
@@ -511,12 +518,12 @@
 
     /* Section titles */
     h2 { 
-      font-size: clamp(1.8rem, 2.8vw, 2.4rem); 
-      background: var(--grad-brand);
+      font-size: clamp(2rem, 3vw, 2.8rem); 
+      background: var(--grad-text);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin: 0 0 1.5rem;
+      margin: 0 0 1.8rem;
       font-weight: 800;
       letter-spacing: -0.5px;
       position: relative;
@@ -538,98 +545,127 @@
       font-size: 1rem;
     }
 
-    /* Cards / Grid */
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    /* Cards / Grid - Premium Glassmorphism */
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
     .card { 
-      background: linear-gradient(145deg, var(--surface) 0%, var(--surface-2) 100%); 
-      border: 1px solid rgba(76, 201, 240, 0.15); 
+      background: var(--surface);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--surface-border);
       border-radius: var(--radius); 
-      padding: 1.5rem; 
+      padding: 2rem; 
       display: flex; 
       flex-direction: column; 
-      gap: 0.75rem;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      gap: 0.85rem;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       position: relative;
       overflow: hidden;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
     }
     .card::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: var(--grad-brand);
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at top right, rgba(123, 44, 255, 0.15), transparent 60%);
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.4s ease;
+      z-index: 0;
     }
+    .card > * { z-index: 1; position: relative; }
     .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(76, 201, 240, 0.3);
-      box-shadow: 0 12px 40px rgba(76, 201, 240, 0.15), 0 0 0 1px rgba(76, 201, 240, 0.1);
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(123, 44, 255, 0.4);
+      background: var(--surface-hover);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(123, 44, 255, 0.2);
     }
-    .card:hover::before {
-      opacity: 1;
-    }
+    .card:hover::before { opacity: 1; }
     .card .title { 
-      font-weight: 700; 
-      color: var(--text); 
-      font-size: 1.25rem;
+      font-weight: 800; 
+      color: #fff; 
+      font-size: 1.6rem;
+      letter-spacing: -0.5px;
       margin-bottom: 0.25rem;
+      font-family: 'Outfit', sans-serif;
+    }
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+    .card p strong {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: block;
+      margin-top: 0.5rem;
+      margin-bottom: 0.1rem;
     }
     .badge { 
-      display: inline-block; 
-      padding: 0.35rem 0.75rem; 
+      display: inline-flex; 
+      align-items: center;
+      width: fit-content;
+      padding: 0.4rem 0.85rem; 
       border-radius: 999px; 
-      background: linear-gradient(135deg, rgba(123,44,255,.4), rgba(76,201,240,.4)); 
-      color: var(--text); 
-      font-size: 0.8rem; 
-      border: 1px solid rgba(76, 201, 240, 0.3);
-      font-weight: 600;
-      letter-spacing: 0.3px;
+      background: rgba(129, 140, 248, 0.1); 
+      color: var(--primary); 
+      font-size: 0.75rem; 
+      border: 1px solid rgba(129, 140, 248, 0.2);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
     }
     .status { 
-      color: var(--success); 
+      color: var(--tertiary); 
       font-weight: 700;
       display: flex;
       align-items: center;
       gap: 0.5rem;
       margin-top: 0.5rem;
+      font-size: 0.9rem;
     }
     .status::before {
       content: '';
       width: 8px;
       height: 8px;
-      background: var(--success);
+      background: var(--tertiary);
       border-radius: 50%;
       animation: pulse 2s ease-in-out infinite;
+      box-shadow: 0 0 10px var(--tertiary);
     }
     @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
     }
     .links { 
       display: flex; 
       flex-wrap: wrap; 
       gap: 0.75rem;
       margin-top: auto;
-      padding-top: 0.75rem;
-      border-top: 1px solid rgba(76, 201, 240, 0.1);
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--surface-border);
     }
     .links a { 
-      background: linear-gradient(135deg, rgba(76, 201, 240, 0.1), rgba(123, 44, 255, 0.1)); 
-      padding: 0.5rem 1rem; 
-      border-radius: 10px; 
-      border: 1px solid rgba(76, 201, 240, 0.2);
+      background: rgba(56, 189, 248, 0.1); 
+      color: var(--primary); 
+      padding: 0.6rem 1.2rem; 
+      border-radius: 12px; 
+      border: 1px solid rgba(56, 189, 248, 0.2);
       transition: all 0.3s ease;
-      font-weight: 500;
-      font-size: 0.9rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-align: center;
+      flex-grow: 1;
     }
     .links a:hover {
-      background: linear-gradient(135deg, rgba(76, 201, 240, 0.2), rgba(123, 44, 255, 0.2));
-      border-color: rgba(76, 201, 240, 0.4);
+      background: var(--primary);
+      color: var(--bg);
+      border-color: var(--primary);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(76, 201, 240, 0.2);
+      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
     }
 
     /* Lists */
@@ -746,6 +782,37 @@
         height: 26px;
       }
     }
+
+    /* Project Filter System */
+    .project-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+    .filter-btn {
+      padding: 0.6rem 1.25rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--surface-border);
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    .filter-btn:hover {
+      border-color: rgba(56, 189, 248, 0.5);
+      color: var(--text);
+    }
+    .filter-btn.active {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: var(--primary);
+      color: var(--primary);
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+    }
   </style>
 </head>
 <body>
@@ -824,7 +891,7 @@
     <section id="about">
       <div class="container hero">
         <div>
-          <h1 class="hero-title">Fernando Chale Eteba</h1>
+          <h1 class="hero-title">Fernando <span>Chale Eteba</span></h1>
           <p class="hero-sub" data-i18n="hero.subtitle">Junior Full-Stack Developer &amp; Software Engineering student. Focused on clean UI, robust architecture, and fast delivery with Vibe Coding.</p>
           
           <!-- About Me Extended Section -->
@@ -944,6 +1011,18 @@
 
         <div class="cards">
           <article class="card">
+            <div class="title">Eteba Chale Group</div>
+            <span class="badge" data-i18n="project.badge.mvp">MVP · SPA</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> React.js, React Router, React-Bootstrap, Framer Motion; Backend: custom REST API in PHP 8.</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project5.description">Full e-commerce workflow with secure JWT auth, admin dashboard, and review cycle (submit preview URL, client approves/requests changes). Stripe/PayPal-ready, demo mode included.</span></p>
+            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project5.role">Architected and developed the backend RESTful API.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
+            <div class="links">
+              <a href="https://etebachalegroup.xo.je/" data-i18n="project.link.page">Page</a>
+            </div>
+          </article>
+
+          <article class="card">
             <div class="title">Dreams Lux Hair</div>
             <span class="badge" data-i18n="project.badge.ecommerce">Full-stack e-commerce platform</span>
             <p><strong data-i18n="project.tech">Tech Stack:</strong> PHP · MySQL 8 · HTML5 · Tailwind CSS · JavaScript (Vanilla, Fetch API) · RESTful API (PHP) · Apache · JWT Authentication</p>
@@ -952,7 +1031,6 @@
             <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
             <div class="links">
               <a href="http://dreamluxhair.xo.je/" target="_blank" rel="noopener noreferrer" data-i18n="project.link.page">Page</a>
-              <a href="https://github.com/etebachale-group/Dreams-Lux-Hair" target="_blank" rel="noopener noreferrer" data-i18n="project.link.repo">Repository</a>
             </div>
           </article>
           
@@ -964,8 +1042,7 @@
             <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project0.role">Full-stack developer — built backend, database, UI, payment system, and order workflow for a smooth shopping experience.</span></p>
             <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
             <div class="links">
-              <a href="https://rotteri.xo.je/" data-i18n="project.link.page">Page</a>
-              <a href="https://github.com/etebachale-group/" data-i18n="project.link.repo">Repository</a>
+              <a href="https://rotteri.com/" data-i18n="project.link.page">Page</a>
             </div>
           </article>
 
@@ -978,7 +1055,6 @@
             <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
             <div class="links">
               <a href="https://bubi-lex.vercel.app/" data-i18n="project.link.page">Page</a>
-              <a href="https://github.com/etebachale-group/bubi-lex.git" data-i18n="project.link.repo">Repository</a>
             </div>
           </article>
 
@@ -991,9 +1067,9 @@
             <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.mvp">Live (MVP)</span></div>
             <div class="links">
               <a href="https://etebachalegroup.page.gd/GQ-Turismo/" data-i18n="project.link.page">Page</a>
-              <a href="https://github.com/etebachale-group/GQ-Turismo.git" data-i18n="project.link.repo">Repository</a>
             </div>
           </article>
+
           <article class="card">
             <div class="title">Frikabeatz</div>
             <span class="badge" data-i18n="project.badge.fullstack">Full-stack web app</span>
@@ -1003,9 +1079,9 @@
             <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
             <div class="links">
               <a href="https://frikabeatz.xo.je/" data-i18n="project.link.page">Page</a>
-              <a href="https://github.com/etebachale-group/Frikabeatz" data-i18n="project.link.repo">Repository</a>
             </div>
           </article>
+
           <article class="card">
             <div class="title">Abeme Modjobuy Envíos</div>
             <span class="badge" data-i18n="project.badge.logistics">Logistics + Company site</span>
@@ -1015,19 +1091,60 @@
             <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.mvp">Live (MVP)</span></div>
             <div class="links">
               <a href="https://abememodjobuy.page.gd/" data-i18n="project.link.page">Page</a>
-              <a href="https://github.com/etebachale-group/abeme-modjobuy.git" data-i18n="project.link.repo">Repository</a>
             </div>
           </article>
 
           <article class="card">
-            <div class="title">Eteba Chale Group</div>
-            <span class="badge" data-i18n="project.badge.mvp">MVP · SPA</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> React.js, React Router, React-Bootstrap, Framer Motion; Backend: custom REST API in PHP 8.</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project5.description">Full e-commerce workflow with secure JWT auth, admin dashboard, and review cycle (submit preview URL, client approves/requests changes). Stripe/PayPal-ready, demo mode included.</span></p>
-            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project5.role">Architected and developed the backend RESTful API.</span></p>
+            <div class="title">Personal Portfolio Website</div>
+            <span class="badge" data-i18n="project.badge.frontend">Frontend</span>
+            <p data-i18n="project7.description">A responsive portfolio showcasing my projects and skills using HTML, CSS, and JavaScript.</p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.active">Active</span></div>
+            <div class="links">
+              <a href="https://etebachale-group.github.io/cvfernandochaleeteba.github.io" data-i18n="project.link.page">Page</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="title">Ensema Business School</div>
+            <span class="badge" data-i18n="project.badge.education">Education Platform</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> Web Technologies, PHP, MySQL</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project11.description">An educational portal for an African business school to showcase academic programs and facilitate communication.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.completed">Completed</span></div>
+            <div class="links">
+              <a href="https://ensema.gq" data-i18n="project.link.page">Page</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="title">Africa Youth Portal</div>
+            <span class="badge" data-i18n="project.badge.community">Community Portal</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> Next.js 14, TypeScript, Tailwind CSS, Supabase</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project12.description">A community platform aimed at empowering the African youth, featuring resources, news, and empowerment programs.</span></p>
             <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.dev">In development</span></div>
             <div class="links">
-              <a href="https://github.com/etebachale-group/abeme-modjobuy.git" data-i18n="project.link.repo">Repository</a>
+              <a href="https://africayouthportal.vercel.app/" data-i18n="project.link.page">Page</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="title">Guinea Vista</div>
+            <span class="badge" data-i18n="project.badge.media">Media Platform</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> HTML, CSS, Web</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project13.description">A digital presence for a TV production company, aimed at presenting youth-centered audiovisual projects.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.completed">Completed</span></div>
+            <div class="links">
+              <a href="https://guineavista.vercel.app" data-i18n="project.link.page">Page</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="title">ËRËBË</div>
+            <span class="badge" data-i18n="project.badge.webapp">Web Application</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> PHP 8.3+, Laravel 9, MySQL</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project14.description">A web application system offering specific services and content under the ËRËBË brand context.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
+            <div class="links">
+              <a href="https://erebe.xo.je" data-i18n="project.link.page">Page</a>
             </div>
           </article>
 
@@ -1042,16 +1159,29 @@
               <a href="https://github.com/etebachale-group/Ecuacelebs.git" data-i18n="project.link.repo">Repository</a>
             </div>
           </article>
+
           <article class="card">
-            <div class="title">Personal Portfolio Website</div>
-            <span class="badge" data-i18n="project.badge.frontend">Frontend</span>
-            <p data-i18n="project7.description">A responsive portfolio showcasing my projects and skills using HTML, CSS, and JavaScript.</p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.active">Active</span></div>
+            <div class="title">Bitácora de Aprendizaje</div>
+            <span class="badge" data-i18n="project.badge.java">Java Desktop App</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> Java, JSON, Desktop UI</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project9.description">A daily learning log application to track progress, analyze errors, and store strategies. Designed for personal and continuous improvement.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.local">Local Active (beta)</span></div>
             <div class="links">
-              <a href="https://etebachale-group.github.io/cvfernandochaleeteba.github.io" data-i18n="project.link.page">Page</a>
-              <a href="https://github.com/etebachale-group/cvfernandochaleeteba.github.io.git" data-i18n="project.link.repo">Repository</a>
+              <a href="https://github.com/etebachale-group/" data-i18n="project.link.repo">Repository</a>
             </div>
           </article>
+
+          <article class="card">
+            <div class="title">Photostudio</div>
+            <span class="badge" data-i18n="project.badge.portfolio">Portfolio</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> HTML, CSS, JavaScript, PHP</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project10.description">A responsive portfolio website built for a photography studio, featuring an elegant image gallery and simple contact integration.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.completed">Completed</span></div>
+            <div class="links">
+              <a href="https://github.com/etebachale-group/" data-i18n="project.link.repo">Repository</a>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -1286,7 +1416,20 @@
         'career.item2': 'Data-oriented technical positions',
         'career.item3': 'Startup and MVP-driven environments',
         'career.item4': 'Remote or on-site roles with growth potential',
-        'career.closing': 'I value learning, ownership, and building systems that matter.'
+        'career.closing': 'I value learning, ownership, and building systems that matter.',
+        'project.badge.java': 'Java Desktop App',
+        'project.badge.portfolio': 'Portfolio',
+        'project.badge.education': 'Education Platform',
+        'project.badge.community': 'Community Portal',
+        'project.badge.media': 'Media Platform',
+        'project.badge.webapp': 'Web Application',
+        'project.status.completed': 'Completed',
+        'project9.description': 'A daily learning log application to track progress, analyze errors, and store strategies. Designed for personal and continuous improvement.',
+        'project10.description': 'A responsive portfolio website built for a photography studio, featuring an elegant image gallery and simple contact integration.',
+        'project11.description': 'An educational portal for an African business school to showcase academic programs and facilitate communication.',
+        'project12.description': 'A community platform aimed at empowering the African youth, featuring resources, news, and empowerment programs.',
+        'project13.description': 'A digital presence for a TV production company, aimed at presenting youth-centered audiovisual projects.',
+        'project14.description': 'A web application system offering specific services and content under the ËRËBË brand context.'
       },
       es: {
         'nav.about': 'Acerca de',
@@ -1430,7 +1573,20 @@
         'career.item2': 'Posiciones técnicas orientadas a datos',
         'career.item3': 'Entornos de startups y orientados a MVP',
         'career.item4': 'Roles remotos o presenciales con potencial de crecimiento',
-        'career.closing': 'Valoro el aprendizaje, la propiedad y la construcción de sistemas que importan.'
+        'career.closing': 'Valoro el aprendizaje, la propiedad y la construcción de sistemas que importan.',
+        'project.badge.java': 'App de Escritorio Java',
+        'project.badge.portfolio': 'Portafolio',
+        'project.badge.education': 'Plataforma Educativa',
+        'project.badge.community': 'Portal Comunitario',
+        'project.badge.media': 'Plataforma de Medios',
+        'project.badge.webapp': 'Aplicación Web',
+        'project.status.completed': 'Completado',
+        'project9.description': 'Una aplicación de bitácora diaria para rastrear el progreso, analizar errores y guardar estrategias. Diseñado para la mejora personal.',
+        'project10.description': 'Un sitio web responsivo construido para un estudio de fotografía, con una elegante galería de imágenes e integración de contacto simple.',
+        'project11.description': 'Un portal educativo para una escuela de negocios africana, diseñado para promover programas académicos y facilitar la comunicación.',
+        'project12.description': 'Una plataforma comunitaria orientada a empoderar a la juventud africana, presentando recursos, noticias y programas de empoderamiento.',
+        'project13.description': 'Presencia digital para una empresa de producción de TV, destinada a presentar proyectos audiovisuales centrados en la juventud.',
+        'project14.description': 'Un sistema de aplicación web que ofrece servicios y contenido específico con la marca ËRËBË.'
       },
       fr: {
         'nav.about': 'À propos',
@@ -1574,7 +1730,20 @@
         'career.item2': 'Postes techniques orientés données',
         'career.item3': 'Environnements de startups et orientés MVP',
         'career.item4': 'Rôles à distance ou sur site avec potentiel de croissance',
-        'career.closing': 'Je valorise l\'apprentissage, la propriété et la construction de systèmes qui comptent.'
+        'career.closing': 'Je valorise l\'apprentissage, la propriété et la construction de systèmes qui comptent.',
+        'project.badge.java': 'Application de Bureau Java',
+        'project.badge.portfolio': 'Portfolio',
+        'project.badge.education': 'Plateforme Éducative',
+        'project.badge.community': 'Portail Communautaire',
+        'project.badge.media': 'Plateforme Multimédia',
+        'project.badge.webapp': 'Application Web',
+        'project.status.completed': 'Terminé',
+        'project9.description': 'Un journal d\'apprentissage quotidien pour suivre les progrès, analyser les erreurs et enregistrer des stratégies d\'amélioration.',
+        'project10.description': 'Un site web portfolio responsive pour un studio de photographie, avec une élégante galerie d\'images.',
+        'project11.description': 'Un portail éducatif pour une école de commerce africaine afin de présenter des programmes académiques.',
+        'project12.description': 'Une plateforme communautaire visant à autonomiser la jeunesse africaine, avec des ressources et des actualités.',
+        'project13.description': 'Une présence numérique pour une société de production TV axée sur des projets audiovisuels pour les jeunes.',
+        'project14.description': 'Un système d\'application web offrant des services spécifiques sous la marque ËRËBË.'
       }
     };
 
@@ -1766,10 +1935,77 @@
       }
     }
     
+    // Interactive Project Filter Class
+    class ProjectFilter {
+      constructor() {
+        this.cards = document.querySelectorAll('.card');
+        this.container = document.querySelector('.cards');
+        if (!this.container || this.cards.length === 0) return;
+        
+        // Auto assign categories reading the badges
+        this.cards.forEach(card => {
+          const text = (card.querySelector('.badge')?.textContent || '').toLowerCase();
+          card.style.transition = 'all 0.35s ease';
+          if(text.includes('front') || text.includes('portfolio') || text.includes('media')) {
+            card.setAttribute('data-category', 'frontend');
+          } else if(text.includes('ecommerce') || text.includes('e-commerce') || text.includes('logistics')) {
+            card.setAttribute('data-category', 'ecommerce');
+          } else if(text.includes('mvp') || text.includes('full-stack') || text.includes('fullstack') || text.includes('app') || text.includes('community') || text.includes('subscription')) {
+            card.setAttribute('data-category', 'fullstack');
+          } else {
+            card.setAttribute('data-category', 'other');
+          }
+        });
+
+        this.init();
+      }
+
+      init() {
+        // Inject modern filter buttons
+        const html = `
+          <div class="project-filters">
+            <button type="button" class="filter-btn active" data-filter="all">All Projects</button>
+            <button type="button" class="filter-btn" data-filter="fullstack">Full-Stack & MVP</button>
+            <button type="button" class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+            <button type="button" class="filter-btn" data-filter="frontend">Frontend & UI</button>
+            <button type="button" class="filter-btn" data-filter="other">Other</button>
+          </div>
+        `;
+        this.container.insertAdjacentHTML('beforebegin', html);
+
+        const filterContainer = document.querySelector('.project-filters');
+        filterContainer.addEventListener('click', (e) => {
+          const btn = e.target.closest('.filter-btn');
+          if (!btn) return;
+
+          // Activation state
+          filterContainer.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          // Filtering
+          const filterValue = btn.getAttribute('data-filter');
+          this.cards.forEach(card => {
+            if(filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+              card.style.display = 'flex';
+              setTimeout(() => { 
+                card.style.opacity = '1'; 
+                card.style.transform = 'scale(1)'; 
+              }, 10);
+            } else {
+              card.style.opacity = '0';
+              card.style.transform = 'scale(0.9)';
+              setTimeout(() => { card.style.display = 'none'; }, 350);
+            }
+          });
+        });
+      }
+    }
+
     // Initialize when DOM is loaded
     document.addEventListener('DOMContentLoaded', () => {
       new LanguageManager();
       new ModernNav();
+      new ProjectFilter(); // Initialize filtering logic
     });
     
     // Handle page load with hash
