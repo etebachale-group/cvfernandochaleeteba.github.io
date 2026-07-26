@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalles del Proyecto - Fernando Chale Eteba</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Marked.js for parsing Markdown -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #09090b 0%, #121215 50%, #18181b 100%);
+      --glass-bg: rgba(24, 24, 27, 0.55);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --glass-hover: rgba(255, 255, 255, 0.12);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --accent-color: #3b82f6;
+      --accent-hover: #2563eb;
+      --accent-glow: rgba(59, 130, 246, 0.2);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Navigation Bar */
+    nav {
+      width: 100%;
+      max-width: 1500px;
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 9, 11, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--glass-border);
+      margin-bottom: 1.5rem;
+    }
+
+    .back-btn {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.6rem 1.2rem;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .back-btn:hover {
+      background: var(--glass-hover);
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateX(-3px);
+      box-shadow: 0 4px 15px var(--accent-glow);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .action-btn {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      color: var(--text-primary);
+      padding: 0.5rem 0.9rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+    }
+
+    .action-btn:hover {
+      background: var(--glass-hover);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .lang-switcher {
+      display: flex;
+      gap: 0.25rem;
+      background: var(--glass-bg);
+      padding: 0.25rem;
+      border-radius: 10px;
+      border: 1px solid var(--glass-border);
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      padding: 0.35rem 0.7rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.8rem;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn:hover {
+      color: #fff;
+    }
+
+    .lang-btn.active {
+      background: var(--accent-color);
+      color: #fff;
+      box-shadow: 0 2px 8px var(--accent-glow);
+    }
+
+    /* Main Full-Width Layout */
+    .layout-container {
+      display: grid;
+      grid-template-columns: 310px 1fr;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1500px;
+      padding: 0 2rem 4rem 2rem;
+      box-sizing: border-box;
+      align-items: start;
+    }
+
+    /* Sidebar / Table of Contents */
+    .toc-sidebar {
+      position: sticky;
+      top: 5rem;
+      max-height: calc(100vh - 6.5rem);
+      overflow-y: auto;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      box-sizing: border-box;
+    }
+
+    .toc-sidebar::-webkit-scrollbar {
+      width: 5px;
+    }
+    .toc-sidebar::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+    }
+
+    .toc-header h3 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #38bdf8;
+      margin: 0 0 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .toc-item a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      display: block;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      word-break: break-word;
+    }
+
+    .toc-item.h1 a {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .toc-item.h2 a {
+      font-weight: 600;
+      padding-left: 0.75rem;
+    }
+
+    .toc-item.h3 a {
+      font-weight: 400;
+      padding-left: 1.4rem;
+      font-size: 0.8rem;
+    }
+
+    /* Main Content Area */
+    .main-content {
+      width: 100%;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 3rem;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+      box-sizing: border-box;
+      min-width: 0;
+    }
+
+    /* Project Hero Header with Logo */
+    .project-hero {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      padding: 1.5rem 2rem;
+      background: rgba(15, 15, 22, 0.75);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(12px);
+    }
+
+    .project-hero-logo-container {
+      width: 110px;
+      height: 110px;
+      min-width: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 0.75rem;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .detail-hero-logo {
+      max-width: 100%;
+      max-height: 90px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+    }
+
+    .project-hero-text h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin: 0 0 0.4rem 0;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .project-hero-text p {
+      margin: 0;
+      color: #94a3b8;
+      font-size: 1rem;
+    }
+
+
+
+    #readme-content {
+      line-height: 1.8;
+      font-size: 1.02rem;
+    }
+
+    #readme-content h1,
+    #readme-content h2,
+    #readme-content h3,
+    #readme-content h4 {
+      scroll-margin-top: 6rem;
+    }
+
+    #readme-content h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+      border-bottom: 2px solid rgba(59, 130, 246, 0.4);
+      padding-bottom: 0.75rem;
+    }
+
+    #readme-content h2 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-top: 2.5rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--glass-border);
+      padding-bottom: 0.5rem;
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    #readme-content h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #e2e8f0;
+    }
+
+    #readme-content p {
+      color: #cbd5e1;
+      margin-bottom: 1.2rem;
+    }
+
+    #readme-content a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dashed var(--accent-color);
+      transition: all 0.2s ease;
+    }
+
+    #readme-content a:hover {
+      color: #60a5fa;
+      border-bottom-style: solid;
+    }
+
+    #readme-content ul, #readme-content ol {
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+      padding-left: 1.75rem;
+    }
+
+    #readme-content li {
+      margin-bottom: 0.6rem;
+    }
+
+    #readme-content blockquote {
+      margin: 1.5rem 0;
+      padding: 1rem 1.5rem;
+      background: rgba(59, 130, 246, 0.08);
+      border-left: 4px solid var(--accent-color);
+      border-radius: 0 8px 8px 0;
+      color: #94a3b8;
+    }
+
+    #readme-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    #readme-content th, #readme-content td {
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--glass-border);
+      text-align: left;
+    }
+
+    #readme-content th {
+      background: rgba(255, 255, 255, 0.05);
+      color: #f1f5f9;
+      font-weight: 700;
+    }
+
+    #readme-content tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    #readme-content pre {
+      background: #09090b;
+      padding: 1.25rem;
+      border-radius: 12px;
+      overflow-x: auto;
+      border: 1px solid var(--glass-border);
+      margin: 1.5rem 0;
+      box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    #readme-content code {
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+      color: #38bdf8;
+      font-size: 0.92rem;
+    }
+
+    #readme-content p code, #readme-content li code {
+      background: rgba(56, 189, 248, 0.1);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    #readme-content hr {
+      border: 0;
+      height: 1px;
+      background: var(--glass-border);
+      margin: 2.5rem 0;
+    }
+
+    .loader {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+    }
+
+    .error-msg {
+      color: #ef4444;
+      text-align: center;
+      padding: 2.5rem;
+      background: rgba(239, 68, 68, 0.1);
+      border-radius: 12px;
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .layout-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1.5rem 3rem 1.5rem;
+      }
+
+      .toc-sidebar {
+        position: relative;
+        top: 0;
+        max-height: none;
+      }
+
+      .main-content {
+        padding: 2rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        padding: 1rem;
+      }
+      .main-content {
+        padding: 1.25rem;
+        border-radius: 12px;
+      }
+      #readme-content h1 {
+        font-size: 1.8rem;
+      }
+      #readme-content h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+  <script src="projects-data.js"></script>
+</head>
+<body>
+
+  <!-- Top Sticky Navigation -->
+  <nav>
+    <a href="index.html" class="back-btn" id="backBtn">← Volver al Portafolio</a>
+    <div class="nav-actions">
+      <button id="scrollTopBtn" class="action-btn" title="Ir arriba">▲ Top</button>
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Full-Width Layout Container -->
+  <div class="layout-container">
+    
+    <!-- Table of Contents Sidebar -->
+    <aside class="toc-sidebar" id="toc-card">
+      <div class="toc-header">
+        <h3 id="tocTitle">📍 ÍNDICE DEL PROYECTO</h3>
+      </div>
+      <ul id="toc-list" class="toc-list"></ul>
+    </aside>
+
+    <!-- Main Content Panel -->
+    <main class="main-content">
+      
+      <!-- Project Hero Header Banner -->
+      <div id="project-hero" class="project-hero" style="display: none;">
+        <div class="project-hero-logo-container">
+          <img id="detailHeroLogo" src="" alt="Logo" class="detail-hero-logo">
+        </div>
+        <div class="project-hero-text">
+          <h1 id="detailHeroTitle"></h1>
+          <p id="detailHeroSub">Caso de Estudio y Visión Informativa</p>
+        </div>
+      </div>
+
+      <div id="loader" class="loader">Cargando detalles del proyecto...</div>
+      <div id="readme-content" style="display: none;"></div>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const projectId = urlParams.get('id');
+
+      const loader = document.getElementById('loader');
+      const contentDiv = document.getElementById('readme-content');
+      const backBtn = document.getElementById('backBtn');
+      const langBtns = document.querySelectorAll('.lang-btn');
+      const tocCard = document.getElementById('toc-card');
+      const tocList = document.getElementById('toc-list');
+      const tocTitle = document.getElementById('tocTitle');
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+      const projectHero = document.getElementById('project-hero');
+      const detailHeroLogo = document.getElementById('detailHeroLogo');
+      const detailHeroTitle = document.getElementById('detailHeroTitle');
+      const detailHeroSub = document.getElementById('detailHeroSub');
+
+      let currentLang = localStorage.getItem('preferredLang') || 'es';
+
+      const logoMap = {
+        "eteba-chat": "assets/logos/eteba-chat.png",
+        "rotteri-online-shop": "assets/logos/rotteri-online-shop.png",
+        "abeme-modjobuy-envos": "assets/logos/abeme-modjobuy-envos.png",
+        "eteba-chale-group": "assets/logos/eteba-chale-group.png",
+        "dreams-lux-hair": "assets/logos/dreams-lux-hair.png",
+        "bubi-lex": "assets/logos/bubi-lex.png",
+        "eteba-pay": "assets/logos/eteba-pay.png",
+        "rb": "assets/logos/rb.png",
+        "rbr": "assets/logos/rb.png",
+        "hackforce-ai-api": "assets/logos/hackforce-ai-api.svg",
+        "ecg-digital-city": "assets/logos/ecg-digital-city.png",
+        "sugarbabylounge": "assets/logos/sugarbabylounge.png",
+        "abeme-oil": "assets/logos/abeme-oil.png",
+        "gq-turismo": "assets/logos/gq-turismo.jpeg",
+        "frikabeatz": "assets/logos/frikabeatz.png",
+        "personal-portfolio-website": "assets/logos/personal-portfolio-website.JPG",
+        "africa-youth-portal": "assets/logos/africa-youth-portal.png",
+        "guinea-vista": "assets/logos/guinea-vista.png",
+        "bitcora-de-aprendizaje": "assets/logos/bitcora-de-aprendizaje.svg",
+        "photostudio": "assets/logos/photostudio.svg"
+      };
+
+      const translations = {
+        es: {
+          back: '← Volver al Portafolio',
+          toc: '📍 ÍNDICE DEL PROYECTO',
+          notFound: 'Detalles del proyecto no encontrados.',
+          noProject: 'No se especificó ningún proyecto.',
+          sub: 'Caso de Estudio y Visión Informativa'
+        },
+        en: {
+          back: '← Back to Portfolio',
+          toc: '📍 PROJECT INDEX',
+          notFound: 'Project details not found.',
+          noProject: 'No project specified.',
+          sub: 'Case Study & Informative Overview'
+        },
+        fr: {
+          back: '← Retour au Portfolio',
+          toc: '📍 INDEX DU PROJET',
+          notFound: 'Détails du projet non trouvés.',
+          noProject: 'Aucun projet spécifié.',
+          sub: 'Étude de cas et vue d’ensemble'
+        }
+      };
+
+      // Back to top button
+      if (scrollTopBtn) {
+        scrollTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // Generate Table of Contents & Anchors
+      function buildTOC() {
+        if (!contentDiv || !tocList) return;
+        
+        tocList.innerHTML = '';
+        const headings = contentDiv.querySelectorAll('h1, h2, h3');
+        
+        if (headings.length === 0) {
+          if (tocCard) tocCard.style.display = 'none';
+          return;
+        }
+        
+        if (tocCard) tocCard.style.display = 'block';
+
+        headings.forEach((heading, idx) => {
+          const rawText = heading.textContent.trim();
+          let slug = rawText.toLowerCase()
+            .replace(/[^\w\s-]/g, '')
+            .trim()
+            .replace(/\s+/g, '-');
+          
+          if (!slug) slug = 'sec-' + idx;
+          heading.id = slug;
+
+          const li = document.createElement('li');
+          const levelClass = heading.tagName.toLowerCase();
+          li.className = `toc-item ${levelClass}`;
+
+          const a = document.createElement('a');
+          a.href = `#${slug}`;
+          a.textContent = rawText;
+
+          a.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetEl = document.getElementById(slug);
+            if (targetEl) {
+              targetEl.scrollIntoView({ behavior: 'smooth' });
+              history.pushState(null, null, `#${slug}`);
+            }
+          });
+
+          li.appendChild(a);
+          tocList.appendChild(li);
+        });
+
+        // Setup ScrollSpy
+        setupScrollSpy(headings);
+      }
+
+      // ScrollSpy logic for TOC
+      function setupScrollSpy(headings) {
+        const tocLinks = tocList.querySelectorAll('a');
+        
+        window.addEventListener('scroll', () => {
+          let currentId = '';
+          const scrollPos = window.scrollY + 120;
+
+          headings.forEach(heading => {
+            if (scrollPos >= heading.offsetTop) {
+              currentId = heading.id;
+            }
+          });
+
+          tocLinks.forEach(link => {
+            if (link.getAttribute('href') === `#${currentId}`) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        });
+      }
+
+      // Render Project
+      function renderProject(lang) {
+        currentLang = lang;
+        localStorage.setItem('preferredLang', lang);
+        document.documentElement.lang = lang;
+
+        const langData = translations[lang] || translations.es;
+
+        if (backBtn) backBtn.textContent = langData.back;
+        if (tocTitle) tocTitle.textContent = langData.toc;
+        if (detailHeroSub) detailHeroSub.textContent = langData.sub;
+
+        langBtns.forEach(btn => {
+          if (btn.dataset.lang === lang) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+
+        if (!projectId) {
+          loader.style.display = 'none';
+          contentDiv.style.display = 'block';
+          contentDiv.innerHTML = `<div class="error-msg">${langData.noProject}</div>`;
+          if (tocCard) tocCard.style.display = 'none';
+          if (projectHero) projectHero.style.display = 'none';
+          return;
+        }
+
+        if (typeof projectData !== 'undefined' && projectData[projectId]) {
+          loader.style.display = 'none';
+          contentDiv.style.display = 'block';
+          const projectInfo = projectData[projectId];
+          
+          let markdownText = '';
+          if (typeof projectInfo === 'object') {
+            markdownText = projectInfo[lang] || projectInfo['es'] || projectInfo['en'] || '';
+          } else {
+            markdownText = projectInfo;
+          }
+
+          // Render Logo Banner
+          const logoPath = logoMap[projectId];
+          if (logoPath && projectHero && detailHeroLogo && detailHeroTitle) {
+            detailHeroLogo.src = logoPath;
+            
+            // Extract clean title
+            const firstHeading = markdownText.match(/^#\s+(.+)$/m);
+            const cleanTitle = firstHeading ? firstHeading[1].replace(/[^\w\s-]/gi, '').trim() : projectId.replace(/-/g, ' ').toUpperCase();
+            
+            detailHeroTitle.textContent = cleanTitle;
+            projectHero.style.display = 'flex';
+          } else if (projectHero) {
+            projectHero.style.display = 'none';
+          }
+
+          contentDiv.innerHTML = marked.parse(markdownText);
+          
+          // Build Table of Contents & Anchors
+          buildTOC();
+
+          // Scroll to anchor if present in URL
+          if (window.location.hash) {
+            const initialHash = window.location.hash.substring(1);
+            setTimeout(() => {
+              const target = document.getElementById(initialHash);
+              if (target) target.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+          }
+        } else {
+          loader.style.display = 'none';
+          contentDiv.style.display = 'block';
+          contentDiv.innerHTML = `<div class="error-msg">${langData.notFound}</div>`;
+          if (tocCard) tocCard.style.display = 'none';
+          if (projectHero) projectHero.style.display = 'none';
+        }
+      }
+
+      // Language Switcher Events
+      langBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          renderProject(e.target.dataset.lang);
+        });
+      });
+
+      // Initial Render
+      renderProject(currentLang);
+    });
+  </script>
+</body>
+</html>

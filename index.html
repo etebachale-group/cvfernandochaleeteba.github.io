@@ -813,6 +813,33 @@
       color: var(--primary);
       box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
     }
+  
+    /* Project Card Logo Styling */
+    .card-logo-container {
+      width: 100%;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 15, 20, 0.6);
+      border-radius: 12px;
+      padding: 0.75rem;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    .project-card-logo {
+      max-width: 100%;
+      max-height: 65px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+      transition: transform 0.3s ease;
+    }
+    .card:hover .project-card-logo {
+      transform: scale(1.08);
+    }
+
   </style>
 </head>
 <body>
@@ -1010,31 +1037,22 @@
         </section>
 
         <div class="cards">
+          
           <article class="card">
-            <div class="title">Eteba Chale Group</div>
-            <span class="badge" data-i18n="project.badge.mvp">MVP · SPA</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> React.js, React Router, React-Bootstrap, Framer Motion; Backend: custom REST API in PHP 8.</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project5.description">Full e-commerce workflow with secure JWT auth, admin dashboard, and review cycle (submit preview URL, client approves/requests changes). Stripe/PayPal-ready, demo mode included.</span></p>
-            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project5.role">Architected and developed the backend RESTful API.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
+            <div class="card-logo-container"><img src="assets/logos/eteba-chat.png" alt="Eteba Chat Logo" class="project-card-logo"></div>
+            <div class="title">Eteba Chat</div>
+            <span class="badge">B2B AI Platform</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> Node.js, Express, TypeScript, Llama 3.1, PostgreSQL, Groq.</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project.etebachat.desc">Commercial automation platform for businesses in Africa and globally, featuring smart virtual assistants and multilingual search.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span>Live</span></div>
             <div class="links">
-              <a href="https://etebachalegroup.xo.je/" data-i18n="project.link.page">Page</a>
+              <a href="project-details.html?id=eteba-chat" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
+              <a href="https://eteba-chat.onrender.com" target="_blank" rel="noopener noreferrer" data-i18n="project.link.page">Page</a>
             </div>
           </article>
 
           <article class="card">
-            <div class="title">Dreams Lux Hair</div>
-            <span class="badge" data-i18n="project.badge.ecommerce">Full-stack e-commerce platform</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> PHP · MySQL 8 · HTML5 · Tailwind CSS · JavaScript (Vanilla, Fetch API) · RESTful API (PHP) · Apache · JWT Authentication</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project8.description">A functional e-commerce platform designed to manage products, automate sales, and enable secure online purchases through a streamlined admin dashboard and checkout flow.</span></p>
-            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project8.role">Responsible for designing, developing, and maintaining the complete e-commerce system, including backend logic, REST APIs, database structure, admin dashboard, and frontend integration.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
-            <div class="links">
-              <a href="http://dreamluxhair.xo.je/" target="_blank" rel="noopener noreferrer" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-          
-          <article class="card">
+            <div class="card-logo-container"><img src="assets/logos/rotteri-online-shop.png" alt="Rotteri Online Shop Logo" class="project-card-logo"></div>
             <div class="title">Rotteri Online Shop</div>
             <span class="badge" data-i18n="project.badge.fullstack">Full-stack e-commerce web app</span>
             <p><strong data-i18n="project.tech">Tech Stack:</strong>PHP · MySQL · HTML · CSS · JavaScript · Bootstrap· Apache. </p>
@@ -1042,47 +1060,13 @@
             <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project0.role">Full-stack developer — built backend, database, UI, payment system, and order workflow for a smooth shopping experience.</span></p>
             <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
             <div class="links">
+              <a href="project-details.html?id=rotteri-online-shop" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
               <a href="https://rotteri.com/" data-i18n="project.link.page">Page</a>
             </div>
           </article>
 
           <article class="card">
-            <div class="title">Bubi-Lex</div>
-            <span class="badge" data-i18n="project.badge.fullstack">Full-stack web app</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> Next.js, Supabase, PostgreSQL, Gemini CLI, Tailwind CSS, React, Vercel.</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project2.description">An interactive online dictionary for the Bubi language. Features CRUD operations, search, and phonetic data management via Supabase.</span></p>
-            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project2.role">Full-stack developer (architecture, database, UI/UX, deployment).</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
-            <div class="links">
-              <a href="https://bubi-lex.vercel.app/" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="title">GQ-Turismo</div>
-            <span class="badge" data-i18n="project.badge.travel">Travel Planning & Booking Web App</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> React.js, Node.js, PHP, MySQL, HTML, CSS, AI.</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project3.description">Explore Equatorial Guinea, build itineraries, and book local experiences; mobile-friendly and real-time updates.</span></p>
-            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project3.role">Full-Stack Developer — database design, system architecture, UX/UI.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.mvp">Live (MVP)</span></div>
-            <div class="links">
-              <a href="https://etebachalegroup.page.gd/GQ-Turismo/" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="title">Frikabeatz</div>
-            <span class="badge" data-i18n="project.badge.fullstack">Full-stack web app</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong>PHP · MySQL · HTML · CSS · JavaScript · Apache.</p>
-            <p><strong data-i18n="project.description">Description:</strong><span data-i18n="project1.description">is a web platform for buying and selling beats, sample packs, and production services, with audio previews, user roles, and a small social feed.</span></p>
-            <p><strong data-i18n="project.role">Role:</strong><span data-i18n="project1.role">Full-stack developer — built the backend, database, UI, audio system, and payment flow.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
-            <div class="links">
-              <a href="https://frikabeatz.xo.je/" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-
-          <article class="card">
+            <div class="card-logo-container"><img src="assets/logos/abeme-modjobuy-envos.png" alt="Abeme Modjobuy Envíos Logo" class="project-card-logo"></div>
             <div class="title">Abeme Modjobuy Envíos</div>
             <span class="badge" data-i18n="project.badge.logistics">Logistics + Company site</span>
             <p><strong data-i18n="project.tech">Tech Stack:</strong> React.js, Node.js, PHP, MySQL, HTML, CSS, WhatsApp API.</p>
@@ -1090,97 +1074,223 @@
             <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project4.role">Full-stack developer & system architect.</span></p>
             <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.mvp">Live (MVP)</span></div>
             <div class="links">
+              <a href="project-details.html?id=abeme-modjobuy-envos" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
               <a href="https://abememodjobuy.page.gd/" data-i18n="project.link.page">Page</a>
             </div>
           </article>
 
           <article class="card">
-            <div class="title">Personal Portfolio Website</div>
-            <span class="badge" data-i18n="project.badge.frontend">Frontend</span>
-            <p data-i18n="project7.description">A responsive portfolio showcasing my projects and skills using HTML, CSS, and JavaScript.</p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.active">Active</span></div>
+            <div class="card-logo-container"><img src="assets/logos/eteba-chale-group.png" alt="Eteba Chale Group Logo" class="project-card-logo"></div>
+            <div class="title">Eteba Chale Group</div>
+            <span class="badge" data-i18n="project.badge.mvp">MVP · SPA</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> React.js, React Router, React-Bootstrap, Framer Motion; Backend: custom REST API in PHP 8.</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project5.description">Full e-commerce workflow with secure JWT auth, admin dashboard, and review cycle (submit preview URL, client approves/requests changes). Stripe/PayPal-ready, demo mode included.</span></p>
+            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project5.role">Architected and developed the backend RESTful API.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
             <div class="links">
-              <a href="https://etebachale-group.github.io/cvfernandochaleeteba.github.io" data-i18n="project.link.page">Page</a>
+              <a href="project-details.html?id=eteba-chale-group" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
+              <a href="https://etebachalegroup.xo.je/" data-i18n="project.link.page">Page</a>
             </div>
           </article>
 
           <article class="card">
-            <div class="title">Ensema Business School</div>
-            <span class="badge" data-i18n="project.badge.education">Education Platform</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> Web Technologies, PHP, MySQL</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project11.description">An educational portal for an African business school to showcase academic programs and facilitate communication.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.completed">Completed</span></div>
+            <div class="card-logo-container"><img src="assets/logos/dreams-lux-hair.png" alt="Dreams Lux Hair Logo" class="project-card-logo"></div>
+            <div class="title">Dreams Lux Hair</div>
+            <span class="badge" data-i18n="project.badge.ecommerce">Full-stack e-commerce platform</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> PHP · MySQL 8 · HTML5 · Tailwind CSS · JavaScript (Vanilla, Fetch API) · RESTful API (PHP) · Apache · JWT Authentication</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project8.description">A functional e-commerce platform designed to manage products, automate sales, and enable secure online purchases through a streamlined admin dashboard and checkout flow.</span></p>
+            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project8.role">Responsible for designing, developing, and maintaining the complete e-commerce system, including backend logic, REST APIs, database structure, admin dashboard, and frontend integration.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
             <div class="links">
-              <a href="https://ensema.gq" data-i18n="project.link.page">Page</a>
+              <a href="project-details.html?id=dreams-lux-hair" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
+              <a href="http://dreamluxhair.xo.je/" target="_blank" rel="noopener noreferrer" data-i18n="project.link.page">Page</a>
             </div>
           </article>
 
           <article class="card">
-            <div class="title">Africa Youth Portal</div>
-            <span class="badge" data-i18n="project.badge.community">Community Portal</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> Next.js 14, TypeScript, Tailwind CSS, Supabase</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project12.description">A community platform aimed at empowering the African youth, featuring resources, news, and empowerment programs.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.dev">In development</span></div>
+            <div class="card-logo-container"><img src="assets/logos/bubi-lex.png" alt="Bubi-Lex Logo" class="project-card-logo"></div>
+            <div class="title">Bubi-Lex</div>
+            <span class="badge" data-i18n="project.badge.fullstack">Full-stack web app</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> Next.js, Supabase, PostgreSQL, Gemini CLI, Tailwind CSS, React, Vercel.</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project2.description">An interactive online dictionary for the Bubi language. Features CRUD operations, search, and phonetic data management via Supabase.</span></p>
+            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project2.role">Full-stack developer (architecture, database, UI/UX, deployment).</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
             <div class="links">
-              <a href="https://africayouthportal.vercel.app/" data-i18n="project.link.page">Page</a>
+              <a href="project-details.html?id=bubi-lex" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
+              <a href="https://bubi-lex.vercel.app/" data-i18n="project.link.page">Page</a>
             </div>
           </article>
 
           <article class="card">
-            <div class="title">Guinea Vista</div>
-            <span class="badge" data-i18n="project.badge.media">Media Platform</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> HTML, CSS, Web</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project13.description">A digital presence for a TV production company, aimed at presenting youth-centered audiovisual projects.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.completed">Completed</span></div>
+            <div class="card-logo-container"><img src="assets/logos/eteba-pay.png" alt="Eteba Pay 💰 Logo" class="project-card-logo"></div>
+            <div class="title">Eteba Pay 💰</div>
+            <span class="badge">Fintech Wallet</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> Next.js 14, Fastify, Prisma ORM, PostgreSQL, Redis, Twilio.</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project.etebapay.desc">Digital wallet and borderless money transfer system tailored for Equatorial Guinea. Features secure PIN, OTP, and admin dashboards.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span>Live (Demo)</span></div>
             <div class="links">
-              <a href="https://guineavista.vercel.app" data-i18n="project.link.page">Page</a>
+              <a href="project-details.html?id=eteba-pay" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
+              <a href="https://eteba-pay-frontend.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="project.link.page">Page</a>
             </div>
           </article>
 
           <article class="card">
+            <div class="card-logo-container"><img src="assets/logos/rb.png" alt="ËRËBË Logo" class="project-card-logo"></div>
             <div class="title">ËRËBË</div>
             <span class="badge" data-i18n="project.badge.webapp">Web Application</span>
             <p><strong data-i18n="project.tech">Tech Stack:</strong> PHP 8.3+, Laravel 9, MySQL</p>
             <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project14.description">A web application system offering specific services and content under the ËRËBË brand context.</span></p>
             <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
             <div class="links">
+              <a href="project-details.html?id=rb" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
               <a href="https://erebe.xo.je" data-i18n="project.link.page">Page</a>
             </div>
           </article>
 
           <article class="card">
-            <div class="title">Ecuacelebs(Demo Propose)</div>
-            <span class="badge" data-i18n="project.badge.subscription">Subscription platform</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> PHP (vanilla), MySQL; Frontend: HTML, CSS, JS; Bootstrap 5.3, Font Awesome, Google Fonts.</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project6.description">Platform for creators to monetize content with tiered subscriptions (Gratis, Básico, Premium). Admin panel to manage users, content, events, and banners.</span></p>
-            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project6.role">Social Media Platform to Content Creator Of Equatorial Guinea.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.local">Local Active (beta)</span></div>
+            <div class="card-logo-container"><img src="assets/logos/hackforce-ai-api.svg" alt="HackForce AI API 🤖 Logo" class="project-card-logo"></div>
+            <div class="title">HackForce AI API 🤖</div>
+            <span class="badge">AI · Backend · Frontend</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> React, FastAPI, PostgreSQL, Supabase, Groq AI (Mixtral-8x7b), Vercel.</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project.hackforce.desc">Intelligent bug classification and developer assignment system. Includes AI-powered dashboards and realtime analytics.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span>Live</span></div>
             <div class="links">
-              <a href="https://github.com/etebachale-group/Ecuacelebs.git" data-i18n="project.link.repo">Repository</a>
+              <a href="project-details.html?id=hackforce-ai-api" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
+              <a href="https://hack-force-ai-api.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="project.link.page">Page</a>
             </div>
           </article>
 
           <article class="card">
+            <div class="card-logo-container"><img src="assets/logos/ecg-digital-city.png" alt="ECG Digital City 🏙️ Logo" class="project-card-logo"></div>
+            <div class="title">ECG Digital City 🏙️</div>
+            <span class="badge">3D Virtual Office</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> React 18, Three.js, Socket.IO, Node.js, Express, Sequelize.</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project.ecg.desc">3D virtual office platform with gamification, advanced interactions, and smart navigation for remote teams.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span>Live</span></div>
+            <div class="links">
+              <a href="project-details.html?id=ecg-digital-city" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
+              <a href="https://ecg-digital-city.onrender.com" target="_blank" rel="noopener noreferrer" data-i18n="project.link.page">Page</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-logo-container"><img src="assets/logos/sugarbabylounge.png" alt="SugarBabyLounge Logo" class="project-card-logo"></div>
+            <div class="title">SugarBabyLounge</div>
+            <span class="badge">Global Platform</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> Next.js, Drizzle ORM, shadcn/ui, Socket.IO, PostgreSQL.</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project.sugar.desc">A secure and private global networking platform with real-time chat, analytics, and advanced security measures.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span>Live</span></div>
+            <div class="links">
+              <a href="project-details.html?id=sugarbabylounge" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
+              <a href="https://sugarbabylounge.co" target="_blank" rel="noopener noreferrer" data-i18n="project.link.page">Page</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-logo-container"><img src="assets/logos/abeme-oil.png" alt="ABEME OIL Logo" class="project-card-logo"></div>
+            <div class="title">ABEME OIL</div>
+            <span class="badge">Logistics</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> HTML, CSS, JavaScript, Backend systems.</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project.abeme.desc">Logistics and resource distribution management platform tailored for business operations.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span>Live</span></div>
+            <div class="links">
+              <a href="project-details.html?id=abeme-oil" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
+              <a href="https://abemeoil.xo.je" target="_blank" rel="noopener noreferrer" data-i18n="project.link.page">Page</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-logo-container"><img src="assets/logos/gq-turismo.jpeg" alt="GQ-Turismo Logo" class="project-card-logo"></div>
+            <div class="title">GQ-Turismo</div>
+            <span class="badge" data-i18n="project.badge.travel">Travel Planning & Booking Web App</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> React.js, Node.js, PHP, MySQL, HTML, CSS, AI.</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project3.description">Explore Equatorial Guinea, build itineraries, and book local experiences; mobile-friendly and real-time updates.</span></p>
+            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project3.role">Full-Stack Developer — database design, system architecture, UX/UI.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.mvp">Live (MVP)</span></div>
+            <div class="links">
+              <a href="project-details.html?id=gq-turismo" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
+              <a href="https://etebachalegroup.page.gd/GQ-Turismo/" data-i18n="project.link.page">Page</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-logo-container"><img src="assets/logos/frikabeatz.png" alt="Frikabeatz Logo" class="project-card-logo"></div>
+            <div class="title">Frikabeatz</div>
+            <span class="badge" data-i18n="project.badge.fullstack">Full-stack web app</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong>PHP · MySQL · HTML · CSS · JavaScript · Apache.</p>
+            <p><strong data-i18n="project.description">Description:</strong><span data-i18n="project1.description">is a web platform for buying and selling beats, sample packs, and production services, with audio previews, user roles, and a small social feed.</span></p>
+            <p><strong data-i18n="project.role">Role:</strong><span data-i18n="project1.role">Full-stack developer — built the backend, database, UI, audio system, and payment flow.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
+            <div class="links">
+              <a href="project-details.html?id=frikabeatz" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
+              <a href="https://frikabeatz.xo.je/" data-i18n="project.link.page">Page</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-logo-container"><img src="assets/logos/personal-portfolio-website.JPG" alt="Personal Portfolio Website Logo" class="project-card-logo"></div>
+            <div class="title">Personal Portfolio Website</div>
+            <span class="badge" data-i18n="project.badge.frontend">Frontend</span>
+            <p data-i18n="project7.description">A responsive portfolio showcasing my projects and skills using HTML, CSS, and JavaScript.</p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.active">Active</span></div>
+            <div class="links">
+              <a href="project-details.html?id=personal-portfolio-website" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
+              <a href="https://etebachale-group.github.io/cvfernandochaleeteba.github.io" data-i18n="project.link.page">Page</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-logo-container"><img src="assets/logos/africa-youth-portal.png" alt="Africa Youth Portal Logo" class="project-card-logo"></div>
+            <div class="title">Africa Youth Portal</div>
+            <span class="badge" data-i18n="project.badge.community">Community Portal</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> Next.js 14, TypeScript, Tailwind CSS, Supabase</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project12.description">A community platform aimed at empowering the African youth, featuring resources, news, and empowerment programs.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.dev">In development</span></div>
+            <div class="links">
+              <a href="project-details.html?id=africa-youth-portal" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
+              <a href="https://africayouthportal.vercel.app/" data-i18n="project.link.page">Page</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-logo-container"><img src="assets/logos/guinea-vista.png" alt="Guinea Vista Logo" class="project-card-logo"></div>
+            <div class="title">Guinea Vista</div>
+            <span class="badge" data-i18n="project.badge.media">Media Platform</span>
+            <p><strong data-i18n="project.tech">Tech Stack:</strong> HTML, CSS, Web</p>
+            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project13.description">A digital presence for a TV production company, aimed at presenting youth-centered audiovisual projects.</span></p>
+            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.proposal">Proposal</span></div>
+            <div class="links">
+              <a href="project-details.html?id=guinea-vista" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
+              <a href="https://guineavista.vercel.app" data-i18n="project.link.page">Page</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-logo-container"><img src="assets/logos/bitcora-de-aprendizaje.svg" alt="Bitácora de Aprendizaje Logo" class="project-card-logo"></div>
             <div class="title">Bitácora de Aprendizaje</div>
             <span class="badge" data-i18n="project.badge.java">Java Desktop App</span>
             <p><strong data-i18n="project.tech">Tech Stack:</strong> Java, JSON, Desktop UI</p>
             <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project9.description">A daily learning log application to track progress, analyze errors, and store strategies. Designed for personal and continuous improvement.</span></p>
             <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.local">Local Active (beta)</span></div>
             <div class="links">
+              <a href="project-details.html?id=bitcora-de-aprendizaje" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
               <a href="https://github.com/etebachale-group/" data-i18n="project.link.repo">Repository</a>
             </div>
           </article>
 
           <article class="card">
+            <div class="card-logo-container"><img src="assets/logos/photostudio.svg" alt="Photostudio Logo" class="project-card-logo"></div>
             <div class="title">Photostudio</div>
             <span class="badge" data-i18n="project.badge.portfolio">Portfolio</span>
             <p><strong data-i18n="project.tech">Tech Stack:</strong> HTML, CSS, JavaScript, PHP</p>
             <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project10.description">A responsive portfolio website built for a photography studio, featuring an elegant image gallery and simple contact integration.</span></p>
             <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.completed">Completed</span></div>
             <div class="links">
+              <a href="project-details.html?id=photostudio" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
               <a href="https://github.com/etebachale-group/" data-i18n="project.link.repo">Repository</a>
             </div>
           </article>
+        
 
         </div>
       </div>
@@ -1338,6 +1448,7 @@
         'project.status.active': 'Active',
         'project.link.page': 'Page',
         'project.link.repo': 'Repository',
+        'project.link.details': 'Details',
         'project0.description': 'Online store for selling products in Equatorial Guinea, with dynamic catalog, shopping cart, order management, and responsive design.',
         'project0.role': 'Full-stack developer — built backend, database, UI, payment system, and order workflow for a smooth shopping experience.',
         'project1.description': 'is a web platform for buying and selling beats, sample packs, and production services, with audio previews, user roles, and a small social feed.',
@@ -1429,7 +1540,15 @@
         'project11.description': 'An educational portal for an African business school to showcase academic programs and facilitate communication.',
         'project12.description': 'A community platform aimed at empowering the African youth, featuring resources, news, and empowerment programs.',
         'project13.description': 'A digital presence for a TV production company, aimed at presenting youth-centered audiovisual projects.',
-        'project14.description': 'A web application system offering specific services and content under the ËRËBË brand context.'
+        'project14.description': 'A web application system offering specific services and content under the ËRËBË brand context.',
+        'project.status.proposal': 'Proposal',
+        'project.hackforce.desc': 'Intelligent bug classification and developer assignment system. Includes AI-powered dashboards and realtime analytics.',
+        'project.etebachat.desc': 'Commercial automation platform for businesses in Africa and globally, featuring smart virtual assistants and multilingual search.',
+        'project.ecg.desc': '3D virtual office platform with gamification, advanced interactions, and smart navigation for remote teams.',
+        'project.sugar.desc': 'A secure and private global networking platform with real-time chat, analytics, and advanced security measures.',
+        'project.etebapay.desc': 'Digital wallet and borderless money transfer system tailored for Equatorial Guinea. Features secure PIN, OTP, and admin dashboards.',
+        'project.abeme.desc': 'Logistics and resource distribution management platform tailored for business operations.',
+
       },
       es: {
         'nav.about': 'Acerca de',
@@ -1494,6 +1613,7 @@
         'project.status.active': 'Activo',
         'project.link.page': 'Página',
         'project.link.repo': 'Repositorio',
+        'project.link.details': 'Detalles',
         'project0.description': 'Tienda en línea para vender productos en Guinea Ecuatorial, con catálogo dinámico, carrito de compras, gestión de pedidos y diseño responsivo.',
         'project0.role': 'Desarrollador full-stack — construí el backend, base de datos, UI, sistema de pagos y flujo de pedidos para una experiencia de compra fluida.',
         'project1.description': 'es una plataforma web para comprar y vender beats, paquetes de samples y servicios de producción, con vistas previas de audio, roles de usuario y un pequeño feed social.',
@@ -1586,7 +1706,15 @@
         'project11.description': 'Un portal educativo para una escuela de negocios africana, diseñado para promover programas académicos y facilitar la comunicación.',
         'project12.description': 'Una plataforma comunitaria orientada a empoderar a la juventud africana, presentando recursos, noticias y programas de empoderamiento.',
         'project13.description': 'Presencia digital para una empresa de producción de TV, destinada a presentar proyectos audiovisuales centrados en la juventud.',
-        'project14.description': 'Un sistema de aplicación web que ofrece servicios y contenido específico con la marca ËRËBË.'
+        'project14.description': 'Un sistema de aplicación web que ofrece servicios y contenido específico con la marca ËRËBË.',
+        'project.status.proposal': 'Propuesta',
+        'project.hackforce.desc': 'Sistema inteligente de clasificación de errores y asignación de desarrolladores. Incluye paneles impulsados por IA y análisis en tiempo real.',
+        'project.etebachat.desc': 'Plataforma de automatización comercial para empresas en África y a nivel mundial, con asistentes virtuales inteligentes y búsqueda multilingüe.',
+        'project.ecg.desc': 'Plataforma de oficina virtual 3D con gamificación, interacciones avanzadas y navegación inteligente para equipos remotos.',
+        'project.sugar.desc': 'Una red global segura y privada con chat en vivo, análisis y medidas de seguridad avanzadas.',
+        'project.etebapay.desc': 'Billetera digital y sistema de transferencias de dinero sin fronteras para Guinea Ecuatorial. Incluye PIN seguro, OTP y paneles de administración.',
+        'project.abeme.desc': 'Plataforma de logística y gestión de distribución de recursos adaptada para operaciones comerciales.',
+
       },
       fr: {
         'nav.about': 'À propos',
@@ -1651,6 +1779,7 @@
         'project.status.active': 'Actif',
         'project.link.page': 'Page',
         'project.link.repo': 'Dépôt',
+        'project.link.details': 'Détails',
         'project0.description': 'Boutique en ligne pour vendre des produits en Guinée Équatoriale, avec catalogue dynamique, panier d\'achat, gestion des commandes et design responsive.',
         'project0.role': 'Développeur full-stack — j\'ai construit le backend, la base de données, l\'interface utilisateur, le système de paiement et le flux de commandes pour une expérience d\'achat fluide.',
         'project1.description': 'est une plateforme web pour acheter et vendre des beats, des packs d\'échantillons et des services de production, avec aperçus audio, rôles d\'utilisateur et un petit flux social.',
@@ -1743,7 +1872,15 @@
         'project11.description': 'Un portail éducatif pour une école de commerce africaine afin de présenter des programmes académiques.',
         'project12.description': 'Une plateforme communautaire visant à autonomiser la jeunesse africaine, avec des ressources et des actualités.',
         'project13.description': 'Une présence numérique pour une société de production TV axée sur des projets audiovisuels pour les jeunes.',
-        'project14.description': 'Un système d\'application web offrant des services spécifiques sous la marque ËRËBË.'
+        'project14.description': 'Un système d\'application web offrant des services spécifiques sous la marque ËRËBË.',
+        'project.status.proposal': 'Proposition',
+        'project.hackforce.desc': 'Système intelligent de classification des bogues et d\'affectation des développeurs. Comprend des tableaux de bord alimentés par l\'IA et des analyses en temps réel.',
+        'project.etebachat.desc': 'Plateforme d\'automatisation commerciale pour les entreprises en Afrique et dans le monde, avec des assistants virtuels intelligents et une recherche multilingue.',
+        'project.ecg.desc': 'Plateforme de bureau virtuel 3D avec gamification, interactions avancées et navigation intelligente pour les équipes distantes.',
+        'project.sugar.desc': 'Un réseau mondial sécurisé et privé avec chat en direct, analyses et mesures de sécurité avancées.',
+        'project.etebapay.desc': 'Portefeuille numérique et système de transfert d\'argent sans frontières conçu pour la Guinée équatoriale. Comprend un code PIN sécurisé, OTP et des panneaux d\'administration.',
+        'project.abeme.desc': 'Plateforme de gestion de la logistique et de la distribution des ressources adaptée aux opérations commerciales.',
+
       }
     };
 
