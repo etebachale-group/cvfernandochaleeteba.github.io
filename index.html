@@ -51,7 +51,7 @@
     a:hover { color: var(--accent-2); }
     :focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
 
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .container { max-width: 98%; margin: 0 auto; padding: 0 2rem; }
     section { 
       padding: 5rem 0; 
       scroll-margin-top: 80px;
@@ -68,6 +68,20 @@
       background: linear-gradient(90deg, transparent, rgba(76, 201, 240, 0.2), transparent);
     }
 
+    
+    .two-col-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 992px) {
+      .two-col-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+  
     /* Modern Header */
     .header {
       position: fixed;
@@ -546,7 +560,7 @@
     }
 
     /* Cards / Grid - Premium Glassmorphism */
-    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
     .card { 
       background: var(--surface);
       backdrop-filter: blur(12px);
@@ -961,398 +975,82 @@
       </div>
     </section>
 
-    <section id="education">
-      <div class="container">
-        <h2 data-i18n="education.title">Education</h2>
-        <p><strong data-i18n="education.primary">Primary School Diploma</strong> — <span data-i18n="education.primary.location">Malabo Equatorial Guinea</span> (2005-2013)</p>
-        <p><strong data-i18n="education.high">High School Diploma</strong> — <span data-i18n="education.high.location">Malabo Equatorial Guinea</span> (2014-2018)</p>
-        <p><strong data-i18n="education.baccalaureate">Baccalaureate</strong> — <span data-i18n="education.baccalaureate.location">Malabo Equatorial Guinea</span> (2018-2020)</p>
-        <p><strong data-i18n="education.professional">Profesional Diploma in Software Engineering</strong> — <span data-i18n="education.professional.location">IPMC University College</span> (<span data-i18n="education.professional.date">March 2024 - March 2025</span>)</p>
-        <p><strong data-i18n="education.advance">Advance Diploma</strong> — <span data-i18n="education.advance.location">IPMC University College</span> (<span data-i18n="education.advance.date">May 2025 - Present</span>)</p>
-        <p><strong data-i18n="education.certificates">Certificates:</strong></p>
-        <ul class="clean">
-          <li>Introduction to SQL - SoloLearn</li>
-          <li>Introduction to Java - SoloLearn</li>
-          <li>Fundamentals of AI - Netzum</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="container">
-        <h2 data-i18n="skills.title">Skills</h2>
-        <p><strong data-i18n="skills.tools">Tools & Technologies:</strong> <span data-i18n="skills.tools.list">Visual Studio Code, Git, Docker, GitHub, Android Studio, Markdown, SEO, Photovoltaic Solar System Technical Design</span></p>
-        <p><strong data-i18n="skills.ai">AI:</strong> <span data-i18n="skills.ai.list">Copilot, Gemini, ChatGPT, Codex, Google Notebook LM</span></p>
-        <p><strong data-i18n="skills.basic">Basic:</strong> <span data-i18n="skills.basic.list">C++, Java, C#, Python</span></p>
-        <p><strong data-i18n="skills.frontend">Frontend:</strong> <span data-i18n="skills.frontend.list">HTML, CSS, JavaScript, Responsive Design, UI/UX Thinking, React, Bootstrap</span></p>
-        <p><strong data-i18n="skills.backend">Backend:</strong> <span data-i18n="skills.backend.list">PHP, MySQL, phpMyAdmin, Node.js, PostgreSQL, Next.js, MongoDB, SQLite</span></p>
-        <p><strong data-i18n="skills.debugging">Debugging:</strong> <span data-i18n="skills.debugging.list">Fast identification and resolution of bugs, Vibe Coding</span></p>
-        <p><strong data-i18n="skills.languages">Languages:</strong> <span data-i18n="skills.languages.list">Spanish (Native), English (Fluent)</span></p>
-        
-        <!-- Professional Skillset Highlights -->
-        <section id="skills-highlights" style="margin-top: 2rem; padding: 1.5rem; background: var(--surface); border-radius: var(--radius); border: 1px solid rgba(76, 201, 240, 0.2);">
-          <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 1rem;" data-i18n="skills.highlights.title">Professional Skillset Highlights</h3>
-          <ul class="clean" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0.75rem;">
-            <li style="padding: 0.75rem; background: rgba(76, 201, 240, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item1">Full-Stack Web Development</li>
-            <li style="padding: 0.75rem; background: rgba(123, 44, 255, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item2">REST API design and backend architecture</li>
-            <li style="padding: 0.75rem; background: rgba(0, 209, 178, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item3">Business-oriented system design</li>
-            <li style="padding: 0.75rem; background: rgba(76, 201, 240, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item4">Debugging and rapid problem resolution</li>
-            <li style="padding: 0.75rem; background: rgba(123, 44, 255, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item5">Technical documentation</li>
-            <li style="padding: 0.75rem; background: rgba(0, 209, 178, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item6">Digital marketing fundamentals</li>
+        <div id="education-skills-row" class="container two-col-row" style="margin-top: 1.5rem;">
+      <section id="education" style="padding: 0;">
+        <div>
+          <h2 data-i18n="education.title">Education</h2>
+          <p><strong data-i18n="education.primary">Primary School Diploma</strong> — <span data-i18n="education.primary.location">Malabo Equatorial Guinea</span> (2005-2013)</p>
+          <p><strong data-i18n="education.high">High School Diploma</strong> — <span data-i18n="education.high.location">Malabo Equatorial Guinea</span> (2014-2018)</p>
+          <p><strong data-i18n="education.baccalaureate">Baccalaureate</strong> — <span data-i18n="education.baccalaureate.location">Malabo Equatorial Guinea</span> (2018-2020)</p>
+          <p><strong data-i18n="education.professional">Profesional Diploma in Software Engineering</strong> — <span data-i18n="education.professional.location">IPMC University College</span> (<span data-i18n="education.professional.date">March 2024 - March 2025</span>)</p>
+          <p><strong data-i18n="education.advance">Advance Diploma</strong> — <span data-i18n="education.advance.location">IPMC University College</span> (<span data-i18n="education.advance.date">May 2025 - Present</span>)</p>
+          <p><strong data-i18n="education.certificates">Certificates:</strong></p>
+          <ul class="clean">
+            <li>Introduction to SQL - SoloLearn</li>
+            <li>Introduction to Java - SoloLearn</li>
+            <li>Fundamentals of AI - Netzum</li>
           </ul>
-        </section>
+        </div>
+      </section>
+
+      <section id="skills" style="padding: 0;">
+        <div>
+          <h2 data-i18n="skills.title">Skills</h2>
+          <p><strong data-i18n="skills.tools">Tools &amp; Technologies:</strong> <span data-i18n="skills.tools.list">Visual Studio Code, Git, Docker, GitHub, Android Studio, Markdown, SEO, Photovoltaic Solar System Technical Design</span></p>
+          <p><strong data-i18n="skills.ai">AI:</strong> <span data-i18n="skills.ai.list">Copilot, Gemini, ChatGPT, Codex, Google Notebook LM</span></p>
+          <p><strong data-i18n="skills.basic">Basic:</strong> <span data-i18n="skills.basic.list">C++, Java, C#, Python</span></p>
+          <p><strong data-i18n="skills.frontend">Frontend:</strong> <span data-i18n="skills.frontend.list">HTML, CSS, JavaScript, Responsive Design, UI/UX Thinking, React, Bootstrap</span></p>
+          <p><strong data-i18n="skills.backend">Backend:</strong> <span data-i18n="skills.backend.list">PHP, MySQL, phpMyAdmin, Node.js, PostgreSQL, Next.js, MongoDB, SQLite</span></p>
+          <p><strong data-i18n="skills.debugging">Debugging:</strong> <span data-i18n="skills.debugging.list">Fast identification and resolution of bugs, Vibe Coding</span></p>
+          <p><strong data-i18n="skills.languages">Languages:</strong> <span data-i18n="skills.languages.list">Spanish (Native), English (Fluent)</span></p>
+          
+          <!-- Professional Skillset Highlights -->
+          <section id="skills-highlights" style="margin-top: 1.5rem; padding: 1.25rem; background: var(--surface); border-radius: var(--radius); border: 1px solid rgba(76, 201, 240, 0.2);">
+            <h3 style="color: var(--primary); font-size: 1.2rem; margin-bottom: 0.75rem;" data-i18n="skills.highlights.title">Professional Skillset Highlights</h3>
+            <ul class="clean" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.5rem;">
+              <li style="padding: 0.6rem; background: rgba(76, 201, 240, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item1">Full-Stack Web Development</li>
+              <li style="padding: 0.6rem; background: rgba(123, 44, 255, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item2">REST API design and backend architecture</li>
+              <li style="padding: 0.6rem; background: rgba(0, 209, 178, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item3">Business-oriented system design</li>
+              <li style="padding: 0.6rem; background: rgba(76, 201, 240, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item4">Debugging and rapid problem resolution</li>
+              <li style="padding: 0.6rem; background: rgba(123, 44, 255, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item5">Technical documentation</li>
+              <li style="padding: 0.6rem; background: rgba(0, 209, 178, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item6">Digital marketing fundamentals</li>
+            </ul>
+          </section>
+        </div>
+      </section>
+    </div>
       </div>
     </section>
 
     <!-- Data & Analytics Section -->
-    <section id="data-analytics">
-      <div class="container">
-        <h2 data-i18n="data.title">Data & Analytics</h2>
-        <p style="font-size: 1.1rem; color: var(--accent); margin-bottom: 1rem;" data-i18n="data.intro">I use data as a decision tool, not decoration.</p>
-        <ul class="clean" style="display: grid; gap: 0.75rem;">
-          <li style="padding: 0.75rem 1rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--primary);" data-i18n="data.item1">SQL-based analysis for business insights</li>
-          <li style="padding: 0.75rem 1rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--secondary);" data-i18n="data.item2">Reporting for stakeholders and internal decisions</li>
-          <li style="padding: 0.75rem 1rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--tertiary);" data-i18n="data.item3">Process optimization through data interpretation</li>
-          <li style="padding: 0.75rem 1rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--primary);" data-i18n="data.item4">Experience with Excel and Power BI</li>
-          <li style="padding: 0.75rem 1rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--secondary);" data-i18n="data.item5">Basic understanding of data privacy and security</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <h2 data-i18n="projects.title">Projects</h2>
-        
-        <!-- Projects Context Section -->
-        <section id="projects-context" style="margin-bottom: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(76, 201, 240, 0.08), rgba(123, 44, 255, 0.08)); border-radius: var(--radius); border: 1px solid rgba(76, 201, 240, 0.2);">
-          <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 0.75rem;" data-i18n="projects.context.title">What These Projects Represent</h3>
-          <p style="font-size: 1.05rem; margin-bottom: 1rem;" data-i18n="projects.context.intro">My projects are not tutorials. They are <strong>working systems</strong> built around real needs.</p>
-          <ul class="clean" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem;">
-            <li style="padding: 0.75rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border-left: 3px solid var(--primary);" data-i18n="projects.context.item1">User authentication and roles</li>
-            <li style="padding: 0.75rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border-left: 3px solid var(--secondary);" data-i18n="projects.context.item2">Payments and monetization logic</li>
-            <li style="padding: 0.75rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border-left: 3px solid var(--tertiary);" data-i18n="projects.context.item3">Content management</li>
-            <li style="padding: 0.75rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border-left: 3px solid var(--primary);" data-i18n="projects.context.item4">Logistics and operations workflows</li>
-            <li style="padding: 0.75rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border-left: 3px solid var(--secondary);" data-i18n="projects.context.item5">MVP validation for startups</li>
+        <div id="data-career-row" class="container two-col-row" style="margin-top: 1.5rem;">
+      <section id="data-analytics" style="padding: 0;">
+        <div>
+          <h2 data-i18n="data.title">Data &amp; Analytics</h2>
+          <p style="font-size: 1.05rem; color: var(--accent); margin-bottom: 0.75rem;" data-i18n="data.intro">I use data as a decision tool, not decoration.</p>
+          <ul class="clean" style="display: grid; gap: 0.5rem;">
+            <li style="padding: 0.6rem 0.85rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--primary);" data-i18n="data.item1">SQL-based analysis for business insights</li>
+            <li style="padding: 0.6rem 0.85rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--secondary);" data-i18n="data.item2">Reporting for stakeholders and internal decisions</li>
+            <li style="padding: 0.6rem 0.85rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--tertiary);" data-i18n="data.item3">Process optimization through data interpretation</li>
+            <li style="padding: 0.6rem 0.85rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--primary);" data-i18n="data.item4">Experience with Excel and Power BI</li>
+            <li style="padding: 0.6rem 0.85rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--secondary);" data-i18n="data.item5">Basic understanding of data privacy and security</li>
           </ul>
-        </section>
-
-        <div class="cards">
-          
-          <article class="card">
-            <div class="card-logo-container"><img src="assets/logos/eteba-chat.png" alt="Eteba Chat Logo" class="project-card-logo"></div>
-            <div class="title">Eteba Chat</div>
-            <span class="badge">B2B AI Platform</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> Node.js, Express, TypeScript, Llama 3.1, PostgreSQL, Groq.</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project.etebachat.desc">Commercial automation platform for businesses in Africa and globally, featuring smart virtual assistants and multilingual search.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span>Live</span></div>
-            <div class="links">
-              <a href="project-details.html?id=eteba-chat" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
-              <a href="https://eteba-chat.onrender.com" target="_blank" rel="noopener noreferrer" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-logo-container"><img src="assets/logos/rotteri-online-shop.png" alt="Rotteri Online Shop Logo" class="project-card-logo"></div>
-            <div class="title">Rotteri Online Shop</div>
-            <span class="badge" data-i18n="project.badge.fullstack">Full-stack e-commerce web app</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong>PHP · MySQL · HTML · CSS · JavaScript · Bootstrap· Apache. </p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project0.description">Online store for selling products in Equatorial Guinea, with dynamic catalog, shopping cart, order management, and responsive design.</span></p>
-            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project0.role">Full-stack developer — built backend, database, UI, payment system, and order workflow for a smooth shopping experience.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
-            <div class="links">
-              <a href="project-details.html?id=rotteri-online-shop" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
-              <a href="https://rotteri.com/" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-logo-container"><img src="assets/logos/abeme-modjobuy-envos.png" alt="Abeme Modjobuy Envíos Logo" class="project-card-logo"></div>
-            <div class="title">Abeme Modjobuy Envíos</div>
-            <span class="badge" data-i18n="project.badge.logistics">Logistics + Company site</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> React.js, Node.js, PHP, MySQL, HTML, CSS, WhatsApp API.</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project4.description">Online shop for organic skincare products by Eteba Group. Includes catalog, cart, and WhatsApp orders.</span></p>
-            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project4.role">Full-stack developer & system architect.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.mvp">Live (MVP)</span></div>
-            <div class="links">
-              <a href="project-details.html?id=abeme-modjobuy-envos" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
-              <a href="https://abememodjobuy.page.gd/" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-logo-container"><img src="assets/logos/eteba-chale-group.png" alt="Eteba Chale Group Logo" class="project-card-logo"></div>
-            <div class="title">Eteba Chale Group</div>
-            <span class="badge" data-i18n="project.badge.mvp">MVP · SPA</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> React.js, React Router, React-Bootstrap, Framer Motion; Backend: custom REST API in PHP 8.</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project5.description">Full e-commerce workflow with secure JWT auth, admin dashboard, and review cycle (submit preview URL, client approves/requests changes). Stripe/PayPal-ready, demo mode included.</span></p>
-            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project5.role">Architected and developed the backend RESTful API.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
-            <div class="links">
-              <a href="project-details.html?id=eteba-chale-group" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
-              <a href="https://etebachalegroup.xo.je/" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-logo-container"><img src="assets/logos/dreams-lux-hair.png" alt="Dreams Lux Hair Logo" class="project-card-logo"></div>
-            <div class="title">Dreams Lux Hair</div>
-            <span class="badge" data-i18n="project.badge.ecommerce">Full-stack e-commerce platform</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> PHP · MySQL 8 · HTML5 · Tailwind CSS · JavaScript (Vanilla, Fetch API) · RESTful API (PHP) · Apache · JWT Authentication</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project8.description">A functional e-commerce platform designed to manage products, automate sales, and enable secure online purchases through a streamlined admin dashboard and checkout flow.</span></p>
-            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project8.role">Responsible for designing, developing, and maintaining the complete e-commerce system, including backend logic, REST APIs, database structure, admin dashboard, and frontend integration.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
-            <div class="links">
-              <a href="project-details.html?id=dreams-lux-hair" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
-              <a href="http://dreamluxhair.xo.je/" target="_blank" rel="noopener noreferrer" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-logo-container"><img src="assets/logos/bubi-lex.png" alt="Bubi-Lex Logo" class="project-card-logo"></div>
-            <div class="title">Bubi-Lex</div>
-            <span class="badge" data-i18n="project.badge.fullstack">Full-stack web app</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> Next.js, Supabase, PostgreSQL, Gemini CLI, Tailwind CSS, React, Vercel.</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project2.description">An interactive online dictionary for the Bubi language. Features CRUD operations, search, and phonetic data management via Supabase.</span></p>
-            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project2.role">Full-stack developer (architecture, database, UI/UX, deployment).</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
-            <div class="links">
-              <a href="project-details.html?id=bubi-lex" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
-              <a href="https://bubi-lex.vercel.app/" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-logo-container"><img src="assets/logos/eteba-pay.png" alt="Eteba Pay 💰 Logo" class="project-card-logo"></div>
-            <div class="title">Eteba Pay 💰</div>
-            <span class="badge">Fintech Wallet</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> Next.js 14, Fastify, Prisma ORM, PostgreSQL, Redis, Twilio.</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project.etebapay.desc">Digital wallet and borderless money transfer system tailored for Equatorial Guinea. Features secure PIN, OTP, and admin dashboards.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span>Live (Demo)</span></div>
-            <div class="links">
-              <a href="project-details.html?id=eteba-pay" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
-              <a href="https://eteba-pay-frontend.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-logo-container"><img src="assets/logos/rb.png" alt="ËRËBË Logo" class="project-card-logo"></div>
-            <div class="title">ËRËBË</div>
-            <span class="badge" data-i18n="project.badge.webapp">Web Application</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> PHP 8.3+, Laravel 9, MySQL</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project14.description">A web application system offering specific services and content under the ËRËBË brand context.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
-            <div class="links">
-              <a href="project-details.html?id=rb" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
-              <a href="https://erebe.xo.je" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-logo-container"><img src="assets/logos/hackforce-ai-api.svg" alt="HackForce AI API 🤖 Logo" class="project-card-logo"></div>
-            <div class="title">HackForce AI API 🤖</div>
-            <span class="badge">AI · Backend · Frontend</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> React, FastAPI, PostgreSQL, Supabase, Groq AI (Mixtral-8x7b), Vercel.</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project.hackforce.desc">Intelligent bug classification and developer assignment system. Includes AI-powered dashboards and realtime analytics.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span>Live</span></div>
-            <div class="links">
-              <a href="project-details.html?id=hackforce-ai-api" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
-              <a href="https://hack-force-ai-api.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-logo-container"><img src="assets/logos/ecg-digital-city.png" alt="ECG Digital City 🏙️ Logo" class="project-card-logo"></div>
-            <div class="title">ECG Digital City 🏙️</div>
-            <span class="badge">3D Virtual Office</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> React 18, Three.js, Socket.IO, Node.js, Express, Sequelize.</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project.ecg.desc">3D virtual office platform with gamification, advanced interactions, and smart navigation for remote teams.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span>Live</span></div>
-            <div class="links">
-              <a href="project-details.html?id=ecg-digital-city" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
-              <a href="https://ecg-digital-city.onrender.com" target="_blank" rel="noopener noreferrer" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-logo-container"><img src="assets/logos/sugarbabylounge.png" alt="SugarBabyLounge Logo" class="project-card-logo"></div>
-            <div class="title">SugarBabyLounge</div>
-            <span class="badge">Global Platform</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> Next.js, Drizzle ORM, shadcn/ui, Socket.IO, PostgreSQL.</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project.sugar.desc">A secure and private global networking platform with real-time chat, analytics, and advanced security measures.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span>Live</span></div>
-            <div class="links">
-              <a href="project-details.html?id=sugarbabylounge" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
-              <a href="https://sugarbabylounge.co" target="_blank" rel="noopener noreferrer" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-logo-container"><img src="assets/logos/abeme-oil.png" alt="ABEME OIL Logo" class="project-card-logo"></div>
-            <div class="title">ABEME OIL</div>
-            <span class="badge">Logistics</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> HTML, CSS, JavaScript, Backend systems.</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project.abeme.desc">Logistics and resource distribution management platform tailored for business operations.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span>Live</span></div>
-            <div class="links">
-              <a href="project-details.html?id=abeme-oil" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
-              <a href="https://abemeoil.xo.je" target="_blank" rel="noopener noreferrer" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-logo-container"><img src="assets/logos/gq-turismo.jpeg" alt="GQ-Turismo Logo" class="project-card-logo"></div>
-            <div class="title">GQ-Turismo</div>
-            <span class="badge" data-i18n="project.badge.travel">Travel Planning & Booking Web App</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> React.js, Node.js, PHP, MySQL, HTML, CSS, AI.</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project3.description">Explore Equatorial Guinea, build itineraries, and book local experiences; mobile-friendly and real-time updates.</span></p>
-            <p><strong data-i18n="project.role">Role:</strong> <span data-i18n="project3.role">Full-Stack Developer — database design, system architecture, UX/UI.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.mvp">Live (MVP)</span></div>
-            <div class="links">
-              <a href="project-details.html?id=gq-turismo" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
-              <a href="https://etebachalegroup.page.gd/GQ-Turismo/" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-logo-container"><img src="assets/logos/frikabeatz.png" alt="Frikabeatz Logo" class="project-card-logo"></div>
-            <div class="title">Frikabeatz</div>
-            <span class="badge" data-i18n="project.badge.fullstack">Full-stack web app</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong>PHP · MySQL · HTML · CSS · JavaScript · Apache.</p>
-            <p><strong data-i18n="project.description">Description:</strong><span data-i18n="project1.description">is a web platform for buying and selling beats, sample packs, and production services, with audio previews, user roles, and a small social feed.</span></p>
-            <p><strong data-i18n="project.role">Role:</strong><span data-i18n="project1.role">Full-stack developer — built the backend, database, UI, audio system, and payment flow.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.live">Live (beta)</span></div>
-            <div class="links">
-              <a href="project-details.html?id=frikabeatz" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
-              <a href="https://frikabeatz.xo.je/" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-logo-container"><img src="assets/logos/personal-portfolio-website.JPG" alt="Personal Portfolio Website Logo" class="project-card-logo"></div>
-            <div class="title">Personal Portfolio Website</div>
-            <span class="badge" data-i18n="project.badge.frontend">Frontend</span>
-            <p data-i18n="project7.description">A responsive portfolio showcasing my projects and skills using HTML, CSS, and JavaScript.</p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.active">Active</span></div>
-            <div class="links">
-              <a href="project-details.html?id=personal-portfolio-website" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
-              <a href="https://etebachale-group.github.io/cvfernandochaleeteba.github.io" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-logo-container"><img src="assets/logos/africa-youth-portal.png" alt="Africa Youth Portal Logo" class="project-card-logo"></div>
-            <div class="title">Africa Youth Portal</div>
-            <span class="badge" data-i18n="project.badge.community">Community Portal</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> Next.js 14, TypeScript, Tailwind CSS, Supabase</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project12.description">A community platform aimed at empowering the African youth, featuring resources, news, and empowerment programs.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.dev">In development</span></div>
-            <div class="links">
-              <a href="project-details.html?id=africa-youth-portal" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
-              <a href="https://africayouthportal.vercel.app/" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-logo-container"><img src="assets/logos/guinea-vista.png" alt="Guinea Vista Logo" class="project-card-logo"></div>
-            <div class="title">Guinea Vista</div>
-            <span class="badge" data-i18n="project.badge.media">Media Platform</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> HTML, CSS, Web</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project13.description">A digital presence for a TV production company, aimed at presenting youth-centered audiovisual projects.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.proposal">Proposal</span></div>
-            <div class="links">
-              <a href="project-details.html?id=guinea-vista" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
-              <a href="https://guineavista.vercel.app" data-i18n="project.link.page">Page</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-logo-container"><img src="assets/logos/bitcora-de-aprendizaje.svg" alt="Bitácora de Aprendizaje Logo" class="project-card-logo"></div>
-            <div class="title">Bitácora de Aprendizaje</div>
-            <span class="badge" data-i18n="project.badge.java">Java Desktop App</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> Java, JSON, Desktop UI</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project9.description">A daily learning log application to track progress, analyze errors, and store strategies. Designed for personal and continuous improvement.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.local">Local Active (beta)</span></div>
-            <div class="links">
-              <a href="project-details.html?id=bitcora-de-aprendizaje" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
-              <a href="https://github.com/etebachale-group/" data-i18n="project.link.repo">Repository</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-logo-container"><img src="assets/logos/photostudio.svg" alt="Photostudio Logo" class="project-card-logo"></div>
-            <div class="title">Photostudio</div>
-            <span class="badge" data-i18n="project.badge.portfolio">Portfolio</span>
-            <p><strong data-i18n="project.tech">Tech Stack:</strong> HTML, CSS, JavaScript, PHP</p>
-            <p><strong data-i18n="project.description">Description:</strong> <span data-i18n="project10.description">A responsive portfolio website built for a photography studio, featuring an elegant image gallery and simple contact integration.</span></p>
-            <div class="status"><span data-i18n="project.status">Status:</span> <span data-i18n="project.status.completed">Completed</span></div>
-            <div class="links">
-              <a href="project-details.html?id=photostudio" class="btn secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 10px;" data-i18n="project.link.details">Details</a>
-              <a href="https://github.com/etebachale-group/" data-i18n="project.link.repo">Repository</a>
-            </div>
-          </article>
-        
-
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="experience">
-      <div class="container">
-        <h2 data-i18n="experience.title">Professional Experience</h2>
-        
-        <!-- Business &amp; Leadership Experience -->
-        <section id="business-leadership" style="margin-bottom: 2rem; padding: 1.5rem; background: var(--surface); border-radius: var(--radius); border-left: 4px solid var(--primary);">
-          <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 1rem;" data-i18n="business.leadership.title">Business &amp; Leadership Experience</h3>
-          <ul class="clean" style="display: grid; gap: 0.75rem;">
-            <li style="padding: 0.75rem; background: rgba(76, 201, 240, 0.05); border-radius: 8px;" data-i18n="business.leadership.item1">Designed business workflows translated into software systems</li>
-            <li style="padding: 0.75rem; background: rgba(123, 44, 255, 0.05); border-radius: 8px;" data-i18n="business.leadership.item2">Managed logistics, payments, and operations</li>
-            <li style="padding: 0.75rem; background: rgba(0, 209, 178, 0.05); border-radius: 8px;" data-i18n="business.leadership.item3">Built brands and platforms from zero</li>
-            <li style="padding: 0.75rem; background: rgba(76, 201, 240, 0.05); border-radius: 8px;" data-i18n="business.leadership.item4">Decision-making under resource constraints</li>
+      <section id="career-focus" style="padding: 0;">
+        <div>
+          <h2 data-i18n="career.title">Career Focus</h2>
+          <ul class="clean" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem;">
+            <li style="padding: 0.75rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--primary);" data-i18n="career.item1">Full-Stack Developer roles</li>
+            <li style="padding: 0.75rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--secondary);" data-i18n="career.item2">Data-oriented technical positions</li>
+            <li style="padding: 0.75rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--tertiary);" data-i18n="career.item3">Startup and MVP-driven environments</li>
+            <li style="padding: 0.75rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--primary);" data-i18n="career.item4">Remote or on-site roles</li>
           </ul>
-        </section>
-        
-        <!-- Creative &amp; Media Background -->
-        <section id="creative-background" style="margin-bottom: 2rem; padding: 1.5rem; background: var(--surface); border-radius: var(--radius); border-left: 4px solid var(--secondary);">
-          <h3 style="color: var(--secondary); font-size: 1.3rem; margin-bottom: 1rem;" data-i18n="creative.title">Creative &amp; Media Background</h3>
-          <ul class="clean" style="display: grid; gap: 0.75rem;">
-            <li style="padding: 0.75rem; background: rgba(123, 44, 255, 0.05); border-radius: 8px;" data-i18n="creative.item1">TV Producer at Guinea Vista EG (2017–2022)</li>
-            <li style="padding: 0.75rem; background: rgba(76, 201, 240, 0.05); border-radius: 8px;" data-i18n="creative.item2">Team coordination and deadline management</li>
-            <li style="padding: 0.75rem; background: rgba(0, 209, 178, 0.05); border-radius: 8px;" data-i18n="creative.item3">Visual storytelling and communication skills</li>
-            <li style="padding: 0.75rem; background: rgba(123, 44, 255, 0.05); border-radius: 8px;" data-i18n="creative.item4">Creative foundation influencing UI/UX design</li>
-          </ul>
-        </section>
-        
-        <p><strong data-i18n="experience.producer">TV Producer at Fama GV</strong> — <span data-i18n="experience.company">Guinea Vista EG</span> (<span data-i18n="experience.date">2017 - 2022</span>)</p>
-        <p data-i18n="experience.description">Produced cultural TV shows and youth-centered audiovisual projects, building local content and communication skills.</p>
-      </div>
-    </section>
-
-    <section id="business">
-      <div class="container">
-        <h2 data-i18n="business.title">Business Experience</h2>
-        <ul class="clean">
-          <li><strong>Nkeng Prod</strong> — <span data-i18n="business.nkeng">Studio Production since 2013: Producing music, managing recording sessions, and working with artists.</span></li>
-          <li><strong>Eteba Music</strong> — <span data-i18n="business.eteba">Record Label since 2018: Independent label supporting Afrobeat and urban talent.</span></li>
-          <li><strong>Eteba Chale Group</strong> — <span data-i18n="business.group">Development company: Supporting and investing in small business projects for young entrepreneurs.</span></li>
-          <li><strong>Dream Motivation EG</strong>: <span data-i18n="business.dream">Motivational and empowerment platform for African youth.</span></li>
-          <li><strong>Abeme Modjobuy Envios</strong>: <span data-i18n="business.abeme">Logistics company sending packages from Ghana to Togo and Equatorial Guinea.</span></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Career Focus Section -->
-    <section id="career-focus">
-      <div class="container">
-        <h2 data-i18n="career.title">Career Focus</h2>
-        <ul class="clean" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
-          <li style="padding: 1rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--primary);" data-i18n="career.item1">Full-Stack Developer roles (Junior / Associate)</li>
-          <li style="padding: 1rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--secondary);" data-i18n="career.item2">Data-oriented technical positions</li>
-          <li style="padding: 1rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--tertiary);" data-i18n="career.item3">Startup and MVP-driven environments</li>
-          <li style="padding: 1rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--primary);" data-i18n="career.item4">Remote or on-site roles with growth potential</li>
-        </ul>
-        <p style="font-size: 1.1rem; color: var(--accent); text-align: center; padding: 1rem; background: rgba(76, 201, 240, 0.05); border-radius: var(--radius);" data-i18n="career.closing">I value learning, ownership, and building systems that matter.</p>
-      </div>
-    </section>
+          <p style="font-size: 1rem; color: var(--accent); text-align: center; padding: 0.75rem; background: rgba(76, 201, 240, 0.05); border-radius: var(--radius);" data-i18n="career.closing">I value learning, ownership, and building systems that matter.</p>
+        </div>
+      </section>
+    </div>
 
     <section id="contact">
       <div class="container">
