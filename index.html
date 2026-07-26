@@ -560,7 +560,22 @@
     }
 
     /* Cards / Grid - Premium Glassmorphism */
-    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
+    /* 4-Column Responsive Grid for Full Width */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      width: 100%;
+    }
+    @media (max-width: 1400px) {
+      .cards { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 1024px) {
+      .cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .cards { grid-template-columns: 1fr; }
+    }
     .card { 
       background: var(--surface);
       backdrop-filter: blur(12px);
