@@ -990,8 +990,13 @@
       </div>
     </section>
 
+    
+    <!-- Education & Skills Row -->
     <div id="education-skills-row" class="container two-col-row" style="margin-top: 1.5rem;">
-<section id="education">
+      
+    <!-- Education & Skills Row -->
+    <div id="education-skills-row" class="container two-col-row" style="margin-top: 1.5rem;">
+      <section id="education">
       <div>
         <h2 data-i18n="education.title">Education</h2>
         <p><strong data-i18n="education.primary">Primary School Diploma</strong> — <span data-i18n="education.primary.location">Malabo Equatorial Guinea</span> (2005-2013)</p>
@@ -1007,8 +1012,7 @@
         </ul>
       </div>
     </section>
-
-    <section id="skills">
+      <section id="skills">
       <div>
         <h2 data-i18n="skills.title">Skills</h2>
         <p><strong data-i18n="skills.tools">Tools & Technologies:</strong> <span data-i18n="skills.tools.list">Visual Studio Code, Git, Docker, GitHub, Android Studio, Markdown, SEO, Photovoltaic Solar System Technical Design</span></p>
@@ -1031,13 +1035,11 @@
             <li style="padding: 0.75rem; background: rgba(0, 209, 178, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item6">Digital marketing fundamentals</li>
           </ul>
         </section>
-</div>
-      </div>
-    </section>
+    </div>
 
-    <!-- Data & Analytics Section -->
+    <!-- Data & Career Row -->
     <div id="data-career-row" class="container two-col-row" style="margin-top: 1.5rem;">
-<section id="data-analytics">
+      <section id="data-analytics">
       <div>
         <h2 data-i18n="data.title">Data & Analytics</h2>
         <p style="font-size: 1.1rem; color: var(--accent); margin-bottom: 1rem;" data-i18n="data.intro">I use data as a decision tool, not decoration.</p>
@@ -1050,9 +1052,1089 @@
         </ul>
       </div>
     </section>
-
-    <div id="projects" class="container section-block" style="width: 100%;">
+      <section id="career-focus">
       <div>
+        <h2 data-i18n="career.title">Career Focus</h2>
+        <ul class="clean" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+          <li style="padding: 1rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--primary);" data-i18n="career.item1">Full-Stack Developer roles (Junior / Associate)</li>
+          <li style="padding: 1rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--secondary);" data-i18n="career.item2">Data-oriented technical positions</li>
+          <li style="padding: 1rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--tertiary);" data-i18n="career.item3">Startup and MVP-driven environments</li>
+          <li style="padding: 1rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--primary);" data-i18n="career.item4">Remote or on-site roles with growth potential</li>
+        </ul>
+        <p style="font-size: 1.1rem; color: var(--accent); text-align: center; padding: 1rem; background: rgba(76, 201, 240, 0.05); border-radius: var(--radius);" data-i18n="career.closing">I value learning, ownership, and building systems that matter.</p>
+      </div>
+    </section>
+    </div>
+
+    <!-- Projects Section (Standalone Full-Width Div) -->
+    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Fernando Chale Eteba</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap');
+
+    :root {
+      /* Ultra-Premium Midnight Theme */
+      --bg: #020617;
+      /* Cosmic ambient glows */
+      --bg-gradient: 
+        radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.08) 0%, transparent 50%), 
+        radial-gradient(circle at 100% 100%, rgba(129, 140, 248, 0.08) 0%, transparent 50%);
+      
+      --surface: rgba(15, 23, 42, 0.6);
+      --surface-hover: rgba(30, 41, 59, 0.8);
+      --surface-border: rgba(51, 65, 85, 0.5);
+
+      /* Neon Cyber Accents */
+      --primary: #38bdf8; /* Sky 400 */
+      --secondary: #818cf8; /* Indigo 400 */
+      --tertiary: #34d399; /* Emerald 400 */
+      --accent: #f472b6; /* Pink 400 */
+
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --radius: 20px;
+
+      --grad-brand: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      --grad-text: linear-gradient(to right, var(--text), var(--muted));
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      background-image: var(--bg-gradient);
+      background-attachment: fixed;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    h1, h2, h3, h4, .title { font-family: 'Outfit', sans-serif; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-2); }
+    :focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+
+    .container { max-width: 98%; margin: 0 auto; padding: 0 2rem; }
+    section { 
+      padding: 5rem 0; 
+      scroll-margin-top: 80px;
+      position: relative;
+    }
+    section:not(#about)::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(76, 201, 240, 0.2), transparent);
+    }
+
+    
+    .two-col-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 992px) {
+      .two-col-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+  
+    /* Modern Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 11, 18, 0.85);
+      backdrop-filter: blur(20px) saturate(1.8);
+      border-bottom: 1px solid rgba(76, 201, 240, 0.1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .header.scrolled {
+      background: rgba(18, 20, 39, 0.95);
+      border-bottom-color: rgba(123, 44, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .logo:hover {
+      color: var(--accent-2);
+      transform: translateY(-1px);
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--grad-brand);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 0.5rem;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      padding: 0.6rem 1rem;
+      color: var(--text);
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 500;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(76, 201, 240, 0.1), rgba(123, 44, 255, 0.1));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 12px;
+    }
+
+    .nav-link:hover::before {
+      opacity: 1;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(76, 201, 240, 0.2);
+    }
+
+    .nav-link.active {
+      color: var(--primary);
+      background: rgba(76, 201, 240, 0.1);
+      border: 1px solid rgba(76, 201, 240, 0.2);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 0.5rem;
+      border: none;
+      background: transparent;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger:hover {
+      background: rgba(76, 201, 240, 0.1);
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      margin: 3px 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 2px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Mobile Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: min(85vw, 350px);
+      height: 100vh;
+      background: rgba(18, 20, 39, 0.98);
+      backdrop-filter: blur(20px) saturate(1.8);
+      border-right: 1px solid rgba(76, 201, 240, 0.2);
+      z-index: 1001;
+      transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto;
+    }
+
+    .sidebar.open {
+      left: 0;
+    }
+
+    .sidebar-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid rgba(76, 201, 240, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .sidebar-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .sidebar-close {
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: rgba(76, 201, 240, 0.1);
+      color: var(--primary);
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar-close:hover {
+      background: rgba(76, 201, 240, 0.2);
+      transform: scale(1.05);
+    }
+
+    .sidebar-nav {
+      padding: 1rem;
+    }
+
+    .sidebar-menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      padding: 1rem 1.25rem;
+      color: var(--text);
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 500;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sidebar-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--grad-brand);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 12px;
+    }
+
+    .sidebar-link:hover::before {
+      opacity: 0.1;
+    }
+
+    .sidebar-link:hover {
+      color: var(--primary);
+      transform: translateX(8px);
+      box-shadow: 0 4px 20px rgba(76, 201, 240, 0.15);
+    }
+
+    .sidebar-link.active {
+      color: var(--primary);
+      background: rgba(76, 201, 240, 0.1);
+      border: 1px solid rgba(76, 201, 240, 0.2);
+    }
+
+    .sidebar-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar-overlay.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Responsive */
+    /* Language Switcher */
+    .lang-switcher {
+      display: flex;
+      gap: 0.25rem;
+      background: rgba(76, 201, 240, 0.05);
+      padding: 0.25rem;
+      border-radius: 12px;
+      border: 1px solid rgba(76, 201, 240, 0.15);
+    }
+
+    .lang-btn {
+      padding: 0.4rem 0.75rem;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.85rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn:hover {
+      color: var(--primary);
+      background: rgba(76, 201, 240, 0.1);
+    }
+
+    .lang-btn.active {
+      background: var(--grad-brand);
+      color: white;
+      box-shadow: 0 2px 8px rgba(76, 201, 240, 0.3);
+    }
+
+    .lang-btn-mobile {
+      padding: 0.5rem 1rem;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      flex: 1;
+    }
+
+    .lang-btn-mobile:hover {
+      color: var(--primary);
+      background: rgba(76, 201, 240, 0.1);
+    }
+
+    .lang-btn-mobile.active {
+      background: var(--grad-brand);
+      color: white;
+      box-shadow: 0 2px 8px rgba(76, 201, 240, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+      
+      .hamburger {
+        display: flex;
+      }
+      
+      .lang-switcher {
+        margin-right: 0.5rem;
+      }
+      
+      section {
+        scroll-margin-top: 90px;
+      }
+    }
+
+
+
+    /* Hero */
+    #about .hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; align-items: center; }
+    .hero-title { 
+      font-size: clamp(2.5rem, 5vw, 4rem); 
+      margin: 0; 
+      background: var(--grad-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+    .hero-title span {
+      background: var(--grad-brand);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub { 
+      color: var(--muted); 
+      margin-top: 0.75rem; 
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+    .hero-cta { 
+      display: flex; 
+      gap: 1rem; 
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .btn { 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 8px; 
+      padding: 0.85rem 1.5rem; 
+      border-radius: 999px; 
+      border: 1px solid rgba(76, 201, 240, 0.3); 
+      background: rgba(76, 201, 240, 0.05); 
+      color: var(--text); 
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-size: 0.95rem;
+    }
+    .btn:hover {
+      background: rgba(76, 201, 240, 0.1);
+      border-color: rgba(76, 201, 240, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(76, 201, 240, 0.2);
+    }
+    .btn.primary { 
+      background: var(--grad-brand); 
+      color: white; 
+      border: 0; 
+      box-shadow: 0 10px 30px rgba(123,44,255,.3);
+      font-weight: 700;
+    }
+    .btn.primary:hover { 
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(123,44,255,.4);
+    }
+
+    .profile { 
+      justify-self: center; 
+      text-align: center;
+      position: relative;
+    }
+    .profile::before {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      background: var(--grad-brand);
+      border-radius: 50%;
+      opacity: 0.15;
+      filter: blur(40px);
+      z-index: -1;
+    }
+    .profile-pic { 
+      width: 240px; 
+      height: 240px; 
+      border-radius: 50%; 
+      object-fit: cover; 
+      border: 4px solid rgba(76, 201, 240, 0.3); 
+      box-shadow: 0 12px 40px rgba(0,0,0,.5), 0 0 0 1px rgba(76, 201, 240, 0.2);
+      transition: all 0.3s ease;
+    }
+    .profile-pic:hover {
+      transform: scale(1.05);
+      border-color: rgba(76, 201, 240, 0.6);
+      box-shadow: 0 16px 50px rgba(76, 201, 240, 0.3);
+    }
+
+    /* Section titles */
+    h2 { 
+      font-size: clamp(2rem, 3vw, 2.8rem); 
+      background: var(--grad-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 0 0 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      position: relative;
+      display: inline-block;
+    }
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--grad-brand);
+      border-radius: 2px;
+    }
+    p { 
+      line-height: 1.7; 
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* Cards / Grid - Premium Glassmorphism */
+    /* 4-Column Responsive Grid for Full Width */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      width: 100%;
+    }
+    @media (max-width: 1400px) {
+      .cards { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 1024px) {
+      .cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .cards { grid-template-columns: 1fr; }
+    }
+    .card { 
+      background: var(--surface);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius); 
+      padding: 2rem; 
+      display: flex; 
+      flex-direction: column; 
+      gap: 0.85rem;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at top right, rgba(123, 44, 255, 0.15), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 0;
+    }
+    .card > * { z-index: 1; position: relative; }
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(123, 44, 255, 0.4);
+      background: var(--surface-hover);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(123, 44, 255, 0.2);
+    }
+    .card:hover::before { opacity: 1; }
+    .card .title { 
+      font-weight: 800; 
+      color: #fff; 
+      font-size: 1.6rem;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.25rem;
+      font-family: 'Outfit', sans-serif;
+    }
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+    .card p strong {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: block;
+      margin-top: 0.5rem;
+      margin-bottom: 0.1rem;
+    }
+    .badge { 
+      display: inline-flex; 
+      align-items: center;
+      width: fit-content;
+      padding: 0.4rem 0.85rem; 
+      border-radius: 999px; 
+      background: rgba(129, 140, 248, 0.1); 
+      color: var(--primary); 
+      font-size: 0.75rem; 
+      border: 1px solid rgba(129, 140, 248, 0.2);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .status { 
+      color: var(--tertiary); 
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+    }
+    .status::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--tertiary);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+      box-shadow: 0 0 10px var(--tertiary);
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
+    }
+    .links { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 0.75rem;
+      margin-top: auto;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--surface-border);
+    }
+    .links a { 
+      background: rgba(56, 189, 248, 0.1); 
+      color: var(--primary); 
+      padding: 0.6rem 1.2rem; 
+      border-radius: 12px; 
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-align: center;
+      flex-grow: 1;
+    }
+    .links a:hover {
+      background: var(--primary);
+      color: var(--bg);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+    }
+
+    /* Lists */
+    ul.clean { list-style: none; padding-left: 0; }
+    ul.clean li { margin: 0.25rem 0; color: var(--muted); }
+
+    /* Footer */
+    footer { 
+      padding: 3rem 0; 
+      color: var(--muted); 
+      text-align: center; 
+      border-top: 1px solid rgba(76, 201, 240, 0.1);
+      background: linear-gradient(180deg, transparent, rgba(76, 201, 240, 0.02));
+      margin-top: 4rem;
+    }
+    footer .container {
+      font-size: 0.95rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      #about .hero { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
+    /* WhatsApp Buttons */
+    .contact-buttons {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 1.75rem;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+      font-size: 0.95rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .whatsapp-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .whatsapp-btn:hover::before {
+      left: 100%;
+    }
+
+    .whatsapp-btn:hover {
+      background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1000;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .whatsapp-float:hover {
+      background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+      transform: scale(1.1) translateY(-5px);
+      box-shadow: 0 10px 35px rgba(37, 211, 102, 0.5);
+      animation: none;
+    }
+
+    @media (max-width: 768px) {
+      .whatsapp-float {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 56px;
+        height: 56px;
+      }
+      
+      .whatsapp-float svg {
+        width: 26px;
+        height: 26px;
+      }
+    }
+
+    /* Project Filter System */
+    .project-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+    .filter-btn {
+      padding: 0.6rem 1.25rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--surface-border);
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    .filter-btn:hover {
+      border-color: rgba(56, 189, 248, 0.5);
+      color: var(--text);
+    }
+    .filter-btn.active {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: var(--primary);
+      color: var(--primary);
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+    }
+  
+    /* Project Card Logo Styling */
+    .card-logo-container {
+      width: 100%;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 15, 20, 0.6);
+      border-radius: 12px;
+      padding: 0.75rem;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    .project-card-logo {
+      max-width: 100%;
+      max-height: 65px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+      transition: transform 0.3s ease;
+    }
+    .card:hover .project-card-logo {
+      transform: scale(1.08);
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Modern Header -->
+  <header class="header" id="header">
+    <div class="nav-container">
+      <a href="#about" class="logo">
+        <div class="logo-icon">DEV</div>
+        <span>Software Dev Portfolio</span>
+      </a>
+      
+      <nav aria-label="Main navigation">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+          <li class="nav-item"><a href="#education" class="nav-link" data-i18n="nav.education">Education</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+          <li class="nav-item"><a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a></li>
+          <li class="nav-item"><a href="#business" class="nav-link" data-i18n="nav.business">Business</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="lang-switcher">
+        <button type="button" class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+        <button type="button" class="lang-btn" data-lang="es" aria-label="Español">ES</button>
+        <button type="button" class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
+      </div>
+      
+      <button type="button" class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Sidebar -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="#about" class="sidebar-logo">
+        <div class="logo-icon">F</div>
+        <span>Fernando Chale</span>
+      </a>
+      <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Close menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="sidebar-nav" aria-label="Mobile navigation">
+      <ul class="sidebar-menu">
+        <li><a href="#about" class="sidebar-link" data-i18n="nav.about">About</a></li>
+        <li><a href="#education" class="sidebar-link" data-i18n="nav.education">Education</a></li>
+        <li><a href="#skills" class="sidebar-link" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="#projects" class="sidebar-link" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#experience" class="sidebar-link" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="#business" class="sidebar-link" data-i18n="nav.business">Business</a></li>
+        <li><a href="#contact" class="sidebar-link" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      
+      <!-- Language Switcher in Sidebar -->
+      <div style="padding: 1rem 1.25rem; border-top: 1px solid rgba(76, 201, 240, 0.1); margin-top: 1rem;">
+        <p style="color: var(--muted); font-size: 0.85rem; margin-bottom: 0.75rem;" data-i18n="nav.language">Language</p>
+        <div class="lang-switcher">
+          <button type="button" class="lang-btn-mobile active" data-lang="en" aria-label="English">EN</button>
+          <button type="button" class="lang-btn-mobile" data-lang="es" aria-label="Español">ES</button>
+          <button type="button" class="lang-btn-mobile" data-lang="fr" aria-label="Français">FR</button>
+        </div>
+      </div>
+    </nav>
+  </aside>
+ 
+  <main>
+    <section id="about">
+      <div class="container hero">
+        <div>
+          <h1 class="hero-title">Fernando <span>Chale Eteba</span></h1>
+          <p class="hero-sub" data-i18n="hero.subtitle">Junior Full-Stack Developer &amp; Software Engineering student. Focused on clean UI, robust architecture, and fast delivery with Vibe Coding.</p>
+          
+          <!-- About Me Extended Section -->
+          <section id="about-extended" style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(76, 201, 240, 0.05); border-left: 3px solid var(--primary); border-radius: 8px;">
+            <h3 style="color: var(--primary); font-size: 1.2rem; margin-bottom: 0.75rem;" data-i18n="about.extended.title">About Me</h3>
+            <p style="margin-bottom: 0.75rem; line-height: 1.65;" data-i18n="about.extended.p1">I'm a <strong>hybrid builder</strong> — technology, data, business, and culture moving together.</p>
+            <p style="margin-bottom: 0.75rem; line-height: 1.65;" data-i18n="about.extended.p2">I design and develop <strong>real systems for real problems</strong>, especially in emerging markets. From clean UI to backend logic, from databases to deployment — I think in end-to-end solutions.</p>
+            <p style="margin-bottom: 0; line-height: 1.65;" data-i18n="about.extended.p3">My background mixes Software Engineering, Data Analysis, Digital Business, and Creative Production. That blend lets me build products that are not only functional, but usable, scalable, and human.</p>
+          </section>
+          
+          <div class="hero-cta">
+            <a class="btn primary" href="#projects" data-i18n="hero.cta">See Projects</a>
+            <a href="https://wa.me/233208870387" target="_blank" rel="noopener noreferrer" class="whatsapp-btn"> <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.106"/>
+            </svg><span data-i18n="hero.whatsapp">Chat On WhatsApp</span></a>
+            
+          </div>
+          <div style="margin-top:1rem; color: var(--muted)">
+            <p><strong data-i18n="hero.nationality">Nationality:</strong> Equatorial Guinea · <strong data-i18n="hero.dob">DOB:</strong> 04-Sept-1999 · <strong data-i18n="hero.birthplace">Birthplace:</strong> Malabo</p>
+          </div>
+        </div>
+        <div class="profile">
+          <img src="DSC_0014.JPG" alt="Fernando Chale Eteba" class="profile-pic">
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Profile Section -->
+    <section id="core-profile">
+      <div class="container">
+        <h2 data-i18n="core.title">Core Profile</h2>
+        <ul class="clean" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1rem;">
+          <li style="padding: 1rem; background: var(--surface); border-left: 3px solid var(--primary); border-radius: 8px;" data-i18n="core.item1">Hybrid Full-Stack Developer with strong backend & database focus</li>
+          <li style="padding: 1rem; background: var(--surface); border-left: 3px solid var(--secondary); border-radius: 8px;" data-i18n="core.item2">Data-driven mindset: decisions backed by analysis</li>
+          <li style="padding: 1rem; background: var(--surface); border-left: 3px solid var(--tertiary); border-radius: 8px;" data-i18n="core.item3">Experience building MVPs and business platforms</li>
+          <li style="padding: 1rem; background: var(--surface); border-left: 3px solid var(--primary); border-radius: 8px;" data-i18n="core.item4">Strong documentation and system thinking</li>
+          <li style="padding: 1rem; background: var(--surface); border-left: 3px solid var(--secondary); border-radius: 8px;" data-i18n="core.item5">Comfortable working solo or leading small teams</li>
+          <li style="padding: 1rem; background: var(--surface); border-left: 3px solid var(--tertiary); border-radius: 8px;" data-i18n="core.item6">Focused on Africa-centric solutions with global standards</li>
+        </ul>
+      </div>
+    </section>
+
+    
+    <!-- Education & Skills Row -->
+    <div id="education-skills-row" class="container two-col-row" style="margin-top: 1.5rem;">
+      <section id="education">
+      <div>
+        <h2 data-i18n="education.title">Education</h2>
+        <p><strong data-i18n="education.primary">Primary School Diploma</strong> — <span data-i18n="education.primary.location">Malabo Equatorial Guinea</span> (2005-2013)</p>
+        <p><strong data-i18n="education.high">High School Diploma</strong> — <span data-i18n="education.high.location">Malabo Equatorial Guinea</span> (2014-2018)</p>
+        <p><strong data-i18n="education.baccalaureate">Baccalaureate</strong> — <span data-i18n="education.baccalaureate.location">Malabo Equatorial Guinea</span> (2018-2020)</p>
+        <p><strong data-i18n="education.professional">Profesional Diploma in Software Engineering</strong> — <span data-i18n="education.professional.location">IPMC University College</span> (<span data-i18n="education.professional.date">March 2024 - March 2025</span>)</p>
+        <p><strong data-i18n="education.advance">Advance Diploma</strong> — <span data-i18n="education.advance.location">IPMC University College</span> (<span data-i18n="education.advance.date">May 2025 - Present</span>)</p>
+        <p><strong data-i18n="education.certificates">Certificates:</strong></p>
+        <ul class="clean">
+          <li>Introduction to SQL - SoloLearn</li>
+          <li>Introduction to Java - SoloLearn</li>
+          <li>Fundamentals of AI - Netzum</li>
+        </ul>
+      </div>
+    </section>
+      <section id="skills">
+      <div>
+        <h2 data-i18n="skills.title">Skills</h2>
+        <p><strong data-i18n="skills.tools">Tools & Technologies:</strong> <span data-i18n="skills.tools.list">Visual Studio Code, Git, Docker, GitHub, Android Studio, Markdown, SEO, Photovoltaic Solar System Technical Design</span></p>
+        <p><strong data-i18n="skills.ai">AI:</strong> <span data-i18n="skills.ai.list">Copilot, Gemini, ChatGPT, Codex, Google Notebook LM</span></p>
+        <p><strong data-i18n="skills.basic">Basic:</strong> <span data-i18n="skills.basic.list">C++, Java, C#, Python</span></p>
+        <p><strong data-i18n="skills.frontend">Frontend:</strong> <span data-i18n="skills.frontend.list">HTML, CSS, JavaScript, Responsive Design, UI/UX Thinking, React, Bootstrap</span></p>
+        <p><strong data-i18n="skills.backend">Backend:</strong> <span data-i18n="skills.backend.list">PHP, MySQL, phpMyAdmin, Node.js, PostgreSQL, Next.js, MongoDB, SQLite</span></p>
+        <p><strong data-i18n="skills.debugging">Debugging:</strong> <span data-i18n="skills.debugging.list">Fast identification and resolution of bugs, Vibe Coding</span></p>
+        <p><strong data-i18n="skills.languages">Languages:</strong> <span data-i18n="skills.languages.list">Spanish (Native), English (Fluent)</span></p>
+        
+        <!-- Professional Skillset Highlights -->
+        <section id="skills-highlights" style="margin-top: 2rem; padding: 1.5rem; background: var(--surface); border-radius: var(--radius); border: 1px solid rgba(76, 201, 240, 0.2);">
+          <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 1rem;" data-i18n="skills.highlights.title">Professional Skillset Highlights</h3>
+          <ul class="clean" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0.75rem;">
+            <li style="padding: 0.75rem; background: rgba(76, 201, 240, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item1">Full-Stack Web Development</li>
+            <li style="padding: 0.75rem; background: rgba(123, 44, 255, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item2">REST API design and backend architecture</li>
+            <li style="padding: 0.75rem; background: rgba(0, 209, 178, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item3">Business-oriented system design</li>
+            <li style="padding: 0.75rem; background: rgba(76, 201, 240, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item4">Debugging and rapid problem resolution</li>
+            <li style="padding: 0.75rem; background: rgba(123, 44, 255, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item5">Technical documentation</li>
+            <li style="padding: 0.75rem; background: rgba(0, 209, 178, 0.05); border-radius: 8px;" data-i18n="skills.highlights.item6">Digital marketing fundamentals</li>
+          </ul>
+        </section>
+    </div>
+
+    <!-- Data & Career Row -->
+    <div id="data-career-row" class="container two-col-row" style="margin-top: 1.5rem;">
+      <section id="data-analytics">
+      <div>
+        <h2 data-i18n="data.title">Data & Analytics</h2>
+        <p style="font-size: 1.1rem; color: var(--accent); margin-bottom: 1rem;" data-i18n="data.intro">I use data as a decision tool, not decoration.</p>
+        <ul class="clean" style="display: grid; gap: 0.75rem;">
+          <li style="padding: 0.75rem 1rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--primary);" data-i18n="data.item1">SQL-based analysis for business insights</li>
+          <li style="padding: 0.75rem 1rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--secondary);" data-i18n="data.item2">Reporting for stakeholders and internal decisions</li>
+          <li style="padding: 0.75rem 1rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--tertiary);" data-i18n="data.item3">Process optimization through data interpretation</li>
+          <li style="padding: 0.75rem 1rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--primary);" data-i18n="data.item4">Experience with Excel and Power BI</li>
+          <li style="padding: 0.75rem 1rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--secondary);" data-i18n="data.item5">Basic understanding of data privacy and security</li>
+        </ul>
+      </div>
+    </section>
+      <section id="career-focus">
+      <div>
+        <h2 data-i18n="career.title">Career Focus</h2>
+        <ul class="clean" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+          <li style="padding: 1rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--primary);" data-i18n="career.item1">Full-Stack Developer roles (Junior / Associate)</li>
+          <li style="padding: 1rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--secondary);" data-i18n="career.item2">Data-oriented technical positions</li>
+          <li style="padding: 1rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--tertiary);" data-i18n="career.item3">Startup and MVP-driven environments</li>
+          <li style="padding: 1rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--primary);" data-i18n="career.item4">Remote or on-site roles with growth potential</li>
+        </ul>
+        <p style="font-size: 1.1rem; color: var(--accent); text-align: center; padding: 1rem; background: rgba(76, 201, 240, 0.05); border-radius: var(--radius);" data-i18n="career.closing">I value learning, ownership, and building systems that matter.</p>
+      </div>
+    </section>
+    </div>
+
+    <!-- Projects Section (Standalone Full-Width Div) -->
+    <div id="projects" class="container section-block" style="width: 100%;">
+      <div class="container">
         <h2 data-i18n="projects.title">Projects</h2>
         
         <!-- Projects Context Section -->
@@ -1328,8 +2410,26 @@
       </div>
     </div>
 
+    <!-- Experience & Business Row -->
     <div id="experience-business-row" class="container two-col-row" style="margin-top: 1.5rem;">
-<section id="experience">
+      <section id="experience">
+      <div>
+        <h2 data-i18n="experience.title">Professional Experience</h2>
+        
+        <!-- Business &amp; Leadership Experience -->
+        <section id="business-leadership" style="margin-bottom: 2rem; padding: 1.5rem; background: var(--surface); border-radius: var(--radius); border-left: 4px solid var(--primary);">
+          <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 1rem;" data-i18n="business.leadership.title">Business &amp; Leadership Experience</h3>
+          <ul class="clean" style="display: grid; gap: 0.75rem;">
+            <li style="padding: 0.75rem; background: rgba(76, 201, 240, 0.05); border-radius: 8px;" data-i18n="business.leadership.item1">Designed business workflows translated into software systems</li>
+            <li style="padding: 0.75rem; background: rgba(123, 44, 255, 0.05); border-radius: 8px;" data-i18n="business.leadership.item2">Managed logistics, payments, and operations</li>
+            <li style="padding: 0.75rem; background: rgba(0, 209, 178, 0.05); border-radius: 8px;" data-i18n="business.leadership.item3">Built brands and platforms from zero</li>
+            <li style="padding: 0.75rem; background: rgba(76, 201, 240, 0.05); border-radius: 8px;" data-i18n="business.leadership.item4">Decision-making under resource constraints</li>
+          </ul>
+        </div>
+
+    <!-- Experience & Business Row -->
+    <div id="experience-business-row" class="container two-col-row" style="margin-top: 1.5rem;">
+      <section id="experience">
       <div>
         <h2 data-i18n="experience.title">Professional Experience</h2>
         
@@ -1343,24 +2443,7 @@
             <li style="padding: 0.75rem; background: rgba(76, 201, 240, 0.05); border-radius: 8px;" data-i18n="business.leadership.item4">Decision-making under resource constraints</li>
           </ul>
         </section>
-        
-        <!-- Creative &amp; Media Background -->
-        <section id="creative-background" style="margin-bottom: 2rem; padding: 1.5rem; background: var(--surface); border-radius: var(--radius); border-left: 4px solid var(--secondary);">
-          <h3 style="color: var(--secondary); font-size: 1.3rem; margin-bottom: 1rem;" data-i18n="creative.title">Creative &amp; Media Background</h3>
-          <ul class="clean" style="display: grid; gap: 0.75rem;">
-            <li style="padding: 0.75rem; background: rgba(123, 44, 255, 0.05); border-radius: 8px;" data-i18n="creative.item1">TV Producer at Guinea Vista EG (2017–2022)</li>
-            <li style="padding: 0.75rem; background: rgba(76, 201, 240, 0.05); border-radius: 8px;" data-i18n="creative.item2">Team coordination and deadline management</li>
-            <li style="padding: 0.75rem; background: rgba(0, 209, 178, 0.05); border-radius: 8px;" data-i18n="creative.item3">Visual storytelling and communication skills</li>
-            <li style="padding: 0.75rem; background: rgba(123, 44, 255, 0.05); border-radius: 8px;" data-i18n="creative.item4">Creative foundation influencing UI/UX design</li>
-          </ul>
-        </section>
-        
-        <p><strong data-i18n="experience.producer">TV Producer at Fama GV</strong> — <span data-i18n="experience.company">Guinea Vista EG</span> (<span data-i18n="experience.date">2017 - 2022</span>)</p>
-        <p data-i18n="experience.description">Produced cultural TV shows and youth-centered audiovisual projects, building local content and communication skills.</p>
-      </div>
-    </section>
-
-    <section id="business">
+      <section id="business">
       <div>
         <h2 data-i18n="business.title">Business Experience</h2>
         <ul class="clean">
@@ -1372,22 +2455,7 @@
         </ul>
       </div>
     </section>
-</div>
-
-    <!-- Career Focus Section -->
-    <section id="career-focus">
-      <div>
-        <h2 data-i18n="career.title">Career Focus</h2>
-        <ul class="clean" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
-          <li style="padding: 1rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--primary);" data-i18n="career.item1">Full-Stack Developer roles (Junior / Associate)</li>
-          <li style="padding: 1rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--secondary);" data-i18n="career.item2">Data-oriented technical positions</li>
-          <li style="padding: 1rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--tertiary);" data-i18n="career.item3">Startup and MVP-driven environments</li>
-          <li style="padding: 1rem; background: var(--surface); border-radius: var(--radius); border-left: 3px solid var(--primary);" data-i18n="career.item4">Remote or on-site roles with growth potential</li>
-        </ul>
-        <p style="font-size: 1.1rem; color: var(--accent); text-align: center; padding: 1rem; background: rgba(76, 201, 240, 0.05); border-radius: var(--radius);" data-i18n="career.closing">I value learning, ownership, and building systems that matter.</p>
-      </div>
-    </section>
-</div>
+    </div>
 
     <section id="contact">
       <div class="container">
